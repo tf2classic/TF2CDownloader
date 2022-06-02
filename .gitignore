@@ -2,3 +2,4 @@ TF2CDownloader.spec
 build
 dist
 __pycache__
+.temp
