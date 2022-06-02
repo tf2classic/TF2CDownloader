@@ -1,3 +1,4 @@
 TF2CDownloader.spec
-build/
-dist/
+build
+dist
+__pycache__

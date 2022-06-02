@@ -1,5 +1,6 @@
 import sys
 
+import vars
 import gui
 import setup
 import install
