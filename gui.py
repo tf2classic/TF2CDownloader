@@ -10,5 +10,5 @@ def message(msg):
 def message_end(msg, code):
     print(msg)
     if os.name == 'nt':
-        input("Press any key to exit.")
+        input("Press Enter to exit.")
     sys.exit(code)
