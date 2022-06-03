@@ -8,7 +8,7 @@ run = subprocess.run
 
 def tf2c_download():
 	gui.message("Starting the download for TF2Classic... You may see some errors that are safe to ignore.")
-	run([vars.ARIA2C_BINARY, "--optimize-concurrent-downloads=true", "--check-certificate=false", "--allow-overwrite=true", "--auto-file-renaming=false", "--continue=true", "--console-log-level=error", "--summary-interval=0", "--bt-hash-check-seed=false", "--seed-time=0",
+	run([vars.ARIA2C_BINARY, "--optimize-concurrent-downloads=true", "--check-certificate=false", "--check-integrity=true", "--auto-file-renaming=false", "--continue=true", "--console-log-level=error", "--summary-interval=0", "--bt-hash-check-seed=false", "--seed-time=0",
 	"-d" + vars.TEMP_PATH,
 	"https://wiki.tf2classic.com/misc/tf2classic-latest.meta4"], check=True)
 
