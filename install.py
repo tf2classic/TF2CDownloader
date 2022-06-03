@@ -19,7 +19,7 @@ def tf2c_download():
 			os.rename(vars.TEMP_PATH + file, vars.TEMP_PATH + "tf2classic.zip")
 			break;
 
-def tf2c_extract(path):
+def tf2c_extract():
 	gui.message("Extracting the downloaded archive...")
 	run([vars.SEVENZ_BINARY, "x", vars.TEMP_PATH + "tf2classic.zip", "-aoa"], check=True)
 	if not vars.keepzip:
