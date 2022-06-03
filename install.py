@@ -1,9 +1,10 @@
+import gui
 import subprocess
 import os
-run = subprocess.run
-
 import vars
-import gui
+import shutil
+
+run = subprocess.run
 
 def tf2c_download():
 	gui.message("Starting the download for TF2Classic... You may see some errors that are safe to ignore.")
@@ -19,4 +20,4 @@ def tf2c_extract():
 			os.remove(vars.TEMP_PATH + "tf2classic.zip")
 		if os.path.isfile(vars.TEMP_PATH + "tf2classic-latest.meta4"):
 			os.remove(vars.TEMP_PATH + "tf2classic-latest.meta4")
-		os.rmdir(vars.TEMP_PATH)
+		shutil.rmtree(vars.TEMP_PATH)
