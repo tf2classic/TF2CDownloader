@@ -13,8 +13,9 @@ def sanity_check():
 		sys.exit(1)
 
 sanity_check()
+setup.setup_path()
 setup.setup_binaries()
 install.tf2c_download()
 install.tf2c_extract()
 
-gui.message_end("Setup is over.", 0)
+gui.message_end("Setup is over. Remember to restart Steam!", 0)

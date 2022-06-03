@@ -9,3 +9,6 @@ else:
 	
 ARIA2C_BINARY = None
 SEVENZ_BINARY = None
+
+SOURCEMODS_PATH = None
+TF2C_PATH = None
