@@ -1,8 +1,9 @@
-import os
+from platform import system
 
 keepzip = False
 
-if os.name == 'nt':
+OS_TYPE = system()
+if OS_TYPE() == 'Windows':
 	TEMP_PATH = ".temp/"
 else:
 	TEMP_PATH = "/var/tmp/tf2cdownloader/"

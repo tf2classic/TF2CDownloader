@@ -1,16 +1,16 @@
-import sys
-
+from sys import stdin, exit
 import vars
 import gui
 import setup
 import install
 
-keepzip = False
+# never used anywhere, should be deleted
+#keepzip = False
 
 def sanity_check():
-	if not sys.stdin or not sys.stdin.isatty():
+	if not stdin or not stdin.isatty():
 		print("Looks like we're running in the background. We don't want that, so we're exiting.")
-		sys.exit(1)
+		exit(1)
 
 sanity_check()
 setup.setup_path()

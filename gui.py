@@ -1,43 +1,57 @@
-import os
+from os import path as os_path, makedirs, rmdir
 from time import sleep
-import sys
+from sys import exit
 
-def message(msg):
+def message(msg: str, delay = 0):
+	"""
+	Show a message to user.
+	Delay stops program for specified amount of seconds.
+	"""
 	print(msg)
-	print()
-	if os.name == 'nt':
-		sleep(5)
+	sleep(delay)
 
-def message_quick(msg):
-	print(msg)
-
-def message_yes_no(msg):
-	ans = None
-	while ans not in ("y", "n"):
-		ans = input(msg + " (Y/N)>").lower()
-	
-	if ans == "y":
+def message_yes_no(msg:str, default = true):
+	"""
+	Show a message to user and get yes/no answer.
+	"default" sets "yes" as default answer if true, "no" if false.
+	"""
+	ans = ''
+	ans = input(msg +  [' (y (default) / n): ' if default else ' (y / n (default): '])
+	if ans == 'y':
 		return True
-	elif ans == "n":
+	elif ans == 'n':
 		return False
+	else:
+		return default
+	
 	
 def message_input(msg):
-	return input(msg + " >")
+	"""
+	Show a message and get input from user.
+	"""
+	return input(msg + ' >')
 
 def message_dir(msg):
+	"""
+	Show a message and ask for a directory.
+	"""
 	while True:
-		directory = input(msg + ": ")
-		if os.path.isdir(directory):
+		directory = input(msg + ': ')
+		if os_path.isdir(directory):
 			return directory
 		try:
-			os.makedirs(directory)
-			os.rmdir(directory) # lol
+			# wth???
+			makedirs(directory)
+			rmdir(directory) # lol
 			return directory
 		except Exception:
 			pass
 
 def message_end(msg, code):
-    print(msg)
-    if os.name == 'nt':
-        input("Press Enter to exit.")
-    sys.exit(code)
+	"""
+	Show a message and exit.
+	"""
+	print(msg)
+	if OS_TYPE == 'Windows':
+		input('Press Enter to exit.')
+	exit(code)
