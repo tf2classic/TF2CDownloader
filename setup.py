@@ -1,7 +1,8 @@
 from os import path as os_path
 from shutil import which
 from sys import _MEIPASS as MEIPASS
-if OS_TYPE == 'Windows':
+from platform import system
+if system() == 'Windows':
 	import winreg
 import vars
 import gui
@@ -13,7 +14,7 @@ def sourcemods_path():
 	"""
 	Find path to sourcemod folder.
 	"""
-	if OS_TYPE == 'Windows':
+	if system() == 'Windows':
 		try:
 			global registry
 			global registry_key
@@ -42,7 +43,7 @@ def set_sourcemods_path(path):
 	"""
 	Set sourcemod folder path.
 	"""
-	if OS_TYPE == 'Windows':
+	if system() == 'Windows':
 		global registry
 		global registry_key
 		if registry == 0:
@@ -81,7 +82,7 @@ def setup_path():
 					vars.TF2C_PATH = os_path.join(gui.message_dir('location'), 'tf2classic')
 	else:
 		gui.message('WARNING: Steam\'s sourcemod folder has not been found.')
-		if OS_TYPE == 'Windows':
+		if system() == 'Windows':
 			vars.SOURCEMODS_PATH = 'C:\\Program Files (x86)\\Steam\\steamapps\\sourcemods'
 		else:
 			vars.SOURCEMODS_PATH = '~/.steam/steam/steamapps/sourcemods/'
@@ -101,18 +102,18 @@ def setup_binaries():
 	"""
 	Select paths for required binaries.
 	"""
-	if OS_TYPE == 'Windows':
+	if system() == 'Windows':
 		vars.ARIA2C_BINARY = MEIPASS + '/aria2c.exe'
-		vars.SEVENZ_BINARY = MEIPASS + '/7za.exe'
+		vars.ZSTD_BINARY = MEIPASS + '/pzstd.exe'
 	else:
-		if shutil.which('aria2c') is None:
+		if which('aria2c') is None:
 			gui.message_end('You need to install Aria2 to use this script.', 1)
 		else:
 			vars.ARIA2C_BINARY = 'aria2c'
 
-		if which('7zz') is None and which('7z') is None:
-			gui.message_end('You need to install 7-Zip or p7zip to use this script.', 1)
-		elif which('7zz') is not None:
-			vars.SEVENZ_BINARY = '7zz'
+		if which('zstd') is None and which('pzstd') is None:
+			gui.message_end('You need to install Zstd to use this script.', 1)
+		elif which('pzstd') is not None:
+			vars.ZSTD_BINARY = 'pzstd'
 		else:
-			vars.SEVENZ_BINARY = '7z'
+			vars.ZSTD_BINARY = 'zstd'

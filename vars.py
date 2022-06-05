@@ -2,14 +2,13 @@ from platform import system
 
 keepzip = False
 
-OS_TYPE = system()
-if OS_TYPE() == 'Windows':
+if system() == 'Windows':
 	TEMP_PATH = ".temp/"
 else:
-	TEMP_PATH = "/var/tmp/tf2cdownloader/"
+	TEMP_PATH = "/tmp/tf2cdownloader/"
 	
 ARIA2C_BINARY = None
-SEVENZ_BINARY = None
+ZSTD_BINARY = None
 
 SOURCEMODS_PATH = None
 TF2C_PATH = None

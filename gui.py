@@ -10,13 +10,13 @@ def message(msg: str, delay = 0):
 	print(msg)
 	sleep(delay)
 
-def message_yes_no(msg:str, default = true):
+def message_yes_no(msg:str, default = True):
 	"""
 	Show a message to user and get yes/no answer.
 	"default" sets "yes" as default answer if true, "no" if false.
 	"""
 	ans = ''
-	ans = input(msg +  [' (y (default) / n): ' if default else ' (y / n (default): '])
+	ans = input(msg + ' (y (default) / n): ' if default else ' (y / n (default): ')
 	if ans == 'y':
 		return True
 	elif ans == 'n':
