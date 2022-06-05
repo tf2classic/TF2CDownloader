@@ -58,7 +58,8 @@ def setup_path():
 	Choose setup path.
 	"""
 	confirm = False
-	vars.SOURCEMODS_PATH = sourcemods_path()
+	vars.SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
+	
 	smodsfound = isinstance(vars.SOURCEMODS_PATH, str)
 	if smodsfound:
 		gui.message('Sourcemods folder was automatically found at: ' + vars.SOURCEMODS_PATH)

@@ -1,6 +1,7 @@
 from os import path as os_path, makedirs, rmdir
 from time import sleep
 from sys import exit
+from platform import system
 
 def message(msg: str, delay = 0):
 	"""
@@ -52,6 +53,6 @@ def message_end(msg, code):
 	Show a message and exit.
 	"""
 	print(msg)
-	if OS_TYPE == 'Windows':
+	if system() == 'Windows':
 		input('Press Enter to exit.')
 	exit(code)
