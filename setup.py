@@ -27,16 +27,14 @@ def sourcemods_path():
 			return None
 	else:
 		try:
-			linux_dirs = {
-				'~/.steam/steam/steamapps/sourcemods/',
-				# these locations are mentioned in old posts on forums, so it's better to check them too
-				'~/.local/share/Steam/SteamApps/sourcemods',
-				'~/Steam/SteamApps/sourcemods'
-			}
-			for dir in linux_dirs:
-				if os_path.isdir(dir):
-					return dir
-			return None
+			sourcepath = None
+			with open(os_path.expanduser('~/.steam/registry.vdf'), 'r') as file:
+				for _, line in enumerate(file):
+					if 'SourceModInstallPath' in line:
+						sourcepath = line[line.index('/home'):-1].replace(r'\\', '/')
+						break
+				file.close()
+			return sourcepath
 		except Exception:
 			return None
 
