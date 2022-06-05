@@ -58,7 +58,8 @@ def setup_path():
 	Choose setup path.
 	"""
 	confirm = False
-	vars.SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
+	if sourcemods_path() is not None:
+		vars.SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
 	
 	smodsfound = isinstance(vars.SOURCEMODS_PATH, str)
 	if smodsfound:
