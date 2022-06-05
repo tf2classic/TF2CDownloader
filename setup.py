@@ -107,12 +107,13 @@ def setup_binaries():
 	if system() == 'Windows':
 		vars.ARIA2C_BINARY = MEIPASS + '/aria2c.exe'
 		vars.ZSTD_BINARY = MEIPASS + '/pzstd.exe'
+		vars.TAR_BINARY = MEIPASS = '/tar.exe'
 	else:
+		vars.TAR_BINARY = 'tar'
 		if which('aria2c') is None:
 			gui.message_end('You need to install Aria2 to use this script.', 1)
 		else:
 			vars.ARIA2C_BINARY = 'aria2c'
-
 		if which('zstd') is None and which('pzstd') is None:
 			gui.message_end('You need to install Zstd to use this script.', 1)
 		elif which('pzstd') is not None:

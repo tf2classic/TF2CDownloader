@@ -19,7 +19,7 @@ def tf2c_extract():
 	"""
 	gui.message('Extracting the downloaded archive...', 1)
 	
-	run(['tar', '-I', vars.ZSTD_BINARY + ' -p1', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+	run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY + ' -p1', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
 	
 	if not vars.keepzip:
 		rmtree(vars.TEMP_PATH)
