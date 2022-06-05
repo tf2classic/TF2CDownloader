@@ -22,8 +22,4 @@ def tf2c_extract():
 	run(['tar', '-I', vars.ZSTD_BINARY + ' -p1', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
 	
 	if not vars.keepzip:
-		if os_path.isfile(os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst')):
-			os_remove(os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'))
-		if os_path.isfile(os_path.join(vars.TEMP_PATH, 'tf2classic-latest-zst.meta4')):
-			os_remove(os_path.join(vars.TEMP_PATH, 'tf2classic-latest-zst.meta4'))
 		rmtree(vars.TEMP_PATH)
