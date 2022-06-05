@@ -1,4 +1,4 @@
-from os import path as os_path
+from os import path as os_path, listdir as os_listdir
 from shutil import which
 from sys import _MEIPASS as MEIPASS
 from platform import system
@@ -69,7 +69,7 @@ def setup_path():
 		else:
 			# check if any sourcemods exists there
 			no_sourcemods = True
-			for file in os.listdir(vars.SOURCEMODS_PATH):
+			for file in os_listdir(vars.SOURCEMODS_PATH):
 				if os_path.isdir(file):
 					no_sourcemods = False
 			
