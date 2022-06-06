@@ -1,11 +1,11 @@
 from os import path as os_path, listdir as os_listdir
 from shutil import which
-from sys import _MEIPASS as MEIPASS
 from platform import system
 if system() == 'Windows':
 	import winreg
 import vars
 import gui
+import sys
 
 registry = 0
 registry_key = 0
@@ -105,9 +105,9 @@ def setup_binaries():
 	Select paths for required binaries.
 	"""
 	if system() == 'Windows':
-		vars.ARIA2C_BINARY = MEIPASS + '/aria2c.exe'
-		vars.ZSTD_BINARY = MEIPASS + '/pzstd.exe'
-		vars.TAR_BINARY = MEIPASS = '/tar.exe'
+		vars.ARIA2C_BINARY = sys._MEIPASS + '/aria2c.exe'
+		vars.ZSTD_BINARY = sys._MEIPASS + '/pzstd.exe'
+		vars.TAR_BINARY = sys._MEIPASS = '/tar.exe'
 	else:
 		vars.TAR_BINARY = 'tar'
 		if which('aria2c') is None:
