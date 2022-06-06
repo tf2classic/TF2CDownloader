@@ -17,10 +17,10 @@ def message_yes_no(msg:str, default = True):
 	"default" sets "yes" as default answer if true, "no" if false.
 	"""
 	ans = ''
-	ans = input(msg + ' (y (default) / n): ' if default else ' (y / n (default): ')
-	if ans == 'y':
+	ans = input(msg + ' [Y/n]: ' if default else ' [y/N]: ')
+	if ans == 'y' or 'yes':
 		return True
-	elif ans == 'n':
+	elif ans == 'n' or 'no':
 		return False
 	else:
 		return default
