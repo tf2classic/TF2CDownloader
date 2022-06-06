@@ -37,4 +37,4 @@ setup.setup_binaries()
 install.tf2c_download()
 install.tf2c_extract()
 
-gui.message_end("Setup is over. Remember to restart Steam!", 0)
+gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)
