@@ -1,4 +1,4 @@
-from sys import stdin, exit
+from sys import stdin, exit, argv
 from platform import system
 from shutil import which
 from subprocess import run
@@ -19,7 +19,7 @@ import install
 # that just corresponds to the absolute path of the executable.
 if system() == 'Windows':
 	if which('wt') is not None and os.environ.get("WT_SESSION") is None:
-		run(['wt', r'.\TF2CDownloaderWindows.exe'], check=True)
+		run(['wt', argv[0]], check=True)
 		exit()
 
 # This is mainly for Linux, because it's easy to launch it by double-clicking it, which would
