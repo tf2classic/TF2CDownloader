@@ -105,9 +105,14 @@ def setup_binaries():
 	Select paths for required binaries.
 	"""
 	if system() == 'Windows':
-		vars.ARIA2C_BINARY = sys._MEIPASS + '/aria2c.exe'
-		vars.ZSTD_BINARY = sys._MEIPASS + '/pzstd.exe'
-		vars.TAR_BINARY = sys._MEIPASS = '/tar.exe'
+		if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+			vars.ARIA2C_BINARY = sys._MEIPASS + '/aria2c.exe'
+			vars.ZSTD_BINARY = sys._MEIPASS + '/pzstd.exe'
+			vars.TAR_BINARY = sys._MEIPASS = '/tar.exe'
+		else:
+			vars.ARIA2C_BINARY = r'.\aria2c.exe'
+			vars.ZSTD_BINARY = r'.\pzstd.exe'
+			vars.TAR_BINARY = r'.\tar.exe'
 	else:
 		vars.TAR_BINARY = 'tar'
 		if which('aria2c') is None:
