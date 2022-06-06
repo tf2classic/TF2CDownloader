@@ -1,8 +1,7 @@
 # TF2CDownloader
 Simple script for downloading and extracting TF2Classic quickly, simply, and efficiently.
 
-
-Won't function right on Windows unless it's compiled by PyInstaller, as it's hardcoded to use a variable only supplied to it *by* PyInstaller in order to find the Binaries folder.
+Won't function right unless it's compiled by PyInstaller, as it uses a variable only supplied to it by PyInstaller. This is for finding the third-party binaries packed into the executable.
 
 In the Binaries folder of the repository, Aria2 and its relevant dependencies are extracted from: https://github.com/q3aql/aria2-static-builds (aria2-1.36.0-win-64bit-build2.7z)
 
