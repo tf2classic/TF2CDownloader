@@ -1,6 +1,6 @@
 from sys import stdin, exit, argv
 from platform import system
-from shutil import which
+from shutil import which, disk_usage
 from subprocess import run
 import os
 import vars
@@ -34,6 +34,7 @@ def sanity_check():
 sanity_check()
 setup.setup_path()
 setup.setup_binaries()
+install.free_space_check()
 install.tf2c_download()
 install.tf2c_extract()
 

@@ -1,8 +1,19 @@
 from subprocess import run
 from os import path as os_path, remove as os_remove
-from shutil import rmtree
+from shutil import rmtree, disk_usage
 import vars
 import gui
+
+def free_space_check():
+	"""
+	Extracted game is 11GB. Temporary file is 4GB.
+	This function makes sure the user has that much
+	at the path they're extracting at before moving
+	ahead with it.
+	"""
+	MINIMUM_FREE_BYTES = 16106127360
+	if shutil.disk_usage(vars.SOURCEMODS_PATH)[2] < MINIMUM_FREE_BYTES:
+		gui.message_end("You don't have enough free space to install TF2 Classic. A minimum of 15GB is required.", 1)
 
 def tf2c_download():
 	"""
@@ -19,7 +30,7 @@ def tf2c_extract():
 	"""
 	gui.message('Extracting the downloaded archive...', 1)
 	
-	run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY + ' -p1', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+	run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
 	
 	if not vars.keepzip:
 		rmtree(vars.TEMP_PATH)

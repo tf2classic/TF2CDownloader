@@ -108,12 +108,12 @@ def setup_binaries():
 	if system() == 'Windows':
 		if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
 			vars.ARIA2C_BINARY = sys._MEIPASS + '/aria2c.exe'
-			vars.ZSTD_BINARY = sys._MEIPASS + '/pzstd.exe'
+			vars.ZSTD_BINARY = sys._MEIPASS + '/zstd.exe'
 			vars.TAR_BINARY = sys._MEIPASS = '/tar.exe'
 		else:
-			vars.ARIA2C_BINARY = r'.\Binaries\aria2c.exe'
-			vars.ZSTD_BINARY = r'.\Binaries\pzstd.exe'
-			vars.TAR_BINARY = r'.\Binaries\tar.exe'
+			vars.ARIA2C_BINARY = r'Binaries/aria2c.exe'
+			vars.ZSTD_BINARY = r'Binaries/zstd.exe'
+			vars.TAR_BINARY = r'Binaries/tar.exe'
 	else:
 		vars.TAR_BINARY = 'tar'
 		if which('aria2c') is None:
