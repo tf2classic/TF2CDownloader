@@ -61,9 +61,9 @@ def setup_path():
 	confirm = False
 	if sourcemods_path() is not None:
 		vars.SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
-	
+
 	smodsfound = isinstance(vars.SOURCEMODS_PATH, str)
-	if smodsfound:
+	if smodsfound == True and manual_path != True:
 		gui.message('Sourcemods folder was automatically found at: ' + vars.SOURCEMODS_PATH)
 		if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
 			vars.TF2C_PATH = os.path.join(vars.SOURCEMODS_PATH, 'tf2classic')
@@ -75,30 +75,25 @@ def setup_path():
 				for file in os.listdir(vars.SOURCEMODS_PATH):
 					if os.path.isdir(file):
 						no_sourcemods = False
-			
 			if no_sourcemods:
 				if gui.message_yes_no('Then, would you like to move the sourcemods folder location?'):
 					vars.SOURCEMODS_PATH = gui.message_dir('Please enter the location of the new sourcemods folder')
 					set_sourcemods_path(vars.SOURCEMODS_PATH)
 					vars.TF2C_PATH = os.path.join(vars.SOURCEMODS_PATH, 'tf2classic')
 				else:
-					gui.message('Then, enter the location in which TF2Classic will be installed to. NOTE: Manual linking or relocation will be required for Steam to see the game!')
-					vars.TF2C_PATH = os.path.join(gui.message_dir('location'), 'tf2classic')
+					manual_path = True
+					print('Resetting...\n')
+					setup_path()
 	else:
-		gui.message('WARNING: Steam\'s sourcemod folder has not been found.')
-		if system() == 'Windows':
-			vars.SOURCEMODS_PATH = 'C:\\Program Files (x86)\\Steam\\steamapps\\sourcemods'
-		else:
-			vars.SOURCEMODS_PATH = '~/.steam/steam/steamapps/sourcemods/'
-		gui.message('The recommended installation location would be ' + vars.SOURCEMODS_PATH + '.')
-		if gui.message_yes_no('Would you like to install TF2Classic there?'):
-			vars.TF2C_PATH = os.path.join(vars.SOURCEMODS_PATH, 'tf2classic')
+		gui.message('WARNING: Steam\'s sourcemod folder has not been found, or you chose not to use it.')
+		if gui.message_yes_no('Would you like to extract in ' + os.getcwd() + '? You must move it to your sourcemods manually.'):
+			vars.SOURCEMODS_PATH = os.getcwd()
 			confirm = True
 		else:
-			vars.TF2C_PATH = os.path.join(gui.message_dir('Please, enter the location in which TF2Classic will be installed to'), 'tf2classic')
-		
+			vars.SOURCEMODS_PATH = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
+
 	if not confirm:
-		if not gui.message_yes_no('TF2Classic will be installed in ' + vars.TF2C_PATH + '\nDo you accept?'):
+		if not gui.message_yes_no('TF2Classic will be installed in ' + vars.SOURCEMODS_PATH + '\nDo you accept?'):
 			print('Resetting...\n')
 			setup_path()
 
