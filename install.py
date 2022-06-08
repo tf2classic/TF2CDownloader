@@ -13,7 +13,9 @@ def free_space_check():
 	ahead with it.
 	"""
 	MINIMUM_FREE_BYTES = 16106127360
-	if disk_usage(vars.SOURCEMODS_PATH)[2] < MINIMUM_FREE_BYTES:
+	if os_path.isdir(vars.SOURCEMODS_PATH) == False:
+		gui.message_end("The specified extraction location does not exist.", 1)
+	elif disk_usage(vars.SOURCEMODS_PATH)[2] < MINIMUM_FREE_BYTES:
 		gui.message_end("You don't have enough free space to install TF2 Classic. A minimum of 15GB is required.", 1)
 
 def tf2c_download():
