@@ -22,7 +22,7 @@ def tf2c_download():
 	"""
 	Download TF2C archive.
 	"""
-	gui.message('Starting the download for TF2Classic... You may see some errors that are safe to ignore.', 3)
+	gui.message('Starting the download for TF2 Classic... You may see some errors that are safe to ignore.', 3)
 	run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
 	'-d' + vars.TEMP_PATH,
 	'https://wiki.tf2classic.com/misc/tf2classic-latest-zst.meta4'], check=True)

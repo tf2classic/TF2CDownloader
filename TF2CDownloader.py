@@ -2,6 +2,7 @@ from sys import stdin, exit, argv
 from platform import system
 from shutil import which, disk_usage
 from subprocess import run
+from rich import print
 import os
 import traceback
 import vars
@@ -28,15 +29,15 @@ def sanity_check():
 		exit(1)
 try:
 	sanity_check()
-	setup.setup_path()
+	setup.setup_path(False)
 	setup.setup_binaries()
 	install.free_space_check()
 	install.tf2c_download()
 	install.tf2c_extract()
 except:
 	traceback.print_exc()
-	print("----- Exception details above this line -----")
-	print("The program has failed. Post a screenshot in #technical-issues on the Discord.")
+	print("[italic magenta]----- Exception details above this line -----")
+	print("[bold red]The program has failed. Post a screenshot in #technical-issues on the Discord.[/bold red]")
 	input("Press Enter to exit.")
 	exit(1)
 

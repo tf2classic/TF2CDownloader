@@ -2,6 +2,7 @@ from os import path as os_path, makedirs, rmdir
 from time import sleep
 from sys import exit
 from platform import system
+from rich import print
 import sys
 
 def message(msg: str, delay = 0):
@@ -9,7 +10,7 @@ def message(msg: str, delay = 0):
 	Show a message to user.
 	Delay stops program for specified amount of seconds.
 	"""
-	print(msg)
+	print("[bold yellow]" + msg)
 	sleep(delay)
 
 def message_yes_no(question, default = None):
@@ -26,14 +27,14 @@ def message_yes_no(question, default = None):
 		prompt = " [y/N] "
 
 	while True:
-		sys.stdout.write(question + prompt)
+		print(question + prompt)
 		choice = input().lower()
 		if default is not None and choice == "":
 			return valid[default]
 		elif choice in valid:
 			return valid[choice]
 		else:
-			sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
+			print("[bold blue]Please respond with 'yes' or 'no' " "(or 'y' or 'n').[/bold blue]")
 	
 	
 def message_input(msg):
@@ -62,7 +63,7 @@ def message_end(msg, code):
 	"""
 	Show a message and exit.
 	"""
-	print(msg)
+	print("[bold green]" + msg)
 	if system() == 'Windows':
 		input('Press Enter to exit.')
 	exit(code)
