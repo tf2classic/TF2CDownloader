@@ -41,22 +41,22 @@ def sourcemods_path():
 		except Exception:
 			return None
 
-def set_sourcemods_path(path):
-	"""
-	Set sourcemod folder path.
-	"""
-	if system() == 'Windows':
-		global registry
-		global registry_key
-		if registry == 0:
-			registry = winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER)
-			registry_key = winreg.OpenKeyEx(registry, 'SOFTWARE\Valve\Steam')
-		
-		value = winreg.SetValue(registry_key, 'SourceModInstallPath', winreg.REG_SZ, path)
-	else:
-		gui.message("Setting SourceModInstallPath isn't supported on Linux yet, resetting...", 5)
-		setup_path(False)
-	
+#def set_sourcemods_path(path):
+#	"""
+#	Set sourcemod folder path.
+#	"""
+#	if system() == 'Windows':
+#		global registry
+#		global registry_key
+#		if registry == 0:
+#			registry = winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER)
+#			registry_key = winreg.OpenKeyEx(registry, 'SOFTWARE\Valve\Steam')
+#		
+#		value = winreg.SetValue(registry_key, 'SourceModInstallPath', winreg.REG_SZ, path)
+#	else:
+#		gui.message("Setting SourceModInstallPath isn't supported on Linux yet, resetting...", 5)
+#		setup_path(False)
+#	
 
 def setup_path(manual_path):
 	"""
@@ -73,20 +73,20 @@ def setup_path(manual_path):
 			confirm = True
 		else:
 			# check if any sourcemods exists there
-			no_sourcemods = True
-			if os.path.exists(vars.SOURCEMODS_PATH):
-				for file in os.listdir(vars.SOURCEMODS_PATH):
-					if os.path.isdir(file):
-						no_sourcemods = False
-			if no_sourcemods:
-				if system() == 'Windows':
-					if gui.message_yes_no('Then, would you like to move the sourcemods folder location?'):
-						vars.SOURCEMODS_PATH = gui.message_dir('Please enter the location of the new sourcemods folder')
-						set_sourcemods_path(vars.SOURCEMODS_PATH)
-						confirm = True
-				else:
-					manual_path = True
-					setup_path(True)
+			#no_sourcemods = True
+			#if os.path.exists(vars.SOURCEMODS_PATH):
+			#	for file in os.listdir(vars.SOURCEMODS_PATH):
+			#		if os.path.isdir(file):
+			#			no_sourcemods = False
+			#if no_sourcemods:
+			#	if system() == 'Windows':
+			#		if gui.message_yes_no('Then, would you like to move the sourcemods folder location?'):
+			#			vars.SOURCEMODS_PATH = gui.message_dir('Please enter the location of the new sourcemods folder')
+			#			set_sourcemods_path(vars.SOURCEMODS_PATH)
+			#			confirm = True
+			#	else:
+			#		manual_path = True
+			setup_path(True)
 	else:
 		gui.message('WARNING: Steam\'s sourcemods folder has not been found, or you chose not to use it.')
 		if gui.message_yes_no('Would you like to extract in ' + os.getcwd() + '? You must move it to your sourcemods manually.'):
