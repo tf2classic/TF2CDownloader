@@ -1,5 +1,6 @@
 from shutil import which
 from platform import system
+from os import path
 if system() == 'Windows':
 	import winreg
 import os
@@ -70,7 +71,7 @@ def setup_path():
 		else:
 			# check if any sourcemods exists there
 			no_sourcemods = True
-			if os.path.exists(var.SOURCEMODS_PATH):
+			if os.path.exists(vars.SOURCEMODS_PATH):
 				for file in os.listdir(vars.SOURCEMODS_PATH):
 					if os.path.isdir(file):
 						no_sourcemods = False
@@ -106,14 +107,24 @@ def setup_binaries():
 	Select paths for required binaries.
 	"""
 	if system() == 'Windows':
+		# When running as a script, we just select the Binaries folder directly for Aria2 and Tar.
+		vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
+		vars.TAR_BINARY = 'Binaries/tar.exe'
+		# When we can detect that we're compiled using PyInstaller, we use their
+		# suggested method of determining the location of the temporary runtime folder
+		# to point to Aria2 and Tar.
 		if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-			vars.ARIA2C_BINARY = sys._MEIPASS + '/aria2c.exe'
-			vars.ZSTD_BINARY = sys._MEIPASS + '/zstd.exe'
-			vars.TAR_BINARY = sys._MEIPASS + '/tar.exe'
+			vars.ARIA2C_BINARY = os.path.abspath(os.path.join(os.path.dirname(__file__), 'aria2c.exe'))
+			vars.TAR_BINARY = os.path.abspath(os.path.join(os.path.dirname(__file__), 'tar.exe'))
+			# For whatever reason, Tar won't load Zstd when we give it the path
+			# to the file like the others. So, we instead add PyInstaller's temp folder to
+			# Windows' PATH, or if we're running as a script, the Binaries folder instead,
+			# so that Tar only needs to call the executable name.
+			#
+			# This is terrible. Someone needs to fix this.
+			os.environ['PATH'] += os.path.join(os.path.dirname(__file__))
 		else:
-			vars.ARIA2C_BINARY = r'Binaries/aria2c.exe'
-			vars.ZSTD_BINARY = r'Binaries/zstd.exe'
-			vars.TAR_BINARY = r'Binaries/tar.exe'
+			os.environ['PATH'] += os.path.join(os.path.dirname(__file__) + r'/Binaries/') 
 	else:
 		vars.TAR_BINARY = 'tar'
 		if which('aria2c') is None:

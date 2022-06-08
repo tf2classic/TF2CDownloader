@@ -1,6 +1,7 @@
 from subprocess import run
 from os import path as os_path, remove as os_remove
 from shutil import rmtree, disk_usage
+from platform import system
 import vars
 import gui
 
@@ -29,8 +30,10 @@ def tf2c_extract():
 	Extract archive and delete it.
 	"""
 	gui.message('Extracting the downloaded archive...', 1)
-	
-	run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+	if system() == 'Windows':
+		run([vars.TAR_BINARY, '-I', 'zstd.exe', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+	else:
+		run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
 	
 	if not vars.keepzip:
 		rmtree(vars.TEMP_PATH)

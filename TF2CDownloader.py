@@ -12,11 +12,6 @@ import install
 # Instead, it uses the system default, which is cmd.exe at time of writing.
 # This hack checks if Windows Terminal is installed. If it is, and if the application
 # is launched with cmd.exe instead, it relaunches the application in WT instead.
-#
-# We should find a more reliable way to detect this so it doesn't break if you're
-# running it from a relative path (like Downloads\TF2CDownloaderWindows.exe),
-# or if the executable is named something different. Surely there's a variable
-# that just corresponds to the absolute path of the executable.
 if system() == 'Windows':
 	if which('wt') is not None and os.environ.get("WT_SESSION") is None:
 		run(['wt', argv[0]], check=True)
