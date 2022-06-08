@@ -1,6 +1,8 @@
 # TF2CDownloader
 Simple script for downloading and extracting TF2Classic quickly, simply, and efficiently.
 
+Requires no third-party libraries except for Rich. If you want to compile, you'll need to install python3-rich on Debian/Ubuntu, or get it through PIP on Windows.
+
 Won't function right unless it's compiled by PyInstaller, as it uses a variable only supplied to it by PyInstaller. This is for finding the third-party binaries packed into the executable.
 
 In the Binaries folder of the repository, Aria2 and its relevant dependencies are extracted from: https://github.com/q3aql/aria2-static-builds (aria2-1.36.0-win-64bit-build2.7z)
