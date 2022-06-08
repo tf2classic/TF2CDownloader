@@ -3,6 +3,7 @@ from platform import system
 from shutil import which, disk_usage
 from subprocess import run
 import os
+import traceback
 import vars
 import gui
 import setup
