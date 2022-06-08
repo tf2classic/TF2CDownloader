@@ -2,6 +2,7 @@ from os import path as os_path, makedirs, rmdir
 from time import sleep
 from sys import exit
 from platform import system
+import sys
 
 def message(msg: str, delay = 0):
 	"""
@@ -11,19 +12,28 @@ def message(msg: str, delay = 0):
 	print(msg)
 	sleep(delay)
 
-def message_yes_no(msg:str, default = True):
+def message_yes_no(question, default = None):
 	"""
 	Show a message to user and get yes/no answer.
 	"default" sets "yes" as default answer if true, "no" if false.
 	"""
-	ans = ''
-	ans = input(msg + ' [Y/n]: ' if default else ' [y/N]: ')
-	if ans == 'y' or 'yes':
-		return True
-	elif ans == 'n' or 'no':
-		return False
-	else:
-		return default
+	valid = {"yes": True, "y": True, "no": False, "n": False}
+	if default is None:
+		prompt = " [y/n] "
+	elif default == "yes":
+		prompt = " [Y/n] "
+	elif default == "no":
+		prompt = " [y/N] "
+
+	while True:
+		sys.stdout.write(question + prompt)
+		choice = input().lower()
+		if default is not None and choice == "":
+			return valid[default]
+		elif choice in valid:
+			return valid[choice]
+		else:
+			sys.stdout.write("Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n")
 	
 	
 def message_input(msg):
