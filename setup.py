@@ -107,9 +107,6 @@ def setup_binaries():
 	Select paths for required binaries.
 	"""
 	if system() == 'Windows':
-		# When running as a script, we just select the Binaries folder directly for Aria2 and Tar.
-		vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
-		vars.TAR_BINARY = 'Binaries/tar.exe'
 		# When we can detect that we're compiled using PyInstaller, we use their
 		# suggested method of determining the location of the temporary runtime folder
 		# to point to Aria2 and Tar.
@@ -124,6 +121,9 @@ def setup_binaries():
 			# This is terrible. Someone needs to fix this.
 			os.environ['PATH'] += os.path.join(os.path.dirname(__file__))
 		else:
+			# When running as a script, we just select the Binaries folder directly for Aria2 and Tar.
+			vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
+			vars.TAR_BINARY = 'Binaries/tar.exe'
 			os.environ['PATH'] += os.path.join(os.path.dirname(__file__) + r'/Binaries/') 
 	else:
 		vars.TAR_BINARY = 'tar'
