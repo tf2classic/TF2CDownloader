@@ -75,9 +75,13 @@ def setup_path(manual_path):
 	Choose setup path.
 	"""
 	confirm = False
+	
 
 	smodsfound = isinstance(vars.DEFAULT_SOURCEMODS_PATH, str)
 	if smodsfound and (not manual_path):
+		vars.MOVE_TF2CLASSIC_FOLDER = False
+		vars.MAKE_SYMLINK = False
+		
 		gui.message('Sourcemods folder was automatically found at: ' + vars.DEFAULT_SOURCEMODS_PATH)
 		if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
 			vars.SOURCEMODS_PATH = vars.DEFAULT_SOURCEMODS_PATH
@@ -102,6 +106,9 @@ def setup_path(manual_path):
 				setup_path(True)
 				return
 	else:
+		vars.MOVE_TF2CLASSIC_FOLDER = True
+		vars.MAKE_SYMLINK = smodsfound
+		
 		msg = 'Would you like to install in ' + os.getcwd() + '?'
 		
 		if not smodsfound:
@@ -115,9 +122,6 @@ def setup_path(manual_path):
 			confirm = True
 		else:
 			vars.SOURCEMODS_PATH = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
-			
-		vars.MAKE_SYMLINK = smodsfound
-		vars.MOVE_TF2CLASSIC_FOLDER = True
 	
 	# one final confirmation
 	
