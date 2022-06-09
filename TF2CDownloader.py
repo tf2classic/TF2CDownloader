@@ -9,7 +9,6 @@ import vars
 import gui
 import setup
 import install
-
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
 # This hack checks if Windows Terminal is installed. If it is, and if the application
@@ -37,8 +36,12 @@ try:
 except:
 	traceback.print_exc()
 	print("[italic magenta]----- Exception details above this line -----")
-	print("[bold red]The program has failed. Post a screenshot in #technical-issues on the Discord.[/bold red]")
-	input("Press Enter to exit.")
+	print("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]")
+	if os.environ.get("WT_SESSION"):
+		print("[bold]You are safe to close this window.")
+	else:
+		input("Press Enter to exit.")
 	exit(1)
+
 
 gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)

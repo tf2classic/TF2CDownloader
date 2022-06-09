@@ -3,6 +3,7 @@ from time import sleep
 from sys import exit
 from platform import system
 from rich import print
+import os
 import sys
 
 def message(msg: str, delay = 0):
@@ -64,6 +65,8 @@ def message_end(msg, code):
 	Show a message and exit.
 	"""
 	print("[bold green]" + msg)
-	if system() == 'Windows':
-		input('Press Enter to exit.')
+	if os.environ.get("WT_SESSION"):
+		print("[bold]You are safe to close this window.")
+	else:
+		input("Press Enter to exit.")
 	exit(code)
