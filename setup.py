@@ -41,60 +41,86 @@ def sourcemods_path():
 		except Exception:
 			return None
 
-#def set_sourcemods_path(path):
-#	"""
-#	Set sourcemod folder path.
-#	"""
-#	if system() == 'Windows':
-#		global registry
-#		global registry_key
-#		if registry == 0:
-#			registry = winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER)
-#			registry_key = winreg.OpenKeyEx(registry, 'SOFTWARE\Valve\Steam')
-#		
-#		value = winreg.SetValue(registry_key, 'SourceModInstallPath', winreg.REG_SZ, path)
-#	else:
-#		gui.message("Setting SourceModInstallPath isn't supported on Linux yet, resetting...", 5)
-#		setup_path(False)
-#	
+def set_sourcemods_path():
+	"""
+	Set sourcemod folder path.
+	"""
+	if not vars.MAKE_SYMLINK:
+		return 
+	
+	try:
+		src = vars.SOURCEMODS_PATH
+		dest = vars.DEFAULT_SOURCEMODS_PATH
+		
+		if vars.MOVE_TF2CLASSIC_FOLDER:
+			src += "/tf2classic"
+			dest += "/tf2classic"
+		
+		# attempt to remove empty folder, otherwise it'll whine about it
+		if os.path.isdir(dest):
+			os.rmdir(dest)
+		
+		# do the symlink
+		os.symlink(src, dest)
+	except Exception:
+		print("Warning: could not create symlink. is the program running with elevated permissions? This only means TF2Classic will have trouble showing up on Steam.");
+	
+def setup_default_path():
+	vars.DEFAULT_SOURCEMODS_PATH = sourcemods_path()
+	if vars.DEFAULT_SOURCEMODS_PATH is not None:
+		vars.DEFAULT_SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
 
 def setup_path(manual_path):
 	"""
 	Choose setup path.
 	"""
 	confirm = False
-	if sourcemods_path() is not None:
-		vars.SOURCEMODS_PATH = sourcemods_path().rstrip('\"')
 
-	smodsfound = isinstance(vars.SOURCEMODS_PATH, str)
-	if smodsfound == True and manual_path != True:
-		gui.message('Sourcemods folder was automatically found at: ' + vars.SOURCEMODS_PATH)
+	smodsfound = isinstance(vars.DEFAULT_SOURCEMODS_PATH, str)
+	if smodsfound and (not manual_path):
+		gui.message('Sourcemods folder was automatically found at: ' + vars.DEFAULT_SOURCEMODS_PATH)
 		if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
+			vars.SOURCEMODS_PATH = vars.DEFAULT_SOURCEMODS_PATH
 			confirm = True
 		else:
 			# check if any sourcemods exists there
-			#no_sourcemods = True
-			#if os.path.exists(vars.SOURCEMODS_PATH):
-			#	for file in os.listdir(vars.SOURCEMODS_PATH):
-			#		if os.path.isdir(file):
-			#			no_sourcemods = False
-			#if no_sourcemods:
-			#	if system() == 'Windows':
-			#		if gui.message_yes_no('Then, would you like to move the sourcemods folder location?'):
-			#			vars.SOURCEMODS_PATH = gui.message_dir('Please enter the location of the new sourcemods folder')
-			#			set_sourcemods_path(vars.SOURCEMODS_PATH)
-			#			confirm = True
-			#	else:
-			#		manual_path = True
-			setup_path(True)
+			no_sourcemods = True
+			if os.path.exists(vars.DEFAULT_SOURCEMODS_PATH):
+				for file in os.listdir(vars.DEFAULT_SOURCEMODS_PATH):
+					# there's something in the sourcemods folder, will have to assume it isn't empty
+					no_sourcemods = False
+					break
+			
+			if no_sourcemods:
+				if gui.message_yes_no('Then, would you like to move the sourcemods folder location?'):
+					vars.SOURCEMODS_PATH = gui.message_dir('Please enter the location of the new sourcemods folder')
+					vars.MAKE_SYMLINK = True
+				else:
+					setup_path(True)
+					return
+			else:
+				setup_path(True)
+				return
 	else:
-		gui.message('WARNING: Steam\'s sourcemods folder has not been found, or you chose not to use it.')
-		if gui.message_yes_no('Would you like to extract in ' + os.getcwd() + '? You must move it to your sourcemods manually.'):
+		msg = 'Would you like to install in ' + os.getcwd() + '?'
+		
+		if not smodsfound:
+			gui.message('WARNING: Steam\'s sourcemods folder has not been found.')
+			msg += " You must move it to your sourcemods manually."
+		else:
+			gui.message('WARNING: You chose not to use the Steam\'s sourcemods folder.')
+		
+		if gui.message_yes_no(msg):
 			vars.SOURCEMODS_PATH = os.getcwd()
 			confirm = True
 		else:
 			vars.SOURCEMODS_PATH = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
-
+			
+		vars.MAKE_SYMLINK = smodsfound
+		vars.MOVE_TF2CLASSIC_FOLDER = True
+	
+	# one final confirmation
+	
 	if not confirm:
 		if not gui.message_yes_no('TF2Classic will be installed in ' + vars.SOURCEMODS_PATH + '\nDo you accept?'):
 			print('Resetting...\n')
