@@ -2,17 +2,16 @@
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
-from sys import stdin, exit, argv
+import os
+import traceback
 from platform import system
 from shutil import which
 from subprocess import run
-import os
-import traceback
+from sys import argv, exit, stdin
 from rich import print
 import gui
-import setup
 import install
-
+import setup
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -22,7 +21,6 @@ if system() == 'Windows':
     if which('wt') is not None and os.environ.get("WT_SESSION") is None:
         run(['wt', argv[0]], check=True)
         exit()
-
 
 def sanity_check():
     """
@@ -41,15 +39,16 @@ try:
     install.free_space_check()
     install.tf2c_download()
     install.tf2c_extract()
-except:
-    traceback.print_exc()
-    print("[italic magenta]----- Exception details above this line -----")
-    print("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]")
-    if os.environ.get("WT_SESSION"):
-        print("[bold]You are safe to close this window.")
-    else:
-        input("Press Enter to exit.")
-    exit(1)
+except Exception as ex:
+    if ex is not SystemExit:
+        traceback.print_exc()
+        print("[italic magenta]----- Exception details above this line -----")
+        print("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]")
+        if os.environ.get("WT_SESSION"):
+            print("[bold]You are safe to close this window.")
+        else:
+            input("Press Enter to exit.")
+        exit(1)
 
 
 gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)
