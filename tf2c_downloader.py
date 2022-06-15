@@ -24,8 +24,9 @@ if system() == 'Windows':
         exit()
 
 # Disable QuickEdit so the process doesn't pause when clicked
-kernel32 = ctypes.windll.kernel32
-kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
+if system() == 'Windows':
+    kernel32 = ctypes.windll.kernel32
+    kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
 
 def sanity_check():
     """
