@@ -36,11 +36,8 @@ def tf2c_extract():
     """
     Extract archive and delete it.
     """
-    gui.message('Extracting the downloaded archive...', 1)
+    gui.message('Extracting the downloaded archive, please wait patiently.', 1)
     if system() == 'Windows':
-        run([vars.TAR_BINARY, '-I', 'zstd.exe', '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+        run([vars.ARC_BINARY, '-overwrite', 'unarchive', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), vars.SOURCEMODS_PATH], check=True)
     else:
-        run([vars.TAR_BINARY, '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
-
-    if not vars.KEEPZIP:
-        rmtree(vars.TEMP_PATH)
+        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
