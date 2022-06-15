@@ -4,17 +4,14 @@ the temp paths and some variables for other
 modules to use.
 """
 from platform import system
+import tempfile
 
-KEEPZIP = False
-
-if system() == 'Windows':
-    TEMP_PATH = ".temp/"
-else:
-    TEMP_PATH = "/tmp/tf2cdownloader/"
+TEMP_PATH = tempfile.gettempdir()
 
 ARIA2C_BINARY = None
-TAR_BINARY = None
 # ZSTD_BINARY is only used on Linux.
 ZSTD_BINARY = None
 INSTALL_PATH = None
+# ARC_BINARY is only used on Windows.
+ARC_BINARY = None
 TF2C_PATH = None

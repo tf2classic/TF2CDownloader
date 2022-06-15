@@ -87,21 +87,12 @@ def setup_binaries():
         # to point to Aria2 and Tar.
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
             vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c.exe'))
-            vars.TAR_BINARY = path.abspath(path.join(path.dirname(__file__), 'tar.exe'))
-            # For whatever reason, Tar won't load Zstd when we give it the path
-            # to the file like the others. So, we instead add PyInstaller's temp folder to
-            # Windows' PATH, or if we're running as a script, the Binaries folder instead,
-            # so that Tar only needs to call the executable name.
-            #
-            # This is terrible. Someone needs to fix this.
-            environ['PATH'] += path.join(path.dirname(__file__))
+            vars.ARC_BINARY = path.abspath(path.join(path.dirname(__file__), 'arc.exe'))
         else:
-            # When running as a script, we just select the Binaries folder directly for Aria2 and Tar.
+            # When running as a script, we just select the Binaries folder directly for Aria2 and Arc.
             vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
-            vars.TAR_BINARY = 'Binaries/tar.exe'
-            environ['PATH'] += path.join(path.dirname(__file__) + r'/Binaries/')
+            vars.ARC_BINARY = 'Binaries/arc.exe'
     else:
-        vars.TAR_BINARY = 'tar'
         if which('aria2c') is None:
             gui.message_end('You need to install Aria2 to use this script.', 1)
         else:
