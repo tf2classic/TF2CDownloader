@@ -36,19 +36,20 @@ def sanity_check():
         exit(1)
 try:
     sanity_check()
+    setup.setup_default_path()
     setup.setup_path(False)
     setup.setup_binaries()
     install.free_space_check()
     install.tf2c_download()
     install.tf2c_extract()
+    setup.set_sourcemods_path()
 except:
     traceback.print_exc()
     print("[italic magenta]----- Exception details above this line -----")
     print("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]")
+    input("Press Enter to exit.")
     if os.environ.get("WT_SESSION"):
         print("[bold]You are safe to close this window.")
-    else:
-        input("Press Enter to exit.")
     exit(1)
 
 

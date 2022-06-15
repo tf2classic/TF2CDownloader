@@ -56,7 +56,7 @@ def message_dir(msg):
         if os_path.isdir(directory):
             return directory
         try:
-            # wth???
+            # great way to verify that the directory is at least valid
             makedirs(directory)
             rmdir(directory) # lol
             return directory
@@ -68,8 +68,7 @@ def message_end(msg, code):
     Show a message and exit.
     """
     print("[bold green]" + msg)
+    input("Press Enter to exit.")
     if os.environ.get("WT_SESSION"):
         print("[bold]You are safe to close this window.")
-    else:
-        input("Press Enter to exit.")
     exit(code)
