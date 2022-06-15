@@ -4,6 +4,7 @@ of the real work to functions defined in other files.
 """
 import os
 import traceback
+import ctypes
 from platform import system
 from shutil import which
 from subprocess import run
@@ -21,6 +22,10 @@ if system() == 'Windows':
     if which('wt') is not None and os.environ.get("WT_SESSION") is None:
         run(['wt', argv[0]], check=True)
         exit()
+
+# Disable QuickEdit so the process doesn't pause when clicked
+kernel32 = ctypes.windll.kernel32
+kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
 
 def sanity_check():
     """
