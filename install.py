@@ -3,12 +3,13 @@ Calls the heavylifting processes to
 download and extract the game using the
 paths configured in setup.py
 """
-from subprocess import run
-from os import path as os_path
-from shutil import rmtree, disk_usage
+from os import path
 from platform import system
-import vars
+from shutil import disk_usage, rmtree
+from subprocess import run
 import gui
+import vars
+
 
 def free_space_check():
     """
@@ -18,9 +19,9 @@ def free_space_check():
     ahead with it.
     """
     minimum_free_bytes = 16106127360
-    if not os_path.isdir(vars.SOURCEMODS_PATH):
+    if not path.isdir(vars.INSTALL_PATH):
         gui.message_end("The specified extraction location does not exist.", 1)
-    elif disk_usage(vars.SOURCEMODS_PATH)[2] < minimum_free_bytes:
+    elif disk_usage(vars.INSTALL_PATH)[2] < minimum_free_bytes:
         gui.message_end("You don't have enough free space to install TF2 Classic. A minimum of 15GB is required.", 1)
 
 def tf2c_download():
@@ -38,6 +39,6 @@ def tf2c_extract():
     """
     gui.message('Extracting the downloaded archive, please wait patiently.', 1)
     if system() == 'Windows':
-        run([vars.ARC_BINARY, '-overwrite', 'unarchive', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), vars.SOURCEMODS_PATH], check=True)
+        run([vars.ARC_BINARY, '-overwrite', 'unarchive', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), vars.INSTALL_PATH], check=True)
     else:
-        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.SOURCEMODS_PATH], check=True)
+        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.INSTALL_PATH], check=True)
