@@ -39,6 +39,6 @@ def tf2c_extract():
     """
     gui.message('Extracting the downloaded archive, please wait patiently.', 1)
     if system() == 'Windows':
-        run([vars.ARC_BINARY, '-overwrite', 'unarchive', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), vars.INSTALL_PATH], check=True)
+        run([vars.ARC_BINARY, '-overwrite', 'unarchive', path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), vars.INSTALL_PATH], check=True)
     else:
-        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', os_path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.INSTALL_PATH], check=True)
+        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', path.join(vars.TEMP_PATH, 'tf2classic.tar.zst'), '-C', vars.INSTALL_PATH], check=True)
