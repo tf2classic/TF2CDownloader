@@ -18,11 +18,14 @@ def free_space_check():
     at the path they're extracting at before moving
     ahead with it.
     """
-    minimum_free_bytes = 16106127360
+    minimum_free_download_bytes = 4831838208
+    minimum_free_install_bytes = 12884901888
+    if disk_usage(vars.TEMP_PATH)[2] < minimum_free_download_bytes:
+        gui.message_end("You don't have enough free space to download TF2 Classic. A minimum of 4.5GB on your primary drive is required.", 1)
     if not path.isdir(vars.INSTALL_PATH):
         gui.message_end("The specified extraction location does not exist.", 1)
-    elif disk_usage(vars.INSTALL_PATH)[2] < minimum_free_bytes:
-        gui.message_end("You don't have enough free space to install TF2 Classic. A minimum of 15GB is required.", 1)
+    elif disk_usage(vars.INSTALL_PATH)[2] < minimum_free_install_bytes:
+        gui.message_end("You don't have enough free space to extract TF2 Classic. A minimum of 12GB at your chosen extraction site is required.", 1)
 
 def tf2c_download():
     """
