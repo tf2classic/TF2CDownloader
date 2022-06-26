@@ -2,7 +2,9 @@
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
+import ctypes
 import os
+import signal
 import traceback
 from platform import system
 from shutil import which
@@ -22,6 +24,11 @@ if system() == 'Windows':
         run(['wt', argv[0]], check=True)
         exit()
 
+# Disable QuickEdit so the process doesn't pause when clicked
+if system() == 'Windows':
+    kernel32 = ctypes.windll.kernel32
+    kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
+
 def sanity_check():
     """
     This is mainly for Linux, because it's easy to launch it by double-clicking it, which would
@@ -32,9 +39,10 @@ def sanity_check():
     if not stdin or not stdin.isatty():
         print("Looks like we're running in the background. We don't want that, so we're exiting.")
         exit(1)
+
 try:
     sanity_check()
-    setup.setup_path(False)
+    setup.setup_path()
     setup.setup_binaries()
     install.free_space_check()
     install.tf2c_download()
@@ -49,6 +57,5 @@ except Exception as ex:
         else:
             input("Press Enter to exit.")
         exit(1)
-
 
 gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)
