@@ -49,26 +49,33 @@ def sourcemods_path():
         except Exception:
             return None
 
-def setup_path():
+def setup_path(manual_path):
     """
     Choose setup path.
     """
-    path = sourcemods_path()
-    if path is not None:
-        gui.message('Sourcemods folder was automatically found at: ' + path)
-        if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
-            vars.INSTALL_PATH = path.strip('\"')
-            return
+    confirm = False
+    if sourcemods_path() is not None:
+        vars.INSTALL_PATH = sourcemods_path().rstrip('\"')
 
-    if gui.message_yes_no('Would you like to extract in ' + getcwd() + '? You must move it to your sourcemods manually.'):
-        vars.INSTALL_PATH = getcwd()
-    else:
-        path = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
-        if gui.message_yes_no('TF2Classic will be installed in ' + path + '\nDo you accept?'):
-            vars.INSTALL_PATH = path
+    smodsfound = isinstance(vars.INSTALL_PATH, str)
+    if smodsfound is True and manual_path is not True:
+        gui.message('Sourcemods folder was automatically found at: ' + vars.INSTALL_PATH)
+        if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
+            confirm = True
         else:
-            gui.message('Resetting...\n')
-            setup_path()
+            setup_path(True)
+    else:
+        gui.message('WARNING: Steam\'s sourcemods folder has not been found, or you chose not to use it.')
+        if gui.message_yes_no('Would you like to extract in ' + getcwd() + '? You must move it to your sourcemods manually.'):
+            vars.INSTALL_PATH = getcwd()
+            confirm = True
+        else:
+            vars.INSTALL_PATH = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
+
+    if not confirm:
+        if not gui.message_yes_no('TF2Classic will be installed in ' + vars.INSTALL_PATH + '\nDo you accept?'):
+            print('Resetting...\n')
+            setup_path(False)
 
 def setup_binaries():
     """

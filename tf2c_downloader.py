@@ -2,10 +2,9 @@
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
-import ctypes
 import os
-import signal
 import traceback
+import ctypes
 from platform import system
 from shutil import which
 from subprocess import run
@@ -39,10 +38,9 @@ def sanity_check():
     if not stdin or not stdin.isatty():
         print("Looks like we're running in the background. We don't want that, so we're exiting.")
         exit(1)
-
 try:
     sanity_check()
-    setup.setup_path()
+    setup.setup_path(False)
     setup.setup_binaries()
     install.free_space_check()
     install.tf2c_download()
@@ -57,5 +55,6 @@ except Exception as ex:
         else:
             input("Press Enter to exit.")
         exit(1)
+
 
 gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)
