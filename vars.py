@@ -6,7 +6,7 @@ modules to use.
 from platform import system
 import tempfile
 
-if system() is 'Windows':
+if system() == 'Windows':
     TEMP_PATH = tempfile.gettempdir()
 else:
     TEMP_PATH = "/var/tmp/"

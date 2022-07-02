@@ -10,6 +10,7 @@ from shutil import which
 from subprocess import run
 from sys import argv, exit, stdin
 from rich import print
+from lang import lang
 import gui
 import install
 import setup
@@ -36,7 +37,7 @@ def sanity_check():
     but it's not a priority right now since Linux users can figure out how to use the terminal.
     """
     if not stdin or not stdin.isatty():
-        print("Looks like we're running in the background. We don't want that, so we're exiting.")
+        print(lang["running_background"])
         exit(1)
 try:
     sanity_check()
@@ -48,13 +49,13 @@ try:
 except Exception as ex:
     if ex is not SystemExit:
         traceback.print_exc()
-        print("[italic magenta]----- Exception details above this line -----")
-        print("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]")
+        print(lang["exception_line"])
+        print(lang["exception"])
         if os.environ.get("WT_SESSION"):
-            print("[bold]You are safe to close this window.")
+            print(lang["exit_safe"])
         else:
-            input("Press Enter to exit.")
+            input(lang["exit"])
         exit(1)
 
 
-gui.message_end("The installation has successfully completed. Remember to restart Steam!", 0)
+gui.message_end(lang["success"], 0)
