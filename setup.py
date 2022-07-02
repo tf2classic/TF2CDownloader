@@ -99,7 +99,7 @@ def setup_binaries():
             vars.ARIA2C_BINARY = 'aria2c'
         if which('zstd') is None and which('pzstd') is None:
             gui.message_end('You need to install Zstd to use this script.', 1)
-        elif which('pzstd') is not None:
-            vars.ZSTD_BINARY = 'pzstd'
-        else:
+        elif which('zstd') is not None:
             vars.ZSTD_BINARY = 'zstd'
+        else:
+            vars.ZSTD_BINARY = 'pzstd'
