@@ -6,10 +6,10 @@ modules to use.
 from platform import system
 import tempfile
 
-if system() is 'Windows':
+if system() == 'Windows':
     TEMP_PATH = tempfile.gettempdir()
 else:
-    TEMP_PATH = "/var/tmp/"
+    TEMP_PATH = '/tmp/'
 
 ARIA2C_BINARY = None
 # ZSTD_BINARY is only used on Linux.

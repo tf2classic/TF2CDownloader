@@ -11,6 +11,7 @@ from os import environ, getcwd, path
 from platform import system
 from shutil import which
 from rich import print
+from lang import lang
 import gui
 import vars
 if system() == 'Windows':
@@ -87,12 +88,12 @@ def setup_binaries():
             vars.ARC_BINARY = 'Binaries/arc.exe'
     else:
         if which('aria2c') is None:
-            gui.message_end('You need to install Aria2 to use this script.', 1)
+            gui.message_end(lang["setup_missing_aria2"], 1)
         else:
             vars.ARIA2C_BINARY = 'aria2c'
         if which('zstd') is None and which('pzstd') is None:
-            gui.message_end('You need to install Zstd to use this script.', 1)
-        elif which('pzstd') is not None:
-            vars.ZSTD_BINARY = 'pzstd'
-        else:
+            gui.message_end(lang["setup_missing_zstd"], 1)
+        elif which('zstd') is not None:
             vars.ZSTD_BINARY = 'zstd'
+        else:
+            vars.ZSTD_BINARY = 'pzstd'
