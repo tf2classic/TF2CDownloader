@@ -28,5 +28,8 @@ fr = {
     "starting_download": "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui peuvent être parfaitement ignorées.",
     "starting_extract": "Extraction de l'archive téléchargée, veuillez patentier.",
 
+    "troubleshoot_blacklist": "Application de la liste noir de sécurité...",
+    "troubleshoot_blacklist_fail": "ATTENTION : impossible d'appliquer la liste noir de sécurité.",
+
     "success": "L'installation est terminée. N'oubliez pas de redémarrer Steam !",
 }

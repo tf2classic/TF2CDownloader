@@ -28,5 +28,8 @@ en = {
     "starting_download": "Starting the download for TF2 Classic... You may see some errors that are safe to ignore.",
     "starting_extract": "Extracting the downloaded archive, please wait patiently.",
 
+    "troubleshoot_blacklist": "Applying safety blacklist...",
+    "troubleshoot_blacklist_fail": "WARNING: could not apply safety blacklist.",
+
     "success": "The installation has successfully completed. Remember to restart Steam!",
 }

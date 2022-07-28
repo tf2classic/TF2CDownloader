@@ -14,6 +14,7 @@ from lang import lang
 import gui
 import install
 import setup
+import troubleshoot
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -46,6 +47,7 @@ try:
     install.free_space_check()
     install.tf2c_download()
     install.tf2c_extract()
+    troubleshoot.apply_blacklist()
 except Exception as ex:
     if ex is not SystemExit:
         traceback.print_exc()
