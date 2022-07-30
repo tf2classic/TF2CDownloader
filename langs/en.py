@@ -16,7 +16,7 @@ en = {
     "setup_not_found_question": "Would you like to extract in %s? You must move it to your sourcemods manually.",
     "setup_input": "Please, enter the location in which TF2 Classic will be installed to.\n",
     "setup_accept": "TF2 Classic will be installed in %s\nDo you accept?",
-    "setup_reset": "Réinitialisation...\n",
+    "setup_reset": "Reinitialising...\n",
 
     "setup_missing_aria2": "You need to install Aria2 to use this script.",
     "setup_missing_zstd": "You need to install Zstd to use this script.",
