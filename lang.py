@@ -1,7 +1,7 @@
 from langs.en import en
 from langs.fr import fr
 from langs.es import es
-from langs.es import it
+from langs.it import it
 import locale
 
 langs = {
