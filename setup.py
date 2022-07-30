@@ -65,6 +65,7 @@ def setup_path(manual_path):
             confirm = True
         else:
             setup_path(True)
+            return
     else:
         gui.message(lang["setup_not_found"])
         if gui.message_yes_no(lang["setup_not_found_question"] % getcwd()):
