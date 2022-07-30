@@ -21,8 +21,8 @@ fr = {
     "setup_missing_aria2": "Vous devez installer Aria2 pour utiliser ce script.",
     "setup_missing_zstd": "Vous devez installer Zstd pour utiliser ce script.",
 
-    "free_space_download": "Vous n'avez pas assez d'espace libre pour télécharger TF2 Classic. Vous devez avoir 4.5GO de libre au minimum sur votre disque dur principale.",
-    "free_space_extract": "Vous n'avez pas assez d'espace libre pour extraire TF2 Classic. Vous devez avoir 12GO de libre au minimum sur l'emplacement d'installation.",
+    "free_space_download": "Vous n'avez pas assez d'espace libre pour télécharger TF2 Classic. Vous devez avoir 4,5 Go de libre au minimum sur votre disque dur principale.",
+    "free_space_extract": "Vous n'avez pas assez d'espace libre pour extraire TF2 Classic. Vous devez avoir 12 Go de libre au minimum sur l'emplacement d'installation.",
     "location_doesnt_exist": "L'emplacement d'extraction spécifié n'existe pas.",
 
     "starting_download": "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui peuvent être parfaitement ignorées.",
