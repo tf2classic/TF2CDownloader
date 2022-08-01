@@ -1,16 +1,21 @@
-import locale
-
 from langs.en import en
-from langs.es import es
 from langs.fr import fr
+from langs.es import es
 from langs.it import it
+from langs.el import el
+from langs.hu import hu
+from langs.pl import pl
 from langs.ru import ru
+import locale
 
 langs = {
     "en": en,
     "fr": fr,
     "es": es,
     "it": it,
+    "el": el,
+    "hu": hu,
+    "pl": pl,
     "ru": ru
 }
 
