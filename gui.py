@@ -55,12 +55,7 @@ def message_dir(msg):
             dir = path.expandvars(dir)
         if path.isdir(dir):
             return dir
-        try:
-            makedirs(dir)
-            rmdir(dir)
-            return dir
-        except Exception:
-            pass
+        message(lang["location_doesnt_exist"])
 
 def message_end(msg, code):
     """

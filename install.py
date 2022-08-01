@@ -23,8 +23,6 @@ def free_space_check():
     minimum_free_install_bytes = 12884901888
     if disk_usage(vars.TEMP_PATH)[2] < minimum_free_download_bytes:
         gui.message_end(lang["free_space_download"], 1)
-    if not path.isdir(vars.INSTALL_PATH):
-        gui.message_end(lang["location_doesnt_exist"], 1)
     elif disk_usage(vars.INSTALL_PATH)[2] < minimum_free_install_bytes:
         gui.message_end(lang["free_space_extract"], 1)
 

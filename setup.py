@@ -1,7 +1,6 @@
 """
 This module is primarily related to helping
 the rest of the application find what it needs.
-
 This includes the path to the user's sourcemods
 folder, the binary locations for things like Aria2
 depending on their platform, etc.
@@ -54,21 +53,23 @@ def setup_path():
     """
     Choose setup path.
     """
-    path = sourcemods_path()
-    if path is not None:
-        gui.message('Sourcemods folder was automatically found at: ' + path)
-        if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
-            vars.INSTALL_PATH = path.strip('\"')
+    vars.INSTALL_PATH = sourcemods_path().rstrip('\"')
+    if isinstance(vars.INSTALL_PATH, str):
+        gui.message(lang["setup_found"] % vars.INSTALL_PATH)
+        if gui.message_yes_no(lang["setup_found_question"]):
             return
-    if gui.message_yes_no('Would you like to extract in ' + getcwd() + '? You must move it to your sourcemods manually.'):
-        vars.INSTALL_PATH = getcwd()
     else:
-        path = gui.message_dir('Please, enter the location in which TF2Classic will be installed to.\n')
-        if gui.message_yes_no('TF2Classic will be installed in ' + path + '\nDo you accept?'):
-            vars.INSTALL_PATH = path
-        else:
-            gui.message('Resetting...\n')
-            setup_path()
+        gui.message(lang["setup_not_found"])
+    
+    current = getcwd()
+    if gui.message_yes_no(lang["setup_not_found_question"] % current):
+        vars.INSTALL_PATH = current
+    else:
+        # no do-while?
+        # :civ_megamind:
+        vars.INSTALL_PATH = gui.message_dir(msg)
+        while not gui.message_yes_no(lang["setup_accept"] % vars.INSTALL_PATH):
+            vars.INSTALL_PATH = gui.message_dir(msg)
 
 def setup_binaries():
     """
