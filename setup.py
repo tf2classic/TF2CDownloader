@@ -60,7 +60,6 @@ def setup_path():
         if gui.message_yes_no('It\'s the recommended installation location. Would you like to install TF2Classic there?'):
             vars.INSTALL_PATH = path.strip('\"')
             return
-
     if gui.message_yes_no('Would you like to extract in ' + getcwd() + '? You must move it to your sourcemods manually.'):
         vars.INSTALL_PATH = getcwd()
     else:

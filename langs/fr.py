@@ -16,17 +16,20 @@ fr = {
     "setup_not_found_question": "Voulez-vous l'extraire dans %s ? Vous devez ensuite le déplacer dans votre dossier sourcemods manuellement.",
     "setup_input": "Veuillez entrez l'emplacement du dossier où va être installer TF2 Classic.\n",
     "setup_accept": "TF2 Classic va être installer ici : %s\nEs-ce que vous acceptez ?",
-    "setup_reset": "Redémarrage...\n",
+    "setup_reset": "Réinitialisation...\n",
 
     "setup_missing_aria2": "Vous devez installer Aria2 pour utiliser ce script.",
     "setup_missing_zstd": "Vous devez installer Zstd pour utiliser ce script.",
 
-    "free_space_download": "Vous n'avez pas assez d'espace libre pour télécharger TF2 Classic. Vous devez avoir 4.5GO de libre au minimum sur votre disque dur principale.",
-    "free_space_extract": "Vous n'avez pas assez d'espace libre pour extraire TF2 Classic. Vous devez avoir 12GO de libre au minimum sur l'emplacement d'installation.",
+    "free_space_download": "Vous n'avez pas assez d'espace libre pour télécharger TF2 Classic. Vous devez avoir 4,5 Go de libre au minimum sur votre disque dur principale.",
+    "free_space_extract": "Vous n'avez pas assez d'espace libre pour extraire TF2 Classic. Vous devez avoir 12 Go de libre au minimum sur l'emplacement d'installation.",
     "location_doesnt_exist": "L'emplacement d'extraction spécifié n'existe pas.",
 
     "starting_download": "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui peuvent être parfaitement ignorées.",
     "starting_extract": "Extraction de l'archive téléchargée, veuillez patentier.",
+
+    "troubleshoot_blacklist": "Application de la liste noir de sécurité...",
+    "troubleshoot_blacklist_fail": "ATTENTION : impossible d'appliquer la liste noir de sécurité.",
 
     "success": "L'installation est terminée. N'oubliez pas de redémarrer Steam !",
 }
