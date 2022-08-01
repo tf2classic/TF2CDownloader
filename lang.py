@@ -1,14 +1,17 @@
-from langs.en import en
-from langs.fr import fr
-from langs.es import es
-from langs.it import it
 import locale
+
+from langs.en import en
+from langs.es import es
+from langs.fr import fr
+from langs.it import it
+from langs.ru import ru
 
 langs = {
     "en": en,
     "fr": fr,
     "es": es,
-    "it": it
+    "it": it,
+    "ru": ru
 }
 
 lang = langs["en"]
