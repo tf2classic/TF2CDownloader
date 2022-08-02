@@ -65,8 +65,6 @@ def setup_path():
     if gui.message_yes_no(lang["setup_not_found_question"] % current):
         vars.INSTALL_PATH = current
     else:
-        # no do-while?
-        # :civ_megamind:
         vars.INSTALL_PATH = gui.message_dir(msg)
         while not gui.message_yes_no(lang["setup_accept"] % vars.INSTALL_PATH):
             vars.INSTALL_PATH = gui.message_dir(msg)
