@@ -68,6 +68,7 @@ def setup_path():
         while not gui.message_yes_no(_("TF2 Classic will be installed in %s\nDo you accept?") % vars.INSTALL_PATH):
             vars.INSTALL_PATH = gui.message_dir(_("Please, enter the location in which TF2 Classic will be installed to.\n"))
 
+
 def setup_binaries():
     """
     Select paths for required binaries.
