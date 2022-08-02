@@ -6,16 +6,15 @@ folder, the binary locations for things like Aria2
 depending on their platform, etc.
 """
 import sys
+import gettext
 from os import environ, getcwd, path
 from platform import system
 from shutil import which
 from rich import print
-from lang import lang
 import gui
 import vars
 if system() == 'Windows':
     import winreg
-
 
 REGISTRY = 0
 REGISTRY_KEY = 0
@@ -67,7 +66,7 @@ def setup_path():
     else:
         vars.INSTALL_PATH = gui.message_dir(_("Please, enter the location in which TF2 Classic will be installed to.\n"))
         while not gui.message_yes_no(_("TF2 Classic will be installed in %s\nDo you accept?") % vars.INSTALL_PATH):
-            vars.INSTALL_PATH = gui.message_dir()
+            vars.INSTALL_PATH = gui.message_dir(_("Please, enter the location in which TF2 Classic will be installed to.\n"))
 
 def setup_binaries():
     """

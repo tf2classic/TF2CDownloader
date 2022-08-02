@@ -1,4 +1,3 @@
-from lang import lang
 import vars
 import gui
 import urllib.request

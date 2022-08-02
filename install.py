@@ -5,9 +5,8 @@ paths configured in setup.py
 """
 from os import path
 from platform import system
-from shutil import disk_usage, rmtree
+from shutil import disk_usage
 from subprocess import run
-from lang import lang
 import gui
 import vars
 

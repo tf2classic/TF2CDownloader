@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-08-02 18:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+# Possible agreeing answers for yes/no questions. Split by spaces.
+#: gui.py:26
+msgid "yes y"
+msgstr ""
+
+# Possible denying answers for yes/no questions. Split by spaces.
+#: gui.py:27
+msgid "no n"
+msgstr ""
+
+# Addition to yes/no questions.
+#: gui.py:28
+msgid "{y/n}"
+msgstr ""
+
+#: gui.py:39
+msgid "Please respond with 'yes' or 'no' (or 'y' or 'n')."
+msgstr ""
+
+#: gui.py:60
+msgid "The specified extraction location does not exist."
+msgstr ""
+
+#: gui.py:68 tf2c_downloader.py:59
+msgid "You are safe to close this window."
+msgstr ""
+
+#: gui.py:70 tf2c_downloader.py:61
+msgid "Press Enter to exit."
+msgstr ""
+
+#: install.py:25
+msgid "You don't have enough free space to download TF2 Classic. A minimum of 4.5GB on your primary drive is required."
+msgstr ""
+
+#: install.py:27
+msgid "You don't have enough free space to extract TF2 Classic. A minimum of 12GB at your chosen extraction site is required."
+msgstr ""
+
+#: install.py:33
+msgid "Starting the download for TF2 Classic... You may see some errors that are safe to ignore."
+msgstr ""
+
+#: install.py:42
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr ""
+
+# %s is directory.
+#: setup.py:58
+msgid "Sourcemods folder was automatically found at: %s"
+msgstr ""
+
+#: setup.py:59
+msgid "It's the recommended installation location. Would you like to install TF2 Classic there?"
+msgstr ""
+
+#: setup.py:62
+msgid "WARNING: Steam's sourcemods folder has not been found."
+msgstr ""
+
+# %s is directory.
+#: setup.py:65
+msgid "Would you like to extract in %s? You must move it to your sourcemods manually."
+msgstr ""
+
+#: setup.py:68
+msgid ""
+"Please, enter the location in which TF2 Classic will be installed to.\n"
+msgstr ""
+
+# %s is directory.
+#: setup.py:69
+msgid ""
+"TF2 Classic will be installed in %s\n"
+"Do you accept?"
+msgstr ""
+
+#: setup.py:89
+msgid "You need to install Aria2 to use this script."
+msgstr ""
+
+#: setup.py:93
+msgid "You need to install Zstd to use this script."
+msgstr ""
+
+#: tf2c_downloader.py:42
+msgid "Looks like we're running in the background. We don't want that, so we're exiting."
+msgstr ""
+
+#: tf2c_downloader.py:56
+msgid "Exception details above this line"
+msgstr ""
+
+#: tf2c_downloader.py:57
+msgid "The program has failed. Post a screenshot in #technical-issues on the Discord."
+msgstr ""
+
+#: tf2c_downloader.py:64
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr ""
+
+#: troubleshoot.py:7
+msgid "Applying safety blacklist..."
+msgstr ""
+
+#: troubleshoot.py:11
+msgid "WARNING: could not apply safety blacklist."
+msgstr ""
+

@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-08-02 18:36+0300\n"
+"PO-Revision-Date: 2022-08-02 20:31+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: hu\n"
+
+# Possible agreeing answers for yes/no questions. Split by spaces.
+#: gui.py:26
+msgid "yes y"
+msgstr "y igen i"
+
+# Possible denying answers for yes/no questions. Split by spaces.
+#: gui.py:27
+msgid "no n"
+msgstr "nem n"
+
+# Addition to yes/no questions.
+#: gui.py:28
+msgid "{y/n}"
+msgstr "{i/n}"
+
+#: gui.py:39
+msgid "Please respond with 'yes' or 'no' (or 'y' or 'n')."
+msgstr "Válaszolj kérlek egy 'igen' vagy 'nem'-mel (vagy 'i' vagy 'n')."
+
+#: gui.py:60
+msgid "The specified extraction location does not exist."
+msgstr "A meghatározott kicsomagolási hely nem létezik."
+
+#: gui.py:68 tf2c_downloader.py:59
+msgid "You are safe to close this window."
+msgstr "Mostmár biztonságban bezárhatod ezt az ablakot."
+
+#: gui.py:70 tf2c_downloader.py:61
+msgid "Press Enter to exit."
+msgstr "Kilépéshez nyomd meg az Enter billentyűt."
+
+#: install.py:25
+msgid ""
+"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
+"on your primary drive is required."
+msgstr ""
+"Nincs elég tárhelyed, hogy letöltsd a TF2 Classic-ot. 4.5GB minimum tárhely "
+"szükséges az elsődleges merevlemezeden."
+
+#: install.py:27
+msgid ""
+"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
+"at your chosen extraction site is required."
+msgstr ""
+"Nincs elég tárhelyed, hogy kicsomagold a TF2 Classic-ot. 12GB minimum "
+"tárhely szükséges az általad választott kicsomagolási helyen."
+
+#: install.py:33
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"TF2 Classic letöltésének megkezdése... Lehet, hogy látsz néhány hibát amit "
+"nyugodtan mellőzhetsz."
+
+#: install.py:42
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "A letöltött archívum kicsomagolása, kérlek várj türelemmel."
+
+# %s is directory.
+#: setup.py:58
+msgid "Sourcemods folder was automatically found at: %s"
+msgstr "A sourcemods mappa automatikusan meglelve itt: %s"
+
+#: setup.py:59
+msgid ""
+"It's the recommended installation location. Would you like to install TF2 "
+"Classic there?"
+msgstr ""
+"Ez a javasolt telepítési hely. Szeretnéd oda telepíteni a TF2 Classic-ot?"
+
+#: setup.py:62
+msgid "WARNING: Steam's sourcemods folder has not been found."
+msgstr ""
+"FIGYELEM: Nem lett megtalálva a Steam sourcemods mappája, vagy te döntöttél "
+"úgy, hogy nem használod azt."
+
+# %s is directory.
+#: setup.py:65
+msgid ""
+"Would you like to extract in %s? You must move it to your sourcemods "
+"manually."
+msgstr ""
+"Szeretnéd ide kicsomagolni: %s? Sajátkezüleg kell majd betenned a sourcemods "
+"mappádba."
+
+#: setup.py:68
+msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
+msgstr "Add meg a helyet ahova szeretnéd a TF2 Classic-ot telepíteni.\n"
+
+# %s is directory.
+#: setup.py:69
+msgid ""
+"TF2 Classic will be installed in %s\n"
+"Do you accept?"
+msgstr ""
+"A TF2 Classic ide lesz telepítve: %s\n"
+"Elfogadod?"
+
+#: setup.py:89
+msgid "You need to install Aria2 to use this script."
+msgstr "Ehhez a script-hez a következőt kell telepítened: Aria2."
+
+#: setup.py:93
+msgid "You need to install Zstd to use this script."
+msgstr "Ehhez a script-hez a következőt kell telepítened: Zstd."
+
+#: tf2c_downloader.py:42
+msgid ""
+"Looks like we're running in the background. We don't want that, so we're "
+"exiting."
+msgstr ""
+"Úgy néz ki, hogy a háttérben futtatod a programot. Ezt mi nem akarjuk, "
+"szóval kilépünk."
+
+#: tf2c_downloader.py:56
+msgid "Exception details above this line"
+msgstr "Kifogás részletei e sor fölött"
+
+#: tf2c_downloader.py:57
+msgid ""
+"The program has failed. Post a screenshot in #technical-issues on the "
+"Discord."
+msgstr ""
+"A program sikertelen. Készíts egy képernyőképet és küld el a #technical-"
+"issues csatornába a hivatalos Discord szerveren (de csak angolul)."
+
+#: tf2c_downloader.py:64
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr "A telepítés sikeres. Ne felejtsd újraindítani a Steam-et!"
+
+#: troubleshoot.py:7
+msgid "Applying safety blacklist..."
+msgstr "Biztonsági feketelistára helyezés..."
+
+#: troubleshoot.py:11
+msgid "WARNING: could not apply safety blacklist."
+msgstr "FIGYELEM: sikertelen biztonsági feketelistára helyezés."

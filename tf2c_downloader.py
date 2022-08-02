@@ -6,12 +6,12 @@ import ctypes
 import os
 import signal
 import traceback
+import gettext
 from platform import system
 from shutil import which
 from subprocess import run
 from sys import argv, exit, stdin
 from rich import print
-from lang import lang
 import gui
 import install
 import setup
@@ -30,6 +30,10 @@ if system() == 'Windows':
 if system() == 'Windows':
     kernel32 = ctypes.windll.kernel32
     kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
+
+# Setting up gettext localization system
+lang = gettext.translation('tf2c_downloader', './locale')
+lang.install()
 
 def sanity_check():
     """

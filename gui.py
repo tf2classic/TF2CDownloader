@@ -3,12 +3,10 @@ UX-related functions, like showing messages,
 asking questions, generally handling any sort
 of communication or interactivity with the user.
 """
-from os import environ, makedirs, path, rmdir
+import os
 from sys import exit
 from time import sleep
 from rich import print
-from lang import lang
-
 
 def message(msg, delay = 0):
     """
@@ -26,7 +24,7 @@ def message_yes_no(msg):
     valid_yes = _("yes y").split()
     valid_no = _("no n").split()
     prompt = _("{y/n}")
-    msg += prompt
+    msg += ' ' + prompt
 
     while True:
         print(msg)
@@ -52,10 +50,10 @@ def message_dir(msg):
     while True:
         dir = input(msg + ": ")
         if dir.count("~") > 0:
-            dir = path.expanduser(dir)
+            dir = os.path.expanduser(dir)
         if dir.count("$") > 0:
-            dir = path.expandvars(dir)
-        if path.isdir(dir):
+            dir = os.path.expandvars(dir)
+        if os.path.isdir(dir):
             return dir
         message(_("The specified extraction location does not exist."))
 
@@ -64,7 +62,7 @@ def message_end(msg, code):
     Show a message and exit.
     """
     print("[bold green]" + msg)
-    if environ.get("WT_SESSION"):
+    if os.environ.get("WT_SESSION"):
         print("[bold]" + _("You are safe to close this window."))
     else:
         input(_("Press Enter to exit."))

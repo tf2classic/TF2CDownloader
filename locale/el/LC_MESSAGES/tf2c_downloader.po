@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-08-02 18:36+0300\n"
+"PO-Revision-Date: 2022-08-02 19:56+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: el\n"
+
+# Possible agreeing answers for yes/no questions. Split by spaces.
+#: gui.py:26
+msgid "yes y"
+msgstr "y ναι ν"
+
+# Possible denying answers for yes/no questions. Split by spaces.
+#: gui.py:27
+msgid "no n"
+msgstr "n οχι ο"
+
+# Addition to yes/no questions.
+#: gui.py:28
+msgid "{y/n}"
+msgstr "{ν/ο}"
+
+#: gui.py:39
+msgid "Please respond with 'yes' or 'no' (or 'y' or 'n')."
+msgstr "Παρακαλώ απαντήστε με 'ναι' ή 'οχι' (ή 'ν' ή 'ο')."
+
+#: gui.py:60
+msgid "The specified extraction location does not exist."
+msgstr "Η καθορισμένη θέση αποσυμπίεσης δεν υπάρχει."
+
+#: gui.py:68 tf2c_downloader.py:59
+msgid "You are safe to close this window."
+msgstr "Μπορείτε να κλείσετε το παράθυρο."
+
+#: gui.py:70 tf2c_downloader.py:61
+msgid "Press Enter to exit."
+msgstr "Πατήστε Enter για έξοδο."
+
+#: install.py:25
+msgid ""
+"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
+"on your primary drive is required."
+msgstr ""
+"Δέν έχετε αρκετό ελεύθερο χώρο για να κατεβάσετε το TF2 Classic. Απαιτείται "
+"τουλάχιστον 4,5 GB στον κύριο δίσκο σας."
+
+#: install.py:27
+msgid ""
+"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
+"at your chosen extraction site is required."
+msgstr ""
+"Δέν έχετε αρκετό ελεύθερο χώρο για να αποσυμπιέσετε το TF2 Classic. "
+"Απαιτείται τουλάχιστον 12 GB στην επιλεγμένη τοποθεσία αποσυμπίεσης."
+
+#: install.py:33
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"Έναρξη της λήψης για το TF2 Classic... Ενδέχεται να δείτε ορισμένα σφάλματα "
+"τα οποία μπορείτε να αγνοήσετε."
+
+#: install.py:42
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "Αποσυμπίεση του ληφθέντος αρχείου, παρακαλώ περιμένετε."
+
+# %s is directory.
+#: setup.py:58
+msgid "Sourcemods folder was automatically found at: %s"
+msgstr "Ο Sourcemods φάκελος βρέθηκε αυτόματα στην θέση: %s"
+
+#: setup.py:59
+msgid ""
+"It's the recommended installation location. Would you like to install TF2 "
+"Classic there?"
+msgstr ""
+"Είναι η συνιστώμενη θέση εγκατάστασης. Θέλετε να εγκαταστήσετε το TF2 "
+"Classic εκεί;"
+
+#: setup.py:62
+#, fuzzy
+msgid "WARNING: Steam's sourcemods folder has not been found."
+msgstr ""
+"ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Ο Sourcemods φάκελος του Steam δέν βρέθηκε, ή επιλέξατε να "
+"μην το χρησιμοποιήσετε."
+
+# %s is directory.
+#: setup.py:65
+msgid ""
+"Would you like to extract in %s? You must move it to your sourcemods "
+"manually."
+msgstr ""
+"Θέλετε να αποσυμπιέσετε στο %s; Θα πρέπει να το μετακινήσετε στον φάκελο "
+"sourcemods χειροκίνητα."
+
+#: setup.py:68
+msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
+msgstr ""
+"Παρακαλώ, εισαγάγετε τη θέση στην οποία θα εγκατασταθεί το TF2 Classic.\n"
+
+# %s is directory.
+#: setup.py:69
+msgid ""
+"TF2 Classic will be installed in %s\n"
+"Do you accept?"
+msgstr ""
+"Το TF2 Classic θα εγκατασταθεί στην θέση %s\n"
+"Δέχεστε;"
+
+#: setup.py:89
+msgid "You need to install Aria2 to use this script."
+msgstr ""
+"Θα χρειαστεί να εγκαταστήσετε το Aria2 για να χρησιμοποιήσετε αυτό το "
+"πρόγραμμα."
+
+#: setup.py:93
+msgid "You need to install Zstd to use this script."
+msgstr ""
+"Θα χρειαστεί να εγκαταστήσετε το Zstd για να χρησιμοποιήσετε αυτό το "
+"πρόγραμμα."
+
+#: tf2c_downloader.py:42
+msgid ""
+"Looks like we're running in the background. We don't want that, so we're "
+"exiting."
+msgstr ""
+"Απο ότι φαίνεται λειτουργούμε στο παρασκήνιο. Δέν το θέλουμε αυτό, οπότε "
+"σταματάμε."
+
+#: tf2c_downloader.py:56
+msgid "Exception details above this line"
+msgstr "Λεπτομέρειες της εξαίρεσης πάνω απο αυτήν την γραμμή"
+
+#: tf2c_downloader.py:57
+msgid ""
+"The program has failed. Post a screenshot in #technical-issues on the "
+"Discord."
+msgstr ""
+"Το πρόγραμμα απέτυχε. Στείλτε ένα στιγμιότυπο οθόνης στο #technical-issues "
+"στο Discord (μόνο σε Αγγλικά)."
+
+#: tf2c_downloader.py:64
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr ""
+"Η εγκατάσταση ολοκληρώθηκε με επιτυχία. Μήν ξεχάσετε να επανεκκινήσετε το "
+"Steam!"
+
+#: troubleshoot.py:7
+msgid "Applying safety blacklist..."
+msgstr "Εφαρμογή μαύρης λίστας ασφαλείας..."
+
+#: troubleshoot.py:11
+msgid "WARNING: could not apply safety blacklist."
+msgstr "WARNING: αδυναμία εφαρμογής μαύρης λίστας ασφαλείας."
