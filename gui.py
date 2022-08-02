@@ -3,12 +3,10 @@ UX-related functions, like showing messages,
 asking questions, generally handling any sort
 of communication or interactivity with the user.
 """
-from os import environ, makedirs, path, rmdir
+import os
 from sys import exit
 from time import sleep
 from rich import print
-from lang import lang
-
 
 def message(msg, delay = 0):
     """
@@ -18,30 +16,32 @@ def message(msg, delay = 0):
     print("[bold yellow]" + msg)
     sleep(delay)
 
-def message_yes_no(msg, default = None):
+def message_yes_no(msg):
     """
     Show a message to user and get yes/no answer.
     """
-    valid = lang["prompt_valid"]
-    prompt = lang["prompt_prompt"][default]
-    msg += prompt
+    # dont know for now how to make it properly, leaving all of pain to future-me
+    valid_yes = _("yes y").split()
+    valid_no = _("no n").split()
+    prompt = _("{y/n}")
+    msg += ' ' + prompt
 
     while True:
         print(msg)
         choice = input().lower()
-        if default is not None and choice == "":
-            return valid[default]
-        elif choice in valid:
-            return valid[choice]
+        if choice in valid_yes:
+            return True
+        elif choice in valid_no:
+            return False
         else:
-            print(lang["prompt_invalid"])
+            print("[bold blue]" + _("Please respond with 'yes' or 'no' (or 'y' or 'n').") + "[/bold blue]")
 
 
 def message_input(msg):
     """
     Show a message and get input from user.
     """
-    return input(msg + ' >')
+    return input(msg + ' > ')
 
 def message_dir(msg):
     """
@@ -50,20 +50,20 @@ def message_dir(msg):
     while True:
         dir = input(msg + ": ")
         if dir.count("~") > 0:
-            dir = path.expanduser(dir)
+            dir = os.path.expanduser(dir)
         if dir.count("$") > 0:
-            dir = path.expandvars(dir)
-        if path.isdir(dir):
+            dir = os.path.expandvars(dir)
+        if os.path.isdir(dir):
             return dir
-        message(lang["location_doesnt_exist"])
+        message(_("The specified extraction location does not exist."))
 
 def message_end(msg, code):
     """
     Show a message and exit.
     """
     print("[bold green]" + msg)
-    if environ.get("WT_SESSION"):
-        print(lang["exit_safe"])
+    if os.environ.get("WT_SESSION"):
+        print("[bold]" + _("You are safe to close this window."))
     else:
-        input(lang["exit"])
+        input(_("Press Enter to exit."))
     exit(code)

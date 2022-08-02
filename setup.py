@@ -6,16 +6,15 @@ folder, the binary locations for things like Aria2
 depending on their platform, etc.
 """
 import sys
+import gettext
 from os import environ, getcwd, path
 from platform import system
 from shutil import which
 from rich import print
-from lang import lang
 import gui
 import vars
 if system() == 'Windows':
     import winreg
-
 
 REGISTRY = 0
 REGISTRY_KEY = 0
@@ -55,19 +54,20 @@ def setup_path():
     """
     vars.INSTALL_PATH = sourcemods_path().rstrip('\"')
     if isinstance(vars.INSTALL_PATH, str):
-        gui.message(lang["setup_found"] % vars.INSTALL_PATH)
-        if gui.message_yes_no(lang["setup_found_question"]):
+        gui.message(_("Sourcemods folder was automatically found at: %s") % vars.INSTALL_PATH)
+        if gui.message_yes_no(_("It's the recommended installation location. Would you like to install TF2 Classic there?")):
             return
     else:
-        gui.message(lang["setup_not_found"])
+        gui.message(_("WARNING: Steam's sourcemods folder has not been found."))
     
     current = getcwd()
-    if gui.message_yes_no(lang["setup_not_found_question"] % current):
+    if gui.message_yes_no(_("Would you like to extract in %s? You must move it to your sourcemods manually.") % current):
         vars.INSTALL_PATH = current
     else:
-        vars.INSTALL_PATH = gui.message_dir(lang["setup_input"])
-        while not gui.message_yes_no(lang["setup_accept"] % vars.INSTALL_PATH):
-            vars.INSTALL_PATH = gui.message_dir(lang["setup_input"])
+        vars.INSTALL_PATH = gui.message_dir(_("Please, enter the location in which TF2 Classic will be installed to.\n"))
+        while not gui.message_yes_no(_("TF2 Classic will be installed in %s\nDo you accept?") % vars.INSTALL_PATH):
+            vars.INSTALL_PATH = gui.message_dir(_("Please, enter the location in which TF2 Classic will be installed to.\n"))
+
 
 def setup_binaries():
     """
@@ -86,11 +86,11 @@ def setup_binaries():
             vars.ARC_BINARY = 'Binaries/arc.exe'
     else:
         if which('aria2c') is None:
-            gui.message_end(lang["setup_missing_aria2"], 1)
+            gui.message_end(_("You need to install Aria2 to use this script."), 1)
         else:
             vars.ARIA2C_BINARY = 'aria2c'
         if which('zstd') is None and which('pzstd') is None:
-            gui.message_end(lang["setup_missing_zstd"], 1)
+            gui.message_end(_("You need to install Zstd to use this script."), 1)
         elif which('zstd') is not None:
             vars.ZSTD_BINARY = 'zstd'
         else:
