@@ -39,7 +39,7 @@ def sanity_check():
     but it's not a priority right now since Linux users can figure out how to use the terminal.
     """
     if not stdin or not stdin.isatty():
-        print(lang["running_background"])
+        print(_("Looks like we're running in the background. We don't want that, so we're exiting."))
         exit(1)
 
 try:
@@ -53,12 +53,12 @@ try:
 except Exception as ex:
     if ex is not SystemExit:
         traceback.print_exc()
-        print(lang["exception_line"])
-        print(lang["exception"])
+        print("[italic magenta]----- " + _("Exception details above this line") + "-----")
+        print("[bold red]:warning: " + _("The program has failed. Post a screenshot in #technical-issues on the Discord.") +  ":warning:[/bold red]")
         if os.environ.get("WT_SESSION"):
-            print(lang["exit_safe"])
+            print("[bold]" + _("You are safe to close this window."))
         else:
-            input(lang["exit"])
+            input(_("Press Enter to exit."))
         exit(1)
 
-gui.message_end(lang["success"], 0)
+gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
