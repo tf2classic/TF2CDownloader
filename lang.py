@@ -6,6 +6,7 @@ from langs.el import el
 from langs.hu import hu
 from langs.pl import pl
 from langs.ru import ru
+
 import locale
 
 langs = {
