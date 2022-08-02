@@ -4,7 +4,6 @@ of the real work to functions defined in other files.
 """
 import ctypes
 import os
-import signal
 import traceback
 import gettext
 from platform import system
