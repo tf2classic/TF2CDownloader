@@ -7,8 +7,8 @@ from os import environ, makedirs, path, rmdir
 from sys import exit
 from time import sleep
 from rich import print
-from lang import lang
-
+from gettext import gettext as _
+import unicodedata
 
 def message(msg, delay = 0):
     """
@@ -22,8 +22,24 @@ def message_yes_no(msg, default = None):
     """
     Show a message to user and get yes/no answer.
     """
-    valid = lang["prompt_valid"]
-    prompt = lang["prompt_prompt"][default]
+    valid = {}
+    valid["yes"] = True
+    valid["no"] = False
+    valid["y"] = True
+    valid["n"] = False
+
+    localyes = _("yes")
+    localno = _("no")
+    valid[localyes] = True
+    valid[localyes[0]] = True
+    valid[localno] = False
+    valid[localno[0]] = False
+
+    prompt = _(" {y/n}")
+    if default == "y":
+        prompt = _(" {Y/n}")
+    elif default == "n":
+        prompt = _(" {y/N}")
     msg += prompt
 
     while True:
@@ -34,7 +50,7 @@ def message_yes_no(msg, default = None):
         elif choice in valid:
             return valid[choice]
         else:
-            print(lang["prompt_invalid"])
+            print(_("[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"))
 
 
 def message_input(msg):
@@ -68,7 +84,7 @@ def message_end(msg, code):
     """
     print("[bold green]" + msg)
     if environ.get("WT_SESSION"):
-        print(lang["exit_safe"])
+        print(_("[bold]You are safe to close this window."))
     else:
-        input(lang["exit"])
+        input(_("Press Enter to exit."))
     exit(code)

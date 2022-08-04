@@ -1,0 +1,1 @@
+xgettext --package-name=tf2c-downloader -l python -o locale/tf2c-downloader.pot *.py

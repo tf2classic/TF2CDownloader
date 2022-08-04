@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tf2c-downloader\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-04 21:31+0200\n"
+"PO-Revision-Date: 2022-08-04 22:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+
+#: gui.py:31
+msgid "yes"
+msgstr "tak"
+
+#: gui.py:32
+msgid "no"
+msgstr "nie"
+
+#: gui.py:38
+msgid " {y/n}"
+msgstr " {t/n}"
+
+#: gui.py:40
+msgid " {Y/n}"
+msgstr " {T/n}"
+
+#: gui.py:42
+msgid " {y/N}"
+msgstr " {t/N}"
+
+#: gui.py:53
+msgid ""
+"[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
+msgstr ""
+"[bold blue]Prosimy odpowiedzieć poleceniem 'tak' lub 'nie' (albo 't' lub "
+"'n').[/bold blue]"
+
+#: gui.py:87 tf2c_downloader.py:59
+msgid "[bold]You are safe to close this window."
+msgstr "[bold]Można bezpiecznie zamknąć to okno."
+
+#: gui.py:89 tf2c_downloader.py:61
+msgid "Press Enter to exit."
+msgstr "Wciśnij Enter by zakończyć."
+
+#: install.py:25
+msgid ""
+"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
+"on your primary drive is required."
+msgstr ""
+"Brak wolnego miejsca do pobrania TF2 Classic. Wymagane jest minimum 4.5 GB "
+"na dysku głównym."
+
+#: install.py:27
+msgid "The specified extraction location does not exist."
+msgstr "Określona lokalizacja rozpakowania nie istnieje."
+
+#: install.py:29
+msgid ""
+"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
+"at your chosen extraction site is required."
+msgstr ""
+"Brak wolnego miejsca do rozpakowania TF2 Classic. Wymagane jest minimum 12 "
+"GB w wybranym miejscu wydobycia."
+
+#: install.py:35
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"Rozpoczęcie pobierania gry TF2 Classic... W trakcie procesu pojawią się "
+"błędy, które możn zignorować."
+
+#: install.py:44
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "Rozpakowywanie pobranego archiwum, prosimy cierpliwie poczekać."
+
+#: setup.py:63
+#, python-format
+msgid "Sourcemods folder was automatically found at: %s"
+msgstr "Automatycznie znaleziono folder sourcemods w: %s"
+
+#: setup.py:64
+msgid ""
+"It's the recommended installation location. Would you like to install TF2 "
+"Classic there?"
+msgstr ""
+"Jest to zalecane miejsce instalacji. Czy w tym miejscu ma zostać "
+"zainstalowany TF2 Classic?"
+
+#: setup.py:70
+msgid ""
+"WARNING: Steam's sourcemods folder has not been found, or you chose not to "
+"use it."
+msgstr ""
+"UWAGA: Folder Steama \"sourcemods\" nie został znaleziony, lub zrezygnowano "
+"z jego użycia."
+
+#: setup.py:71
+#, python-format
+msgid ""
+"Would you like to extract in %s? You must move it to your sourcemods "
+"manually."
+msgstr ""
+"Czy rozpakować pliki w %s? Po wypakowaniu należy własnoręcznie przenieść "
+"całą zawartość do pliku sourcemods."
+
+#: setup.py:75
+msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
+msgstr ""
+"Proszę wprowadzić lokalizację, w której zostanie zainstalowane TF2 Classic.\n"
+
+#: setup.py:78
+#, python-format
+msgid ""
+"TF2 Classic will be installed in %s\n"
+"Do you accept?"
+msgstr ""
+"TF2 Classic zostanie zainstalowane w %s\n"
+"Akceptować?"
+
+#: setup.py:79
+msgid "Reinitialising...\n"
+msgstr "Ponowna incjalizacja...\n"
+
+#: setup.py:99
+msgid "You need to install Aria2 to use this script."
+msgstr "Do uruchomienia tego skryptu wymagane jest zainstalowanie: Aria2."
+
+#: setup.py:103
+msgid "You need to install Zstd to use this script."
+msgstr "Do uruchomienia tego skryptu wymagane jest zainstalowanie: Zstd."
+
+#: tf2c_downloader.py:42
+msgid ""
+"Looks like we're running in the background. We don't want that, so we're "
+"exiting."
+msgstr ""
+"Wygląda na to, że ten proces działa w tle. Instalacja może przejść "
+"niepoprawnie, zatem proces ten zostanie przerwany."
+
+#: tf2c_downloader.py:56
+msgid "[italic magenta]----- Exception details above this line -----"
+msgstr ""
+"[italic magenta]----- Szczegóły wyjątków znajdują się powyżej tej linii -----"
+
+#: tf2c_downloader.py:57
+msgid ""
+"[bold red]:warning: The program has failed. Post a screenshot in #technical-"
+"issues on the Discord. :warning:[/bold red]"
+msgstr ""
+"[bold red]:warning: Program został niespodziewanie zatrzymany. Prosimy "
+"zamieścić zrzut ekranu na Discordzie w sekcji #technical-issues (tylko po "
+"angielsku). :warning:[/bold red]"
+
+#: tf2c_downloader.py:65
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr ""
+"Instalacja przebiegła pomyślnie. Prosimy pamiętać o zrestartowaniu Steama!"
+
+#: troubleshoot.py:7
+msgid "Applying safety blacklist..."
+msgstr "Stosowanie czarnej listy bezpieczeństwa..."
+
+#: troubleshoot.py:11
+msgid "WARNING: could not apply safety blacklist."
+msgstr "UWAGA: Nie można zastosować czarnej listy bezpieczeństwa."
