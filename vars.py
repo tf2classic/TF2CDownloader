@@ -9,7 +9,7 @@ import tempfile
 if system() == 'Windows':
     TEMP_PATH = tempfile.gettempdir()
 else:
-    TEMP_PATH = '/tmp/'
+    TEMP_PATH = '/var/tmp/'
 
 ARIA2C_BINARY = None
 # ZSTD_BINARY is only used on Linux.
