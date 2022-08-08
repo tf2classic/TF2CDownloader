@@ -8,6 +8,7 @@ import ctypes
 from platform import system
 from shutil import which
 from subprocess import run
+import sys
 from sys import argv, exit, stdin
 from rich import print
 from gettext import gettext as _
@@ -42,8 +43,16 @@ def sanity_check():
         print(_("Looks like we're running in the background. We don't want that, so we're exiting."))
         exit(1)
 
-gettext.bindtextdomain("tf2c-downloader", "locale")
-gettext.textdomain("tf2c-downloader")
+if os.getenv('LANG') is None:
+    import locale
+    lang, enc = locale.getdefaultlocale()
+    os.environ['LANG'] = lang
+
+if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+    gettext.bindtextdomain('tf2c-downloader', os.path.abspath(os.path.join(os.path.dirname(__file__), 'locale')))
+else:
+    gettext.bindtextdomain('tf2c-downloader', 'locale')
+gettext.textdomain('tf2c-downloader')
 
 try:
     sanity_check()

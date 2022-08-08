@@ -1,2 +1,2 @@
 #!/bin/sh
-pyinstaller --onefile tf2c_downloader.py
+pyinstaller tf2c_downloader.spec

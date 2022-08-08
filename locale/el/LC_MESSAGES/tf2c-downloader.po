@@ -105,7 +105,7 @@ msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
 msgstr ""
-"Θέλετε να αποσυμπιέσετε στο %s; Θα πρέπει να το μετακινήσετε στον φάκελο "
+"Θέλετε να αποσυμπιέσετε στο %s; Θα πρέπει να το μετακινήσετε στον φάκελο "
 "sourcemods χειροκίνητα."
 
 #: setup.py:75
@@ -120,7 +120,7 @@ msgid ""
 "Do you accept?"
 msgstr ""
 "Το TF2 Classic θα εγκατασταθεί στην θέση %s\n"
-"Δέχεστε;"
+"Δέχεστε;"
 
 #: setup.py:79
 msgid "Reinitialising...\n"
