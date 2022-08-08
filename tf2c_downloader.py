@@ -43,6 +43,11 @@ def sanity_check():
         print(_("Looks like we're running in the background. We don't want that, so we're exiting."))
         exit(1)
 
+if sys.stdout.encoding == 'ascii':
+    sys.stdout.reconfigure(encoding='utf-8')
+if sys.stderr.encoding == 'ascii':
+    sys.stderr.reconfigure(encoding='utf-8')
+
 if os.getenv('LANG') is None:
     import locale
     lang, enc = locale.getdefaultlocale()
