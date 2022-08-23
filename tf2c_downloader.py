@@ -17,6 +17,8 @@ import gui
 import install
 import setup
 import troubleshoot
+import updater
+import vars
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -63,10 +65,19 @@ try:
     sanity_check()
     setup.setup_path(False)
     setup.setup_binaries()
-    install.free_space_check()
-    install.tf2c_download()
-    install.tf2c_extract()
-    troubleshoot.apply_blacklist()
+    # After this line, we have two possible paths: installing, or updating/repairing
+    if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
+        vars.INSTALLED = True
+    if vars.INSTALLED == True:
+        updater.update_version_file()
+    if updater.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
+        install.free_space_check()
+        install.tf2c_download()
+        install.tf2c_extract()
+        troubleshoot.apply_blacklist()
+    else:
+        install.free_space_check()
+        updater.update()
 except Exception as ex:
     if ex is not SystemExit:
         traceback.print_exc()

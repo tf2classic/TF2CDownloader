@@ -11,6 +11,9 @@ if system() == 'Windows':
 else:
     TEMP_PATH = '/var/tmp/'
 
+# For determining whether we're installing or updating/repairing the game
+INSTALLED = False
+
 ARIA2C_BINARY = None
 # ZSTD_BINARY is only used on Linux.
 ZSTD_BINARY = None
