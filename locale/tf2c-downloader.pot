@@ -1,8 +1,14 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tf2c-downloader package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 21:31+0200\n"
+"POT-Creation-Date: 2022-08-30 16:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,11 +42,11 @@ msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 
-#: gui.py:87 tf2c_downloader.py:59
+#: gui.py:87 tf2c_downloader.py:87
 msgid "[bold]You are safe to close this window."
 msgstr ""
 
-#: gui.py:89 tf2c_downloader.py:61
+#: gui.py:89 tf2c_downloader.py:89
 msgid "Press Enter to exit."
 msgstr ""
 
@@ -66,7 +72,7 @@ msgid ""
 "safe to ignore."
 msgstr ""
 
-#: install.py:44
+#: install.py:44 updater.py:77
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr ""
 
@@ -117,23 +123,23 @@ msgstr ""
 msgid "You need to install Zstd to use this script."
 msgstr ""
 
-#: tf2c_downloader.py:42
+#: tf2c_downloader.py:45
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
 msgstr ""
 
-#: tf2c_downloader.py:56
+#: tf2c_downloader.py:84
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 
-#: tf2c_downloader.py:57
+#: tf2c_downloader.py:85
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
 
-#: tf2c_downloader.py:65
+#: tf2c_downloader.py:93
 msgid "The installation has successfully completed. Remember to restart Steam!"
 msgstr ""
 
@@ -143,4 +149,30 @@ msgstr ""
 
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
+msgstr ""
+
+#: updater.py:31
+msgid "No migration necessary!"
+msgstr ""
+
+#: updater.py:44
+msgid ""
+"We found an existing up-to-date installation of the game. Do you want to "
+"repair it?"
+msgstr ""
+
+#: updater.py:47 updater.py:56 updater.py:63
+msgid "We have nothing to do. Goodbye!"
+msgstr ""
+
+#: updater.py:50 updater.py:60
+msgid "An update is available for your game. Do you want to install it?"
+msgstr ""
+
+#: updater.py:53
+msgid "In that case, do you want to reinstall completely?"
+msgstr ""
+
+#: updater.py:69
+msgid "Downloading the update archive..."
 msgstr ""

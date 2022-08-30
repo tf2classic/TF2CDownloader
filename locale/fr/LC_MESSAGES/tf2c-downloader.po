@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 21:31+0200\n"
-"PO-Revision-Date: 2022-08-04 21:35+0200\n"
+"POT-Creation-Date: 2022-08-30 16:16+0200\n"
+"PO-Revision-Date: 2022-08-30 16:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -37,11 +37,11 @@ msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr "[bold blue]Répondez avec 'oui' ou 'non' ('o' ou 'n').[/bold blue]"
 
-#: gui.py:87 tf2c_downloader.py:59
+#: gui.py:87 tf2c_downloader.py:87
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Vous pouvez fermer cette fenêtre."
 
-#: gui.py:89 tf2c_downloader.py:61
+#: gui.py:89 tf2c_downloader.py:89
 msgid "Press Enter to exit."
 msgstr "Appuyez sur Entrée pour sortir."
 
@@ -73,7 +73,7 @@ msgstr ""
 "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui "
 "peuvent être parfaitement ignorées."
 
-#: install.py:44
+#: install.py:44 updater.py:77
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Extraction de l'archive téléchargée, veuillez patentier."
 
@@ -133,7 +133,7 @@ msgstr "Vous devez installer Aria2 pour utiliser ce script."
 msgid "You need to install Zstd to use this script."
 msgstr "Vous devez installer Zstd pour utiliser ce script."
 
-#: tf2c_downloader.py:42
+#: tf2c_downloader.py:45
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -141,12 +141,12 @@ msgstr ""
 "On dirait qu'on est en train de tourner en arrière plan. On ne veut pas ça, "
 "donc on sort."
 
-#: tf2c_downloader.py:56
+#: tf2c_downloader.py:84
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 "[italic magenta]----- Détails des exceptions au dessus de cette ligne -----"
 
-#: tf2c_downloader.py:57
+#: tf2c_downloader.py:85
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -154,7 +154,7 @@ msgstr ""
 "[bold red]:warning: Le programme a échoué. Postez un screenshot dans "
 "#technical-issues sur le Discord (en anglais seulement). :warning:[/bold red]"
 
-#: tf2c_downloader.py:65
+#: tf2c_downloader.py:93
 msgid "The installation has successfully completed. Remember to restart Steam!"
 msgstr "L'installation est terminée. N'oubliez pas de redémarrer Steam !"
 
@@ -165,3 +165,29 @@ msgstr "Application de la liste noir de sécurité..."
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
 msgstr "ATTENTION : impossible d'appliquer la liste noir de sécurité."
+
+#: updater.py:31
+msgid "No migration necessary!"
+msgstr "Aucune migration nécessaire !"
+
+#: updater.py:44
+msgid ""
+"We found an existing up-to-date installation of the game. Do you want to "
+"repair it?"
+msgstr "Une installation à jour du jeu a été trouvée. Voulez-vous la réparer ?"
+
+#: updater.py:50 updater.py:60
+msgid "An update is available for your game. Do you want to install it?"
+msgstr "Une mise à jour est disponible. Voulez-vous l'installer ?"
+
+#: updater.py:53
+msgid "In that case, do you want to reinstall completely?"
+msgstr "Dans ce cas, voulez-vous complètement réinstaller le jeu ?"
+
+#: updater.py:56 updater.py:63
+msgid "We have nothing to do. Goodbye!"
+msgstr "Rien à faire. Au revoir !"
+
+#: updater.py:69
+msgid "Downloading the update archive..."
+msgstr "Téléchargement de la mise à jour…"

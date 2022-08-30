@@ -28,7 +28,7 @@ def update_version_file():
     if old_version < "204":
         new_version_file.write(old_version)
     else:
-        gui.message(_("No migration necessary!", 1))
+        gui.message(_("No migration necessary!"), 1)
     new_version_file.close()
     old_version_file.close()
 
@@ -44,7 +44,7 @@ def check_for_updates():
         if gui.message_yes_no(_("We found an existing up-to-date installation of the game. Do you want to repair it?"), False):
             return 'reinstall'
         else:
-            gui.message_end('We have nothing to do. Goodbye!', 0)
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
             
     if local_version == PREVIOUS_VER:
         if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), 0):
@@ -53,18 +53,19 @@ def check_for_updates():
             if gui.message_yes_no(_("In that case, do you want to reinstall completely?"), 0):
                 return 'reinstall'
             else:
-                gui.message_end('We have nothing to do. Goodbye!', 0)
+                gui.message_end(_("We have nothing to do. Goodbye!"), 0)
         
     # We're only generating archives for single-step updates. If the user is more than one version out-of-date, better off reinstalling.
     if local_version < PREVIOUS_VER:
         if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), 0):
             return 'reinstall'
         else:
-            gui.message_end('We have nothing to do. Goodbye!', 0)
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
 def update():
     """
-    The simplest part of all this - if this function is called, we know the
+    The simplest part of all this - if this function is called, we know the user wants to update.
+    """
     gui.message(_("Downloading the update archive..."), 3)
     
     # The same line that installs the game in install.py, just a different URL. Could probably unify into a single function.
