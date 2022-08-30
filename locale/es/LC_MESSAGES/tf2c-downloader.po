@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 21:31+0200\n"
-"PO-Revision-Date: 2022-08-04 22:33+0200\n"
+"POT-Creation-Date: 2022-08-30 16:16+0200\n"
+"PO-Revision-Date: 2022-08-30 16:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -11,6 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: gui.py:31
 msgid "yes"
@@ -35,23 +36,24 @@ msgstr " {s/N}"
 #: gui.py:53
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
-msgstr "[bold blue]Por favor, responda con 'sí' o 'no' (o 's' o 'n').[/bold blue]"
+msgstr ""
+"[bold blue]Por favor, responda con 'sí' o 'no' (o 's' o 'n').[/bold blue]"
 
-#: gui.py:87 tf2c_downloader.py:59
+#: gui.py:87 tf2c_downloader.py:87
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Puede cerrar esta ventana."
 
-#: gui.py:89 tf2c_downloader.py:61
+#: gui.py:89 tf2c_downloader.py:89
 msgid "Press Enter to exit."
-msgstr "Presiona Enter para salir."
+msgstr "Pulse Entrar para salir."
 
 #: install.py:25
 msgid ""
 "You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
 "on your primary drive is required."
 msgstr ""
-"No tienes suficiente espacio libre para descargar TF2 Classic. Se requiere "
-"un mínimo de 4.5GB en tu disco principal."
+"No tiene suficiente espacio libre para descargar TF2 Classic. Se requiere un "
+"mínimo de 4.5GB en su disco principal."
 
 #: install.py:27
 msgid "The specified extraction location does not exist."
@@ -62,18 +64,18 @@ msgid ""
 "You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
 "at your chosen extraction site is required."
 msgstr ""
-"No tienes suficiente espacio libre para extraer TF2 Classic. Se requiere "
-"un mínimo de 12GB en el sitio de extracción elegido."
+"No tiene suficiente espacio libre para extraer TF2 Classic. Se requiere un "
+"mínimo de 12GB en el sitio de extracción elegido."
 
 #: install.py:35
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
 msgstr ""
-"Iniciando la descarga de TF2 Classic... Es posible que veas algunos "
-"errores que puedes ignorar."
+"Iniciando la descarga de TF2 Classic... Es posible que vea algunos errores "
+"que puede ignorar."
 
-#: install.py:44
+#: install.py:44 updater.py:77
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Extrayendo el archivo descargado, espere pacientemente."
 
@@ -87,8 +89,8 @@ msgid ""
 "It's the recommended installation location. Would you like to install TF2 "
 "Classic there?"
 msgstr ""
-"Es la ubicación de instalación recomendada. ¿Le gustaría instalar TF2 Classic "
-"allí?"
+"Es la ubicación de instalación recomendada. ¿Le gustaría instalar TF2 "
+"Classic allí?"
 
 #: setup.py:70
 msgid ""
@@ -104,7 +106,7 @@ msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
 msgstr ""
-"¿Te gustaría extraer en %s? Debes moverlo a tus sourcemods manualmente."
+"¿Usted se gustaría extraer en %s? Debe moverlo a sus sourcemods manualmente."
 
 #: setup.py:75
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
@@ -117,7 +119,7 @@ msgid ""
 "Do you accept?"
 msgstr ""
 "TF2 Classic se instalará en %s\n"
-"¿Aceptas?"
+"¿Acepta?"
 
 #: setup.py:79
 msgid "Reinitialising...\n"
@@ -125,13 +127,13 @@ msgstr "Restableciendo...\n"
 
 #: setup.py:99
 msgid "You need to install Aria2 to use this script."
-msgstr "Necesitas instalar Aria2 para usar este script."
+msgstr "Necesita instalar Aria2 para usar este script."
 
 #: setup.py:103
 msgid "You need to install Zstd to use this script."
-msgstr "Necesitas instalar Zstd para usar este script."
+msgstr "Necesita instalar Zstd para usar este script."
 
-#: tf2c_downloader.py:42
+#: tf2c_downloader.py:45
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -139,12 +141,12 @@ msgstr ""
 "Parece que estamos corriendo en segundo plano. No queremos eso, así que "
 "vamos a salir."
 
-#: tf2c_downloader.py:56
+#: tf2c_downloader.py:84
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 "[italic magenta]----- Detalles de la excepción arriba de esta línea -----"
 
-#: tf2c_downloader.py:57
+#: tf2c_downloader.py:85
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -152,9 +154,9 @@ msgstr ""
 "[bold red]:warning: El programa ha fallado. Publique una captura de pantalla "
 "en #technical-issues en Discord (solo en inglés). :warning:[/bold red]"
 
-#: tf2c_downloader.py:65
+#: tf2c_downloader.py:93
 msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr "La instalación se completó con éxito. ¡Recuerda reiniciar Steam!"
+msgstr "La instalación se completó con éxito. ¡Recuerde reiniciar Steam!"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
@@ -163,3 +165,31 @@ msgstr "Aplicando lista negra de seguridad…"
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
 msgstr "ADVERTENCIA: no se pudo aplicar la lista negra de seguridad."
+
+#: updater.py:31
+msgid "No migration necessary!"
+msgstr "¡No es necesario migrar!"
+
+#: updater.py:44
+msgid ""
+"We found an existing up-to-date installation of the game. Do you want to "
+"repair it?"
+msgstr ""
+"Encontramos una instalación actualizada existente del juego. ¿Quiere "
+"repararlo?"
+
+#: updater.py:47 updater.py:56 updater.py:63
+msgid "We have nothing to do. Goodbye!"
+msgstr "No tenemos nada que hacer. ¡Adiós!"
+
+#: updater.py:50 updater.py:60
+msgid "An update is available for your game. Do you want to install it?"
+msgstr "Hay una actualización disponible para su juego. ¿Quiere instalarlo?"
+
+#: updater.py:53
+msgid "In that case, do you want to reinstall completely?"
+msgstr "En ese caso, ¿desea reinstalar completamente?"
+
+#: updater.py:69
+msgid "Downloading the update archive..."
+msgstr "Descargando el archivo de actualización..."
