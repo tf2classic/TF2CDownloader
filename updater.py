@@ -1,10 +1,16 @@
+from os import path
+from subprocess import run
+from platform import system
+from gettext import gettext as _
+import urllib.request
 import gui
 import vars
-import os.path
-import urllib.request
-from gettext import gettext as _
-VERSION_LIST = urllib.request.urlopen('https://tf2classic.org/updater/versions.py')
-exec(VERSION_LIST.read())
+
+try:
+    VERSION_LIST = urllib.request.urlopen('https://tf2classic.org/updater/versions.py')
+    exec(VERSION_LIST.read())
+except urllib.error.URLError:
+    gui.message(_("WARNING: could not check for updates, moving to installation."))
 
 def update_version_file():
     """
@@ -12,23 +18,22 @@ def update_version_file():
     To avoid file bloat, we reuse this, but replace it with the game's semantic version number.
     To obtain the game's semantic version number, we do some horrible parsing of the game's version.txt
     file, which is what the game itself uses directly to show the version number on the main menu, etc.
-    
-    This parsing and migration is only necessary for older builds of the game, as rev.txt should be updated
-    as a part of the installation process on 2.0.4/2.1.0 and newer.
     """
-    old_version_file = open(vars.INSTALL_PATH + '/tf2classic/version.txt', 'r')
+    try:
+        old_version_file = open(vars.INSTALL_PATH + '/tf2classic/version.txt', 'r')
+    except FileNotFoundError:
+        if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
+            return 'reinstall'
+        else:
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
     old_version = old_version_file.readlines()[1]
     before, sep, after = old_version.partition('=')
     if len(after) > 0:
         old_version = after
     old_version = old_version.replace('.', '')
-
-    # Matching to codenames - should only be necessary up to 2.0.3
     new_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'w')
-    if old_version < "204":
-        new_version_file.write(old_version)
-    else:
-        gui.message(_("No migration necessary!"), 1)
+    # We unconditionally overwrite rev.txt since version.txt is the canonical file.
+    new_version_file.write(old_version)
     new_version_file.close()
     old_version_file.close()
 
@@ -36,12 +41,28 @@ def check_for_updates():
     """
     It's all math here. We can compare the minimized semantic version number against remote variables to see what we should do.
     """
+    
+    # This checks if LATEST_VERSION is defined, and if not, we assume we failed to check for updates for whatever reason.
+    if 'LATEST_VER' not in globals():
+        return 'reinstall'
+    
+    # This probably was already communicated to the user in update_version_file(), but if version.txt doesn't exist, skip updating.
+    if not path.exists(vars.INSTALL_PATH + '/tf2classic/version.txt'):
+        return 'reinstall'
+    
     local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
     local_version = local_version_file.read()
-    local_version = int(local_version)
+
+    try:
+        local_version = int(local_version)
+    except ValueError:
+        if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
+            return 'reinstall'
+        else:
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
     if local_version == LATEST_VER:
-        if gui.message_yes_no(_("We found an existing up-to-date installation of the game. Do you want to repair it?"), False):
+        if gui.message_yes_no(_("We think we've found an existing up-to-date installation of the game. Do you want to reinstall it?"), False):
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)

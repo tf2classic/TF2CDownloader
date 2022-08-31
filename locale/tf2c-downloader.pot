@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-30 16:16+0200\n"
+"POT-Creation-Date: 2022-08-31 16:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgid ""
 "safe to ignore."
 msgstr ""
 
-#: install.py:44 updater.py:77
+#: install.py:44 updater.py:98
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr ""
 
@@ -151,28 +151,34 @@ msgstr ""
 msgid "WARNING: could not apply safety blacklist."
 msgstr ""
 
-#: updater.py:31
-msgid "No migration necessary!"
+#: updater.py:13
+msgid "WARNING: could not check for updates, moving to installation."
 msgstr ""
 
-#: updater.py:44
+#: updater.py:25 updater.py:59
 msgid ""
-"We found an existing up-to-date installation of the game. Do you want to "
-"repair it?"
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
 msgstr ""
 
-#: updater.py:47 updater.py:56 updater.py:63
+#: updater.py:28 updater.py:62 updater.py:68 updater.py:77 updater.py:84
 msgid "We have nothing to do. Goodbye!"
 msgstr ""
 
-#: updater.py:50 updater.py:60
+#: updater.py:65
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
+msgstr ""
+
+#: updater.py:71 updater.py:81
 msgid "An update is available for your game. Do you want to install it?"
 msgstr ""
 
-#: updater.py:53
+#: updater.py:74
 msgid "In that case, do you want to reinstall completely?"
 msgstr ""
 
-#: updater.py:69
+#: updater.py:90
 msgid "Downloading the update archive..."
 msgstr ""

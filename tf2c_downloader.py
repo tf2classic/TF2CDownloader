@@ -1,4 +1,4 @@
-"""
+z"""
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
