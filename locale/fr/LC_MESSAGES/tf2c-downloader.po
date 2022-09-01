@@ -1,16 +1,20 @@
+#
+# Technochips <thetechnochips@protonmail.com>, 2022.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-30 16:16+0200\n"
-"PO-Revision-Date: 2022-08-30 16:19+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"POT-Creation-Date: 2022-09-01 02:58+0200\n"
+"PO-Revision-Date: 2022-09-01 02:58+0200\n"
+"Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
+"Language-Team: French < >\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1\n"
 
 #: gui.py:31
 msgid "yes"
@@ -51,7 +55,7 @@ msgid ""
 "on your primary drive is required."
 msgstr ""
 "Vous n'avez pas assez d'espace libre pour télécharger TF2 Classic. Vous "
-"devez avoir 4,5 Go de libre au minimum sur votre disque dur principale."
+"devez avoir au minimum 4,5 Go d'espace libre sur votre disque dur principale."
 
 #: install.py:27
 msgid "The specified extraction location does not exist."
@@ -63,7 +67,7 @@ msgid ""
 "at your chosen extraction site is required."
 msgstr ""
 "Vous n'avez pas assez d'espace libre pour extraire TF2 Classic. Vous devez "
-"avoir 12 Go de libre au minimum sur l'emplacement d'installation."
+"avoir au minimum 12 Go d'espace sur l'emplacement d'installation."
 
 #: install.py:35
 msgid ""
@@ -73,7 +77,7 @@ msgstr ""
 "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui "
 "peuvent être parfaitement ignorées."
 
-#: install.py:44 updater.py:77
+#: install.py:44 updater.py:127
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Extraction de l'archive téléchargée, veuillez patentier."
 
@@ -166,28 +170,59 @@ msgstr "Application de la liste noir de sécurité..."
 msgid "WARNING: could not apply safety blacklist."
 msgstr "ATTENTION : impossible d'appliquer la liste noir de sécurité."
 
-#: updater.py:31
-msgid "No migration necessary!"
-msgstr "Aucune migration nécessaire !"
+#: updater.py:16
+msgid "WARNING: could not check for updates, moving to installation."
+msgstr ""
+"ATTENTION : impossible de vérifier les mises à jour, passage à "
+"l'installation."
 
-#: updater.py:44
+#: updater.py:28 updater.py:78
 msgid ""
-"We found an existing up-to-date installation of the game. Do you want to "
-"repair it?"
-msgstr "Une installation à jour du jeu a été trouvée. Voulez-vous la réparer ?"
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
+msgstr ""
+"Impossible de vérifier la version de votre installation. Elle pourrait-être "
+"corrompue. Voulez-vous réinstaller le jeu ?"
 
-#: updater.py:50 updater.py:60
+#: updater.py:31 updater.py:81 updater.py:87 updater.py:95 updater.py:104
+#: updater.py:110
+msgid "We have nothing to do. Goodbye!"
+msgstr "On a rien à faire. Au revoir !"
+
+#: updater.py:84
+msgid ""
+"The version of your installation is unknown. It could be corrupted. Do you "
+"want to reinstall the game?"
+msgstr ""
+"La version actuelle de votre installation est inconnue. Elle pourrait-être "
+"corrompue. Voulez-vous réinstaller le jeu ?"
+
+#: updater.py:92
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
+msgstr ""
+"Une installation à jour du jeu semble avoir été trouvée. Voulez-vous la "
+"réinstaller ?"
+
+#: updater.py:98 updater.py:107
 msgid "An update is available for your game. Do you want to install it?"
 msgstr "Une mise à jour est disponible. Voulez-vous l'installer ?"
 
-#: updater.py:53
+#: updater.py:101
 msgid "In that case, do you want to reinstall completely?"
 msgstr "Dans ce cas, voulez-vous complètement réinstaller le jeu ?"
 
-#: updater.py:56 updater.py:63
-msgid "We have nothing to do. Goodbye!"
-msgstr "Rien à faire. Au revoir !"
+#: updater.py:116
+msgid "Getting the patch..."
+msgid_plural "Getting the patches..."
+msgstr[0] "Récupération du patch..."
+msgstr[1] "Récupération des patchs..."
 
-#: updater.py:69
-msgid "Downloading the update archive..."
-msgstr "Téléchargement de la mise à jour…"
+#: updater.py:119
+#, python-format
+msgid "Downloading patch %s to %s..."
+msgstr "Téléchargement du patch %s vers %s..."
+
+#~ msgid "No migration necessary!"
+#~ msgstr "Aucune migration nécessaire !"
