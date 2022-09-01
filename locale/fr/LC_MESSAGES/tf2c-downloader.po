@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 03:14+0200\n"
-"PO-Revision-Date: 2022-09-01 03:15+0200\n"
+"PO-Revision-Date: 2022-09-01 03:39+0200\n"
 "Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
 "Language-Team: French < >\n"
 "Language: fr\n"
@@ -113,8 +113,7 @@ msgstr ""
 
 #: setup.py:75
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr ""
-"Veuillez entrez l'emplacement du dossier où va être installer TF2 Classic.\n"
+msgstr "Veuillez saisir l'emplacement où va être installer TF2 Classic.\n"
 
 #: setup.py:78
 #, python-format
