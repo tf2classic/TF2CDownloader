@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 02:58+0200\n"
-"PO-Revision-Date: 2022-09-01 02:58+0200\n"
+"POT-Creation-Date: 2022-09-01 03:14+0200\n"
+"PO-Revision-Date: 2022-09-01 03:15+0200\n"
 "Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
 "Language-Team: French < >\n"
 "Language: fr\n"
@@ -214,10 +214,11 @@ msgid "In that case, do you want to reinstall completely?"
 msgstr "Dans ce cas, voulez-vous complètement réinstaller le jeu ?"
 
 #: updater.py:116
-msgid "Getting the patch..."
-msgid_plural "Getting the patches..."
-msgstr[0] "Récupération du patch..."
-msgstr[1] "Récupération des patchs..."
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] "Récupération de %s patch..."
+msgstr[1] "Récupération de %s patchs..."
 
 #: updater.py:119
 #, python-format

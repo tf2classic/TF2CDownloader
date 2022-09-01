@@ -113,10 +113,10 @@ def update():
     """
     The simplest part of all this - if this function is called, we know the user wants to update.
     """
-    gui.message(_N("Getting the patch...", "Getting the patches...", len(PATCH_CHAIN)), 2)
+    gui.message(_N("Getting %s patch...", "Getting %s patches...", len(PATCH_CHAIN)) % len(PATCH_CHAIN), 2)
 
     for patch in PATCH_CHAIN:
-        gui.message(_("Downloading patch %s to %s..." % (patch[2], patch[3])), 1)
+        gui.message(_("Downloading patch %s to %s...") % (patch[2], patch[3]), 1)
 
         # The same line that installs the game in install.py, just a different URL. Could probably unify into a single function.
         run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
