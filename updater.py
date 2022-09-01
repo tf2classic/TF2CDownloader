@@ -15,7 +15,7 @@ try:
 except urllib.error.URLError:
     gui.message(_("WARNING: could not check for updates, moving to installation."))
 
-def update_version_file():
+def update_version_file(script = False):
     """
     The previous launcher/updater leaves behind a rev.txt file with the old internal revision number.
     To avoid file bloat, we reuse this, but replace it with the game's semantic version number.
@@ -25,8 +25,8 @@ def update_version_file():
     try:
         old_version_file = open(vars.INSTALL_PATH + '/tf2classic/version.txt', 'r')
     except FileNotFoundError:
-        if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
-            return 'reinstall'
+        if script or gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
+            return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
     old_version = old_version_file.readlines()[1]
@@ -39,6 +39,7 @@ def update_version_file():
     new_version_file.write(old_version)
     new_version_file.close()
     old_version_file.close()
+    return True
 
 def patch_chain(ver_from, ver_to):
     current_version = ver_from
@@ -58,7 +59,7 @@ def patch_chain(ver_from, ver_to):
         current_version = patch["to"]
     return True
 
-def check_for_updates():
+def check_for_updates(script = False):
     """
     It's all math here. We can compare the version number against remote variables to see what we should do.
     """
@@ -120,7 +121,7 @@ def update():
 
         # The same line that installs the game in install.py, just a different URL. Could probably unify into a single function.
         run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
-        '-d' + vars.TEMP_PATH
+        '-d' + vars.TEMP_PATH,
         vars.UPDATER_URL + patch[0]], check=True)
 
         # The same line that extracts the game in install.py, just a different file path. Could probably unify into a single function.

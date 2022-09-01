@@ -1,4 +1,4 @@
-z"""
+"""
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
@@ -61,33 +61,113 @@ else:
     gettext.bindtextdomain('tf2c-downloader', 'locale')
 gettext.textdomain('tf2c-downloader')
 
-try:
-    sanity_check()
-    setup.setup_path(False)
-    setup.setup_binaries()
-    # After this line, we have two possible paths: installing, or updating/repairing
-    if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
-        vars.INSTALLED = True
-    if vars.INSTALLED == True:
-        updater.update_version_file()
-    if updater.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
-        install.free_space_check()
-        install.tf2c_download()
-        install.tf2c_extract()
-        troubleshoot.apply_blacklist()
-    else:
-        install.free_space_check()
-        updater.update()
-except Exception as ex:
-    if ex is not SystemExit:
-        traceback.print_exc()
-        print(_("[italic magenta]----- Exception details above this line -----"))
-        print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
-        if os.environ.get("WT_SESSION"):
-            print(_("[bold]You are safe to close this window."))
+def wizard():
+    try:
+        sanity_check()
+        setup.setup_path(False)
+        setup.setup_binaries()
+        # After this line, we have two possible paths: installing, or updating/repairing
+        if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
+            vars.INSTALLED = True
+        if vars.INSTALLED == True:
+            vars.INSTALLED = updater.update_version_file()
+        if updater.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
+            install.free_space_check()
+            install.tf2c_download()
+            install.tf2c_extract()
+            troubleshoot.apply_blacklist()
+            gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
         else:
-            input(_("Press Enter to exit."))
-        exit(1)
+            install.free_space_check()
+            updater.update()
+            gui.message_end(_("The update has successfully completed."), 0)
+    except Exception as ex:
+        if ex is not SystemExit:
+            traceback.print_exc()
+            print(_("[italic magenta]----- Exception details above this line -----"))
+            print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
+            if os.environ.get("WT_SESSION"):
+                print(_("[bold]You are safe to close this window."))
+            else:
+                input(_("Press Enter to exit."))
+            exit(1)
 
+def manual_script():
+    try:
+        if sys.argv[1] == "--help":
+            print(_(
+            '''Usage: TF2CDownloader [COMMAND] [PATH]
+Installation utility for TF2 Classic.
 
-gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+If no arguments are provided, the downloader will be ran in setup mode, in
+which a series of question will be asked to install the game for a regular
+user. This is what's used when opening the downloader from the desktop.
+
+Valid commands:
+  --install           installs TF2 Classic into a new folder inside PATH
+  --update            updates the pre-existing TF2 Classic installation in its
+                      folder inside PATH
+  --help              shows this
+
+PATH is the folder containing TF2 Classic's folder. This is usually the
+sourcemods folder for clients, or the Source dedicated server folder for
+servers.
+
+If PATH isn't provided, then it'll be replaced with the detected path to the
+sourcemods folder in the Steam directory. If it couldn't be detected, then the
+path will be the current work directory.'''
+            ))
+            exit(0)
+
+        if sys.argv[1] == "--install":
+            setup.setup_path_script()
+            setup.setup_binaries()
+
+            if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
+                vars.INSTALLED = True
+
+            if vars.INSTALLED:
+                gui.message(_("TF2 Classic is already installed. Assuming a reinstallation."))
+            install.free_space_check()
+            install.tf2c_download()
+            install.tf2c_extract()
+            troubleshoot.apply_blacklist()
+            print(_("The installation has successfully completed. Remember to restart Steam!"))
+            exit(0)
+        elif sys.argv[1] == "--update":
+            setup.setup_path_script()
+            setup.setup_binaries()
+
+            if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
+                vars.INSTALLED = True
+
+            if not vars.INSTALLED:
+                print(_("TF2 Classic isn't installed, cannot do an update. Consider using --install instead."))
+                exit(1)
+            else:
+                vars.INSTALLED = updater.update_version_file(True)
+                if updater.check_for_updates(True) == 'reinstall':
+                    install.free_space_check()
+                    install.tf2c_download()
+                    install.tf2c_extract()
+                    troubleshoot.apply_blacklist()
+                else:
+                    install.free_space_check()
+                    updater.update()
+                print(_("The update has successfully completed."))
+                exit(0)
+        else:
+            print(_("Unrecognised command. Try --help"))
+            exit(1)
+
+    except Exception as ex:
+        if ex is not SystemExit:
+            traceback.print_exc()
+            print(_("[italic magenta]----- Exception details above this line -----"))
+            print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
+            exit(1)
+
+if len(sys.argv) <= 1:
+    wizard()
+else:
+    manual_script()
