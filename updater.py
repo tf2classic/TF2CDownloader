@@ -120,7 +120,7 @@ def update():
 
         # The same line that installs the game in install.py, just a different URL. Could probably unify into a single function.
         run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
-        '-d' + vars.TEMP_PATH
+        '-d' + vars.TEMP_PATH,
         vars.UPDATER_URL + patch[0]], check=True)
 
         # The same line that extracts the game in install.py, just a different file path. Could probably unify into a single function.
