@@ -1,4 +1,4 @@
-z"""
+"""
 Master module. Runs basic checks and then offloads all
 of the real work to functions defined in other files.
 """
@@ -14,11 +14,11 @@ from rich import print
 from gettext import gettext as _
 import gettext
 import gui
-import install
+import downloads
 import setup
 import troubleshoot
-import updater
 import vars
+import versions
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -69,15 +69,15 @@ try:
     if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
         vars.INSTALLED = True
     if vars.INSTALLED == True:
-        updater.update_version_file()
-    if updater.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
-        install.free_space_check()
-        install.tf2c_download()
-        install.tf2c_extract()
+        versions.update_version_file()
+    versions.get_version_list()
+    if versions.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
+        if vars.INSTALLED == False:
+            gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+        downloads.install()
         troubleshoot.apply_blacklist()
     else:
-        install.free_space_check()
-        updater.update()
+        downloads.update()
 except Exception as ex:
     if ex is not SystemExit:
         traceback.print_exc()

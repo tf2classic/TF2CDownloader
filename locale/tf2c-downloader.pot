@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-01 03:14+0200\n"
+"POT-Creation-Date: 2022-09-04 03:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,76 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: downloads.py:15
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr ""
+
+#: downloads.py:23
+#, python-format
+msgid "%s byte"
+msgid_plural "%s bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: downloads.py:25
+#, python-format
+msgid "%.2f kB"
+msgstr ""
+
+#: downloads.py:27
+#, python-format
+msgid "%.2f MB"
+msgstr ""
+
+#: downloads.py:29
+#, python-format
+msgid "%.2f GB"
+msgstr ""
+
+#: downloads.py:31
+#, python-format
+msgid "%.2f TB"
+msgstr ""
+
+#: downloads.py:33
+#, python-format
+msgid "%.2f PB"
+msgstr ""
+
+#: downloads.py:37
+#, python-format
+msgid ""
+"You don't have enough free space for the download. A minimum of %s on your "
+"primary drive is required."
+msgstr ""
+
+#: downloads.py:39
+msgid "The specified extraction location does not exist."
+msgstr ""
+
+#: downloads.py:41
+#, python-format
+msgid ""
+"You don't have enough free space for the extraction. A minimum of %s at your "
+"chosen extraction site is required."
+msgstr ""
+
+#: downloads.py:48
+msgid "Getting the archive..."
+msgstr ""
+
+#: downloads.py:71
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] ""
+msgstr[1] ""
+
+#: downloads.py:74
+#, python-format
+msgid "Downloading patch %s to %s..."
+msgstr ""
 
 #: gui.py:31
 msgid "yes"
@@ -49,32 +119,6 @@ msgstr ""
 
 #: gui.py:89 tf2c_downloader.py:89
 msgid "Press Enter to exit."
-msgstr ""
-
-#: install.py:25
-msgid ""
-"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
-"on your primary drive is required."
-msgstr ""
-
-#: install.py:27
-msgid "The specified extraction location does not exist."
-msgstr ""
-
-#: install.py:29
-msgid ""
-"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
-"at your chosen extraction site is required."
-msgstr ""
-
-#: install.py:35
-msgid ""
-"Starting the download for TF2 Classic... You may see some errors that are "
-"safe to ignore."
-msgstr ""
-
-#: install.py:44 updater.py:127
-msgid "Extracting the downloaded archive, please wait patiently."
 msgstr ""
 
 #: setup.py:63
@@ -130,6 +174,12 @@ msgid ""
 "exiting."
 msgstr ""
 
+#: tf2c_downloader.py:76
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+
 #: tf2c_downloader.py:84
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
@@ -152,49 +202,39 @@ msgstr ""
 msgid "WARNING: could not apply safety blacklist."
 msgstr ""
 
-#: updater.py:16
-msgid "WARNING: could not check for updates, moving to installation."
+#: versions.py:20
+msgid ""
+"Could not get version list. If your internet connection is fine, the servers "
+"could be having technical issues."
 msgstr ""
 
-#: updater.py:28 updater.py:78
+#: versions.py:33 versions.py:84
 msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
 msgstr ""
 
-#: updater.py:31 updater.py:81 updater.py:87 updater.py:95 updater.py:104
-#: updater.py:110
+#: versions.py:36 versions.py:87 versions.py:99 versions.py:107 versions.py:116
+#: versions.py:122
 msgid "We have nothing to do. Goodbye!"
 msgstr ""
 
-#: updater.py:84
+#: versions.py:96
 msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
 msgstr ""
 
-#: updater.py:92
+#: versions.py:104
 msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
 msgstr ""
 
-#: updater.py:98 updater.py:107
+#: versions.py:110 versions.py:119
 msgid "An update is available for your game. Do you want to install it?"
 msgstr ""
 
-#: updater.py:101
+#: versions.py:113
 msgid "In that case, do you want to reinstall completely?"
-msgstr ""
-
-#: updater.py:116
-#, python-format
-msgid "Getting %s patch..."
-msgid_plural "Getting %s patches..."
-msgstr[0] ""
-msgstr[1] ""
-
-#: updater.py:119
-#, python-format
-msgid "Downloading patch %s to %s..."
 msgstr ""

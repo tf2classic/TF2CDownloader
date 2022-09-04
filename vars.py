@@ -22,4 +22,4 @@ INSTALL_PATH = None
 ARC_BINARY = None
 TF2C_PATH = None
 
-UPDATER_URL = 'https://tf2classic.org/updater/'
+SOURCE_URL = 'https://tf2classic.org/tf2c/'
