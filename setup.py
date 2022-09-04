@@ -89,19 +89,11 @@ def setup_binaries():
         # to point to Aria2 and Tar.
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
             vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c.exe'))
-            vars.ARC_BINARY = path.abspath(path.join(path.dirname(__file__), 'arc.exe'))
         else:
             # When running as a script, we just select the Binaries folder directly for Aria2 and Arc.
             vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
-            vars.ARC_BINARY = 'Binaries/arc.exe'
     else:
         if which('aria2c') is None:
             gui.message_end(_("You need to install Aria2 to use this script."), 1)
         else:
             vars.ARIA2C_BINARY = 'aria2c'
-        if which('zstd') is None and which('pzstd') is None:
-            gui.message_end(_("You need to install Zstd to use this script."), 1)
-        elif which('zstd') is not None:
-            vars.ZSTD_BINARY = 'zstd'
-        else:
-            vars.ZSTD_BINARY = 'pzstd'

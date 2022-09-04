@@ -15,11 +15,7 @@ else:
 INSTALLED = False
 
 ARIA2C_BINARY = None
-# ZSTD_BINARY is only used on Linux.
-ZSTD_BINARY = None
 INSTALL_PATH = None
-# ARC_BINARY is only used on Windows.
-ARC_BINARY = None
 TF2C_PATH = None
 
 SOURCE_URL = 'https://tf2classic.org/tf2c/'

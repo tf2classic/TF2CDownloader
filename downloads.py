@@ -4,19 +4,39 @@ from platform import system
 from gettext import gettext as _
 from gettext import ngettext as _N
 from shutil import disk_usage
+from tqdm import tqdm
 import vars
 import gui
 import versions
+import pyzstd
+import tarfile
 
 def download_extract(url, filename, endpath):
     run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
 
     gui.message(_("Extracting the downloaded archive, please wait patiently."), 1)
-    if system() == 'Windows':
-        run([vars.ARC_BINARY, '-overwrite', 'unarchive', path.join(vars.TEMP_PATH, filename), endpath], check=True)
-    else:
-        run(['tar', '-I', vars.ZSTD_BINARY, '-xvf', path.join(vars.TEMP_PATH, filename), '-C', endpath], check=True)
+    class ZstdTarFile(tarfile.TarFile):
+        def __init__(self, name, mode='r', *, level_or_option=None, zstd_dict=None, **kwargs):
+            self.zstd_file = pyzstd.ZstdFile(name, mode,
+                                    level_or_option=level_or_option,
+                                    zstd_dict=zstd_dict)
+            try:
+                super().__init__(fileobj=self.zstd_file, mode=mode, **kwargs)
+            except:
+                self.zstd_file.close()
+                raise
+    
+        def close(self):
+            try:
+                super().close()
+            finally:
+                self.zstd_file.close()
+
+    # read .tar.zst file (decompression)
+    with ZstdTarFile(path.join(vars.TEMP_PATH, filename), mode='r') as tar:
+        for member in tqdm(iterable=tar.getmembers(), total=len(tar.getmembers())):
+            tar.extract(member=member, path=endpath)
 
 def pretty_size(bytes):
     if bytes < 100:
