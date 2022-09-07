@@ -24,13 +24,13 @@ import versions
 # Instead, it uses the system default, which is cmd.exe at time of writing.
 # This hack checks if Windows Terminal is installed. If it is, and if the application
 # is launched with cmd.exe instead, it relaunches the application in WT instead.
-if system() == 'Windows':
+if not vars.SCRIPT_MODE and system() == 'Windows':
     if which('wt') is not None and os.environ.get("WT_SESSION") is None:
         run(['wt', argv[0]], check=True)    
         exit()
 
 # Disable QuickEdit so the process doesn't pause when clicked
-if system() == 'Windows':
+if not vars.SCRIPT_MODE and system() == 'Windows':
     kernel32 = ctypes.windll.kernel32
     kernel32.SetConsoleMode(kernel32.GetStdHandle(-10), (0x4|0x80|0x20|0x2|0x10|0x1|0x00|0x100))
 
