@@ -14,11 +14,11 @@ from rich import print
 from gettext import gettext as _
 import gettext
 import gui
-import install
+import downloads
 import setup
 import troubleshoot
-import updater
 import vars
+import versions
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -70,16 +70,16 @@ def wizard():
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
         if vars.INSTALLED == True:
-            vars.INSTALLED = updater.update_version_file()
-        if updater.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
-            install.free_space_check()
-            install.tf2c_download()
-            install.tf2c_extract()
+            vars.INSTALLED = versions.update_version_file()
+        versions.get_version_list()
+        if versions.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
+            if vars.INSTALLED == False:
+                gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+            downloads.install()
             troubleshoot.apply_blacklist()
             gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
         else:
-            install.free_space_check()
-            updater.update()
+            downloads.update()
             gui.message_end(_("The update has successfully completed."), 0)
     except Exception as ex:
         if ex is not SystemExit:
@@ -128,9 +128,7 @@ path will be the current work directory.'''
 
             if vars.INSTALLED:
                 gui.message(_("TF2 Classic is already installed. Assuming a reinstallation."))
-            install.free_space_check()
-            install.tf2c_download()
-            install.tf2c_extract()
+            downloads.install()
             troubleshoot.apply_blacklist()
             print(_("The installation has successfully completed. Remember to restart Steam!"))
             exit(0)
@@ -145,15 +143,12 @@ path will be the current work directory.'''
                 print(_("TF2 Classic isn't installed, cannot do an update. Consider using --install instead."))
                 exit(1)
             else:
-                vars.INSTALLED = updater.update_version_file(True)
-                if updater.check_for_updates(True) == 'reinstall':
-                    install.free_space_check()
-                    install.tf2c_download()
-                    install.tf2c_extract()
+                vars.INSTALLED = versions.update_version_file(True)
+                if versions.check_for_updates() == 'reinstall':
+                    downloads.install()
                     troubleshoot.apply_blacklist()
                 else:
-                    install.free_space_check()
-                    updater.update()
+                    downloads.update()
                 print(_("The update has successfully completed."))
                 exit(0)
         else:
@@ -167,7 +162,7 @@ path will be the current work directory.'''
             print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
             exit(1)
 
-if len(sys.argv) <= 1:
-    wizard()
-else:
+if vars.SCRIPT_MODE:
     manual_script()
+else:
+    wizard()

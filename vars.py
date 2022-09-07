@@ -4,6 +4,7 @@ the temp paths and some variables for other
 modules to use.
 """
 from platform import system
+import sys
 import tempfile
 
 if system() == 'Windows':
@@ -15,11 +16,9 @@ else:
 INSTALLED = False
 
 ARIA2C_BINARY = None
-# ZSTD_BINARY is only used on Linux.
-ZSTD_BINARY = None
 INSTALL_PATH = None
-# ARC_BINARY is only used on Windows.
-ARC_BINARY = None
 TF2C_PATH = None
 
-UPDATER_URL = 'https://tf2classic.org/updater/'
+SCRIPT_MODE = len(sys.argv) > 1
+
+SOURCE_URL = 'https://tf2classic.org/tf2c/'
