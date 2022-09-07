@@ -17,8 +17,8 @@ def message(msg, delay = 0):
     Delay stops program for specified amount of seconds.
     """
     print("[bold yellow]" + msg)
-	if not vars.SCRIPT_MODE:
-    	sleep(delay)
+    if not vars.SCRIPT_MODE:
+        sleep(delay)
 
 def message_yes_no(msg, default = None):
     """
