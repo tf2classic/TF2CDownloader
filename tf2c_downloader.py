@@ -66,7 +66,7 @@ def wizard():
     try:
         sanity_check()
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-            check_downloader_update()
+            selfupdate.check_downloader_update()
         setup.setup_binaries()
         setup.setup_path(False)
         # After this line, we have two possible paths: installing, or updating/repairing
@@ -123,6 +123,8 @@ path will be the current work directory.'''
             exit(0)
 
         if sys.argv[1] == "--install":
+            if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+                selfupdate.check_downloader_update()
             setup.setup_path_script()
             setup.setup_binaries()
 
@@ -136,6 +138,8 @@ path will be the current work directory.'''
             print(_("The installation has successfully completed. Remember to restart Steam!"))
             exit(0)
         elif sys.argv[1] == "--update":
+            if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+                selfupdate.check_downloader_update()
             setup.setup_path_script()
             setup.setup_binaries()
 
