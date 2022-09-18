@@ -1,7 +1,7 @@
 """
 Hashes the running binary with SHA-512.
 Compares against remote hash that should always point to the latest finished version.
-If it doesn't match, prompt to update, which means redownloading the latest GH release over the local copy, then relaunching.
+If it doesn't match, prompt to update the game.
 """
 
 from sys import argv
@@ -33,21 +33,9 @@ def check_downloader_update():
 
     if remote_hash_string == hash_script():
         gui.message(_("TF2CDownloader appears to be up-to-date."))
-    elif gui.message_yes_no(_("TF2CDownloader has an update available. Do you want to install it?")) and not vars.SCRIPT_MODE:
-        return 'update_d'
+    elif gui.message_yes_no(_("TF2CDownloader has an update available. Your current version may not work properly. Do you want to install it?")) and not vars.SCRIPT_MODE:
+        gui.message_end(_('Delete TF2CDownloader, then redownload and relaunch it from https://tf2classic.com/download')
     elif vars.SCRIPT_MODE:
-        gui.message(_("Update available, automatically downloading and relaunching since we're running non-interactively.")
-        return 'update_d'
+        gui.message(_("TF2CDownloader out-of-date."))
     else:
         gui.message(_("User chose to skip update. Things may be broken."))
-
-def apply_downloader_update():
-    if system() == 'Windows':
-        run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0', '-d' + os.getcwd(), 'https://github.com/tf2classic/TF2CDownloader/releases/latest/download/TF2CDownloaderWindows.exe'], check=True)
-    else:
-        run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0', '-d' + os.getcwd(), 'https://github.com/tf2classic/TF2CDownloader/releases/latest/download/TF2CDownloaderLinux'], check=True)
-    os.execv(sys.argv[0], sys.argv)
-
-
-
-

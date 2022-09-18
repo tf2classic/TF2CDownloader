@@ -66,10 +66,9 @@ def wizard():
     try:
         sanity_check()
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-            if selfupdate.check_downloader_update() == 'update_d':
-                selfupdate.apply_downloader_update()
-        setup.setup_path(False)
+            check_downloader_update()
         setup.setup_binaries()
+        setup.setup_path(False)
         # After this line, we have two possible paths: installing, or updating/repairing
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
