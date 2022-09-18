@@ -26,9 +26,9 @@ def hash_script():
 
 def check_downloader_update():
     if system() == 'Windows':
-        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sh512sum_windows")
+        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sha512sum_windows")
     else:
-        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sh512sum_linux")
+        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sha512sum_linux")
     remote_hash_bytes = remote_hash.read()
     remote_hash_string = remote_hash_bytes.decode("utf8")
     remote_hash_string = remote_hash_string.rstrip('\n')
