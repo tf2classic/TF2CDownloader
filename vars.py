@@ -21,4 +21,4 @@ TF2C_PATH = None
 
 SCRIPT_MODE = len(sys.argv) > 1
 
-SOURCE_URL = 'https://tf2classic.org/tf2c/'
+SOURCE_URL = 'https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/'
