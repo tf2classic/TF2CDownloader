@@ -1,6 +1,6 @@
 """
 Hashes the running binary with SHA-512.
-Compares against remote hash that should always point to the latest finished version.
+Compares against remote hash which should always correspond with the latest stable release.
 If it doesn't match, prompt to update the game.
 """
 
@@ -25,7 +25,10 @@ def hash_script():
     return h.hexdigest()
 
 def check_downloader_update():
-    remote_hash = urllib.request.urlopen("https://wiki.tf2classic.com/testing/sha512sum")
+    if system() == 'Windows':
+        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sh512sum_windows")
+    else:
+        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sh512sum_linux")
     remote_hash_bytes = remote_hash.read()
     remote_hash_string = remote_hash_bytes.decode("utf8")
     remote_hash_string = remote_hash_string.rstrip('\n')
