@@ -25,10 +25,15 @@ def hash_script():
     return h.hexdigest()
 
 def check_downloader_update():
-    if system() == 'Windows':
-        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sha512sum_windows")
-    else:
-        remote_hash = urllib.request.urlopen("https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/tf2cd_sha512sum_linux")
+    try:
+        if system() == 'Windows':
+            remote_hash = urllib.request.urlopen("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_windows")
+        else:
+            remote_hash = urllib.request.urlopen("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_linux")
+    except urllib.error.URLError:
+        gui.message(_("WARNING: downloader failed to check itself for updates, potentially out-of-date."))
+        return
+
     remote_hash_bytes = remote_hash.read()
     remote_hash_string = remote_hash_bytes.decode("utf8")
     remote_hash_string = remote_hash_string.rstrip('\n')
