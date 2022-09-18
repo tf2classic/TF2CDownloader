@@ -37,7 +37,7 @@ def check_downloader_update():
     if remote_hash_string == hash_script():
         gui.message(_("TF2CDownloader appears to be up-to-date."))
     elif gui.message_yes_no(_("TF2CDownloader has an update available. Your current version may not work properly. Do you want to install it?")) and not vars.SCRIPT_MODE:
-        gui.message_end(_('Delete TF2CDownloader, then redownload and relaunch it from https://tf2classic.com/download'))
+        gui.message_end(_('Delete TF2CDownloader, then redownload and relaunch it from https://tf2classic.com/download'), 0)
     elif vars.SCRIPT_MODE:
         gui.message(_("TF2CDownloader out-of-date."))
     else:
