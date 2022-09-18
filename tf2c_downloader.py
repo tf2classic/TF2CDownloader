@@ -100,7 +100,7 @@ def manual_script():
 Installation utility for TF2 Classic.
 
 If no arguments are provided, the downloader will be ran in setup mode, in
-which a series of question will be asked to install the game for a regular
+which a series of questions will be asked to install the game for a regular
 user. This is what's used when opening the downloader from the desktop.
 
 Valid commands:
