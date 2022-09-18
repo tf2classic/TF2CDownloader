@@ -19,6 +19,7 @@ import setup
 import troubleshoot
 import vars
 import versions
+import selfupdate
 
 # PyInstaller offers no native way to select which application you use for the console.
 # Instead, it uses the system default, which is cmd.exe at time of writing.
@@ -64,6 +65,9 @@ gettext.textdomain('tf2c-downloader')
 def wizard():
     try:
         sanity_check()
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            if selfupdate.check_downloader_update() == 'update_d':
+                selfupdate.apply_downloader_update()
         setup.setup_path(False)
         setup.setup_binaries()
         # After this line, we have two possible paths: installing, or updating/repairing
