@@ -31,7 +31,7 @@ def update_version_file():
         old_version_file = open(vars.INSTALL_PATH + '/tf2classic/version.txt', 'r')
     except FileNotFoundError:
         if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
-            return 'reinstall'
+            return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
     old_version = old_version_file.readlines()[1]
@@ -44,6 +44,7 @@ def update_version_file():
     new_version_file.write(old_version)
     new_version_file.close()
     old_version_file.close()
+    return True
 
 def patch_chain(ver_from, ver_to):
     current_version = ver_from
@@ -120,4 +121,3 @@ def check_for_updates():
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
-

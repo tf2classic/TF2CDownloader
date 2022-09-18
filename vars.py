@@ -4,6 +4,7 @@ the temp paths and some variables for other
 modules to use.
 """
 from platform import system
+import sys
 import tempfile
 
 if system() == 'Windows':
@@ -17,5 +18,7 @@ INSTALLED = False
 ARIA2C_BINARY = None
 INSTALL_PATH = None
 TF2C_PATH = None
+
+SCRIPT_MODE = len(sys.argv) > 1
 
 SOURCE_URL = 'https://tf2classic.org/tf2c/'

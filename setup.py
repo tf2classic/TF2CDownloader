@@ -50,13 +50,29 @@ def sourcemods_path():
         except Exception:
             return None
 
+def setup_path_script():
+    """
+    Choose setup path, but without user interference.
+    """
+    if len(sys.argv) > 2:
+        vars.INSTALL_PATH = sys.argv[2].rstrip('"')
+    else:
+        vars.INSTALL_PATH = sourcemods_path()
+        if vars.INSTALL_PATH is not None:
+            vars.INSTALL_PATH = vars.INSTALL_PATH.rstrip('"')
+        else:
+            vars.INSTALL_PATH = getcwd()
+
+        gui.message(_("Installation location not precised, will assume: %s") % vars.INSTALL_PATH)
+
 def setup_path(manual_path):
     """
     Choose setup path.
     """
     confirm = False
-    if sourcemods_path() is not None:
-        vars.INSTALL_PATH = sourcemods_path().rstrip('\"')
+    install_path = sourcemods_path()
+    if install_path is not None:
+        vars.INSTALL_PATH = install_path.rstrip('\"')
 
     smodsfound = isinstance(vars.INSTALL_PATH, str)
     if smodsfound is True and manual_path is not True:
