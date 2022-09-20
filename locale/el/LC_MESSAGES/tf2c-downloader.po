@@ -1,10 +1,14 @@
+#
+# Azzy <azzyr@protonmail.com>, 2022.
+#
+
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-04 21:31+0200\n"
-"PO-Revision-Date: 2022-08-04 22:33+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2022-09-20 17:02+0200\n"
+"Last-Translator: Azzy <azzyr@protonmail.com>\n"
 "Language-Team: \n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -12,78 +16,125 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: gui.py:31
+#: downloads.py:18
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "Αποσυμπίεση του ληφθέντος αρχείου, παρακαλώ περιμένετε."
+
+#: downloads.py:43
+#, python-format
+msgid "%s byte"
+msgid_plural "%s bytes"
+msgstr[0] "%s byte"
+msgstr[1] "%s bytes"
+
+#: downloads.py:45
+#, python-format
+msgid "%.2f kB"
+msgstr "%.2f kB"
+
+#: downloads.py:47
+#, python-format
+msgid "%.2f MB"
+msgstr "%.2f MB"
+
+#: downloads.py:49
+#, python-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: downloads.py:51
+#, python-format
+msgid "%.2f TB"
+msgstr "%.2f TB"
+
+#: downloads.py:53
+#, python-format
+msgid "%.2f PB"
+msgstr "%.2f PB"
+
+#: downloads.py:57
+#, python-format
+msgid ""
+"You don't have enough free space for the download. A minimum of %s on your "
+"primary drive is required."
+msgstr ""
+"Δέν έχετε αρκετό ελεύθερο χώρο για την λήψη. "
+"Απαιτείται τουλάχιστον %s στον κύριο δίσκο σας."
+
+#: downloads.py:59
+msgid "The specified extraction location does not exist."
+msgstr "Η καθορισμένη θέση αποσυμπίεσης δεν υπάρχει."
+
+#: downloads.py:61
+#, python-format
+msgid ""
+"You don't have enough free space for the extraction. A minimum of %s at your "
+"chosen extraction site is required."
+msgstr ""
+"Δέν έχετε αρκετό ελεύθερο χώρο για την αποσυμπίεση. "
+"Απαιτείται τουλάχιστον %s στην επιλεγμένη τοποθεσία αποσυμπίεσης."
+
+#: downloads.py:68
+msgid "Getting the archive..."
+msgstr "Λήψη αρχείου..."
+
+#: downloads.py:91
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] "Λήψη %s ενημέρωσης..."
+msgstr[1] "Λήψη %s ενημερώσεων..."
+
+#: downloads.py:94
+#, python-format
+msgid "Downloading patch %s to %s..."
+msgstr "Λήψη ενημέρωσης %s στο %s..."
+
+#: gui.py:36
 msgid "yes"
 msgstr "ναι"
 
-#: gui.py:32
+#: gui.py:37
 msgid "no"
 msgstr "οχι"
 
-#: gui.py:38
+#: gui.py:43
 msgid " {y/n}"
 msgstr " {ν/ο}"
 
-#: gui.py:40
+#: gui.py:45
 msgid " {Y/n}"
 msgstr " {Ν/ο}"
 
-#: gui.py:42
+#: gui.py:47
 msgid " {y/N}"
 msgstr " {ν/Ο}"
 
-#: gui.py:53
+#: gui.py:58
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 "[bold blue]Παρακαλώ απαντήστε με 'ναι' ή 'οχι' (ή 'ν' ή 'ο').[/bold blue]"
 
-#: gui.py:87 tf2c_downloader.py:59
+#: gui.py:92 tf2c_downloader.py:90
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Μπορείτε να κλείσετε το παράθυρο."
 
-#: gui.py:89 tf2c_downloader.py:61
+#: gui.py:94 tf2c_downloader.py:92
 msgid "Press Enter to exit."
 msgstr "Πατήστε Enter για έξοδο."
 
-#: install.py:25
-msgid ""
-"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
-"on your primary drive is required."
-msgstr ""
-"Δέν έχετε αρκετό ελεύθερο χώρο για να κατεβάσετε το TF2 Classic. Απαιτείται "
-"τουλάχιστον 4,5 GB στον κύριο δίσκο σας."
+#: setup.py:66
+#, python-format
+msgid "Installation location not precised, will assume: %s"
+msgstr "Η θέση εγκατάστασης δεν είναι ακριβής, θα υποτεθεί: %s"
 
-#: install.py:27
-msgid "The specified extraction location does not exist."
-msgstr "Η καθορισμένη θέση αποσυμπίεσης δεν υπάρχει."
-
-#: install.py:29
-msgid ""
-"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
-"at your chosen extraction site is required."
-msgstr ""
-"Δέν έχετε αρκετό ελεύθερο χώρο για να αποσυμπιέσετε το TF2 Classic. "
-"Απαιτείται τουλάχιστον 12 GB στην επιλεγμένη τοποθεσία αποσυμπίεσης."
-
-#: install.py:35
-msgid ""
-"Starting the download for TF2 Classic... You may see some errors that are "
-"safe to ignore."
-msgstr ""
-"Έναρξη της λήψης για το TF2 Classic... Ενδέχεται να δείτε ορισμένα σφάλματα "
-"τα οποία μπορείτε να αγνοήσετε."
-
-#: install.py:44
-msgid "Extracting the downloaded archive, please wait patiently."
-msgstr "Αποσυμπίεση του ληφθέντος αρχείου, παρακαλώ περιμένετε."
-
-#: setup.py:63
+#: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
 msgstr "Ο Sourcemods φάκελος βρέθηκε αυτόματα στην θέση: %s"
 
-#: setup.py:64
+#: setup.py:80
 msgid ""
 "It's the recommended installation location. Would you like to install TF2 "
 "Classic there?"
@@ -91,7 +142,7 @@ msgstr ""
 "Είναι η συνιστώμενη θέση εγκατάστασης. Θέλετε να εγκαταστήσετε το TF2 "
 "Classic εκεί;"
 
-#: setup.py:70
+#: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
@@ -99,7 +150,7 @@ msgstr ""
 "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Ο Sourcemods φάκελος του Steam δέν βρέθηκε, ή επιλέξατε να "
 "μην το χρησιμοποιήσετε."
 
-#: setup.py:71
+#: setup.py:87
 #, python-format
 msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
@@ -108,12 +159,11 @@ msgstr ""
 "Θέλετε να αποσυμπιέσετε στο %s; Θα πρέπει να το μετακινήσετε στον φάκελο "
 "sourcemods χειροκίνητα."
 
-#: setup.py:75
+#: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr ""
-"Παρακαλώ, εισαγάγετε τη θέση στην οποία θα εγκατασταθεί το TF2 Classic.\n"
+msgstr "Παρακαλώ, εισαγάγετε τη θέση στην οποία θα εγκατασταθεί το TF2 Classic.\n"
 
-#: setup.py:78
+#: setup.py:94
 #, python-format
 msgid ""
 "TF2 Classic will be installed in %s\n"
@@ -122,23 +172,17 @@ msgstr ""
 "Το TF2 Classic θα εγκατασταθεί στην θέση %s\n"
 "Δέχεστε;"
 
-#: setup.py:79
+#: setup.py:95
 msgid "Reinitialising...\n"
 msgstr "Επαναφορά…\n"
 
-#: setup.py:99
+#: setup.py:113
 msgid "You need to install Aria2 to use this script."
 msgstr ""
 "Θα χρειαστεί να εγκαταστήσετε το Aria2 για να χρησιμοποιήσετε αυτό το "
 "πρόγραμμα."
 
-#: setup.py:103
-msgid "You need to install Zstd to use this script."
-msgstr ""
-"Θα χρειαστεί να εγκαταστήσετε το Zstd για να χρησιμοποιήσετε αυτό το "
-"πρόγραμμα."
-
-#: tf2c_downloader.py:42
+#: tf2c_downloader.py:45
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -146,25 +190,101 @@ msgstr ""
 "Απο ότι φαίνεται λειτουργούμε στο παρασκήνιο. Δέν το θέλουμε αυτό, οπότε "
 "σταματάμε."
 
-#: tf2c_downloader.py:56
-msgid "[italic magenta]----- Exception details above this line -----"
+#: tf2c_downloader.py:77
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
 msgstr ""
-"[italic magenta]----- Λεπτομέρειες της εξαίρεσης πάνω απο αυτήν την γραμμή "
-"-----"
+"Έναρξη της λήψης για το TF2 Classic... Ενδέχεται να δείτε ορισμένα σφάλματα "
+"τα οποία μπορείτε να αγνοήσετε."
 
-#: tf2c_downloader.py:57
+#: tf2c_downloader.py:80 tf2c_downloader.py:133
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr ""
+"Η εγκατάσταση ολοκληρώθηκε με επιτυχία. Μήν ξεχάσετε να επανεκκινήσετε το "
+"Steam!"
+
+#: tf2c_downloader.py:83 tf2c_downloader.py:152
+msgid "The update has successfully completed."
+msgstr "Η ενημέρωση πραγματοποιήθηκε με επιτυχία."
+
+#: tf2c_downloader.py:87 tf2c_downloader.py:161
+msgid "[italic magenta]----- Exception details above this line -----"
+msgstr "[italic magenta]----- Λεπτομέρειες σφάλματος πάνω από αυτή τη γραμμή -----"
+
+#: tf2c_downloader.py:88 tf2c_downloader.py:162
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
 "[bold red]:warning: Το πρόγραμμα απέτυχε. Στείλτε ένα στιγμιότυπο οθόνης στο "
-"#technical-issues στο Discord (μόνο σε Αγγλικά). :warning:[/bold red]"
+"#technical-issues στο Discord. :warning:[/bold red]"
 
-#: tf2c_downloader.py:65
-msgid "The installation has successfully completed. Remember to restart Steam!"
+#: tf2c_downloader.py:99
+msgid ""
+"Usage: TF2CDownloader [COMMAND] [PATH]\n"
+"Installation utility for TF2 Classic.\n"
+"\n"
+"If no arguments are provided, the downloader will be ran in setup mode, in\n"
+"which a series of questions will be asked to install the game for a regular\n"
+"user. This is what's used when opening the downloader from the desktop.\n"
+"\n"
+"Valid commands:\n"
+"  --install           installs TF2 Classic into a new folder inside PATH\n"
+"  --update            updates the pre-existing TF2 Classic installation in "
+"its\n"
+"                      folder inside PATH\n"
+"  --help              shows this\n"
+"\n"
+"PATH is the folder containing TF2 Classic's folder. This is usually the\n"
+"sourcemods folder for clients, or the Source dedicated server folder for\n"
+"servers.\n"
+"\n"
+"If PATH isn't provided, then it'll be replaced with the detected path to "
+"the\n"
+"sourcemods folder in the Steam directory. If it couldn't be detected, then "
+"the\n"
+"path will be the current work directory."
 msgstr ""
-"Η εγκατάσταση ολοκληρώθηκε με επιτυχία. Μήν ξεχάσετε να επανεκκινήσετε το "
-"Steam!"
+"Χρήση: TF2CDownloader [COMMAND] [PATH]\n"
+"Πρόγραμμα εγκατάστασης για το TF2 Classic.\n"
+"\n"
+"Εάν δεν οριστεί συγκεκριμένη λειτουργία, το πρόγραμμα θα εκτελεστεί σε λειτουργία εγκατάστασης, στην\n"
+"οποία μια σειρά ερωτήσεων θα γίνουν για την εγκατάσταση του παιχνιδιού για έναν κανονικό\n"
+"χρήστη. Αυτή είναι η προεπιλογή κατά το άνοιγμα του προγράμματος από την επιφάνεια εργασίας.\n"
+"\n"
+"Έγκυρες εντολές:\n"
+"  --install           εγκαθιστά το TF2 Classic σε έναν νέο φάκελο μέσα στο PATH\n"
+"  --update            ενημερώνει την προϋπάρχουσα εγκατάσταση του TF2 Classic "
+"στο\n"
+"                      φάκελό του μέσα στο PATH\n"
+"  --help              εμφανίζει αυτό\n"
+"\n"
+"Το PATH είναι ο φάκελος στον οπόιο περιέγχεται ο φάκελος του TF2 Classic. Αυτός είναι συνήθως ο\n"
+"φάκελος sourcemods για τους χρήστες, ή ο φάκελος Source dedicated server για\n"
+"τους διακομιστές.\n"
+"\n"
+"Άν το PATH δέν έχει οριστέι, τότε θα αντικατασταθεί με την εντοπισμένη θέση "
+"στον\n"
+"φάκελο sourcemods στον φάκελο του Steam. Άν δεν μπορεί να εντοπιστεί, τότε "
+"η\n"
+"θέση θα είναι o τρέχων φάκελος."
+
+#: tf2c_downloader.py:130
+msgid "TF2 Classic is already installed. Assuming a reinstallation."
+msgstr "To TF2 Classic είναι ήδη εγκατεστημένο. Υποτείθεται επανεγκατάσταση."
+
+#: tf2c_downloader.py:143
+msgid ""
+"TF2 Classic isn't installed, cannot do an update. Consider using --install "
+"instead."
+msgstr ""
+"Το TF2 Classic δέν είναι εγκατεστημένο, δέν μπορεί να πραγματοποιηθεί ενημέρωση. "
+"Λάβετε υπόψιν την χρήση του --install αντί αυτού."
+
+#: tf2c_downloader.py:155
+msgid "Unrecognised command. Try --help"
+msgstr "Μη αναγνωρισμένη εντολή. Δοκιμάστε το --help"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
@@ -173,3 +293,48 @@ msgstr "Εφαρμογή μαύρης λίστας ασφαλείας..."
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
 msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: αδυναμία εφαρμογής μαύρης λίστας ασφαλείας."
+
+#: versions.py:20
+msgid ""
+"Could not get version list. If your internet connection is fine, the servers "
+"could be having technical issues."
+msgstr ""
+"Δεν ήταν δυνατή η λήψη της λίστας εκδόσεων. Εάν η σύνδεσή σας στο Διαδίκτυο "
+"είναι καλή, οι διακομιστές μπορεί να έχουν τεχνικά προβλήματα"
+
+#: versions.py:33 versions.py:85
+msgid ""
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
+msgstr ""
+"Δεν μπορούμε να διαβάσουμε την έκδοση της εγκατάστασής σας. Θα μπορούσε να είναι αλλοιωμένη. " 
+"Θέλετε να εγκαταστήσετε ξανά το παιχνίδι;"
+
+#: versions.py:36 versions.py:88 versions.py:100 versions.py:108
+#: versions.py:117 versions.py:123
+msgid "We have nothing to do. Goodbye!"
+msgstr "Δέν έχουμε κάτι να κάνουμε. Αντίο!"
+
+#: versions.py:97
+msgid ""
+"The version of your installation is unknown. It could be corrupted. Do you "
+"want to reinstall the game?"
+msgstr ""
+"Η έκδοση εγκατάστασής σας είναι άγνωστη. Θα μπορούσε να είναι αλλοιωμένη. " 
+"Θέλετε να εγκαταστήσετε ξανά το παιχνίδι;"
+
+#: versions.py:105
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
+msgstr ""
+"Πιστεύουμε ότι βρήκαμε μια υπάρχουσα πλήρως ενημερωμένη εγκατάσταση του παιχνιδιού. "
+"Θέλετε να το εγκαταστήσετε ξανά;"
+
+#: versions.py:111 versions.py:120
+msgid "An update is available for your game. Do you want to install it?"
+msgstr "Μια ενημέρωση για το παιχνίδι είναι διαθέσιμη. Θέλετε να την εγκαταστήσετε;"
+
+#: versions.py:114
+msgid "In that case, do you want to reinstall completely?"
+msgstr "Σε αυτήν την περίπτωση, θέλετε να κάνετε ολοκληρωτική επανεγκατάσταση;"
