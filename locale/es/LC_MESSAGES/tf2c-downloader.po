@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-30 16:16+0200\n"
+"POT-Creation-Date: 2022-09-21 15:28+0200\n"
 "PO-Revision-Date: 2022-08-30 16:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,78 +13,126 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: gui.py:31
+#: downloads.py:18
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "Extrayendo el archivo descargado, espere pacientemente."
+
+#: downloads.py:43
+#, python-format
+msgid "%s byte"
+msgid_plural "%s bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: downloads.py:45
+#, python-format
+msgid "%.2f kB"
+msgstr ""
+
+#: downloads.py:47
+#, python-format
+msgid "%.2f MB"
+msgstr ""
+
+#: downloads.py:49
+#, python-format
+msgid "%.2f GB"
+msgstr ""
+
+#: downloads.py:51
+#, python-format
+msgid "%.2f TB"
+msgstr ""
+
+#: downloads.py:53
+#, python-format
+msgid "%.2f PB"
+msgstr ""
+
+#: downloads.py:57
+#, fuzzy, python-format
+msgid ""
+"You don't have enough free space for the download. A minimum of %s on your "
+"primary drive is required."
+msgstr ""
+"No tiene suficiente espacio libre para descargar TF2 Classic. Se requiere un "
+"mínimo de 4.5GB en su disco principal."
+
+#: downloads.py:59
+msgid "The specified extraction location does not exist."
+msgstr "La ubicación de extracción especificada no existe."
+
+#: downloads.py:61
+#, fuzzy, python-format
+msgid ""
+"You don't have enough free space for the extraction. A minimum of %s at your "
+"chosen extraction site is required."
+msgstr ""
+"No tiene suficiente espacio libre para extraer TF2 Classic. Se requiere un "
+"mínimo de 12GB en el sitio de extracción elegido."
+
+#: downloads.py:68
+#, fuzzy
+msgid "Getting the archive..."
+msgstr "Descargando el archivo de actualización..."
+
+#: downloads.py:91
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] ""
+msgstr[1] ""
+
+#: downloads.py:94
+#, fuzzy, python-format
+msgid "Downloading patch %s to %s..."
+msgstr "Descargando el archivo de actualización..."
+
+#: gui.py:36
 msgid "yes"
 msgstr "sí"
 
-#: gui.py:32
+#: gui.py:37
 msgid "no"
 msgstr "no"
 
-#: gui.py:38
+#: gui.py:43
 msgid " {y/n}"
 msgstr " {s/n}"
 
-#: gui.py:40
+#: gui.py:45
 msgid " {Y/n}"
 msgstr " {S/n}"
 
-#: gui.py:42
+#: gui.py:47
 msgid " {y/N}"
 msgstr " {s/N}"
 
-#: gui.py:53
+#: gui.py:58
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 "[bold blue]Por favor, responda con 'sí' o 'no' (o 's' o 'n').[/bold blue]"
 
-#: gui.py:87 tf2c_downloader.py:87
+#: gui.py:92 tf2c_downloader.py:90
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Puede cerrar esta ventana."
 
-#: gui.py:89 tf2c_downloader.py:89
+#: gui.py:94 tf2c_downloader.py:92
 msgid "Press Enter to exit."
 msgstr "Pulse Entrar para salir."
 
-#: install.py:25
-msgid ""
-"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
-"on your primary drive is required."
+#: setup.py:66
+#, python-format
+msgid "Installation location not precised, will assume: %s"
 msgstr ""
-"No tiene suficiente espacio libre para descargar TF2 Classic. Se requiere un "
-"mínimo de 4.5GB en su disco principal."
 
-#: install.py:27
-msgid "The specified extraction location does not exist."
-msgstr "La ubicación de extracción especificada no existe."
-
-#: install.py:29
-msgid ""
-"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
-"at your chosen extraction site is required."
-msgstr ""
-"No tiene suficiente espacio libre para extraer TF2 Classic. Se requiere un "
-"mínimo de 12GB en el sitio de extracción elegido."
-
-#: install.py:35
-msgid ""
-"Starting the download for TF2 Classic... You may see some errors that are "
-"safe to ignore."
-msgstr ""
-"Iniciando la descarga de TF2 Classic... Es posible que vea algunos errores "
-"que puede ignorar."
-
-#: install.py:44 updater.py:77
-msgid "Extracting the downloaded archive, please wait patiently."
-msgstr "Extrayendo el archivo descargado, espere pacientemente."
-
-#: setup.py:63
+#: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
 msgstr "La carpeta Sourcemods se encontró automáticamente en: %s"
 
-#: setup.py:64
+#: setup.py:80
 msgid ""
 "It's the recommended installation location. Would you like to install TF2 "
 "Classic there?"
@@ -92,7 +140,7 @@ msgstr ""
 "Es la ubicación de instalación recomendada. ¿Le gustaría instalar TF2 "
 "Classic allí?"
 
-#: setup.py:70
+#: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
@@ -100,7 +148,7 @@ msgstr ""
 "ADVERTENCIA: No se ha encontrado la carpeta sourcemods de Steam o usted "
 "decidió no usarla."
 
-#: setup.py:71
+#: setup.py:87
 #, python-format
 msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
@@ -108,11 +156,11 @@ msgid ""
 msgstr ""
 "¿Usted se gustaría extraer en %s? Debe moverlo a sus sourcemods manualmente."
 
-#: setup.py:75
+#: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
 msgstr "Por favor, ingrese la ubicación en la que se instalará TF2 Classic.\n"
 
-#: setup.py:78
+#: setup.py:94
 #, python-format
 msgid ""
 "TF2 Classic will be installed in %s\n"
@@ -121,17 +169,13 @@ msgstr ""
 "TF2 Classic se instalará en %s\n"
 "¿Acepta?"
 
-#: setup.py:79
+#: setup.py:95
 msgid "Reinitialising...\n"
 msgstr "Restableciendo...\n"
 
-#: setup.py:99
+#: setup.py:113
 msgid "You need to install Aria2 to use this script."
 msgstr "Necesita instalar Aria2 para usar este script."
-
-#: setup.py:103
-msgid "You need to install Zstd to use this script."
-msgstr "Necesita instalar Zstd para usar este script."
 
 #: tf2c_downloader.py:45
 msgid ""
@@ -141,12 +185,29 @@ msgstr ""
 "Parece que estamos corriendo en segundo plano. No queremos eso, así que "
 "vamos a salir."
 
-#: tf2c_downloader.py:84
+#: tf2c_downloader.py:77
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"Iniciando la descarga de TF2 Classic... Es posible que vea algunos errores "
+"que puede ignorar."
+
+#: tf2c_downloader.py:80 tf2c_downloader.py:133
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr "La instalación se completó con éxito. ¡Recuerde reiniciar Steam!"
+
+#: tf2c_downloader.py:83 tf2c_downloader.py:152
+#, fuzzy
+msgid "The update has successfully completed."
+msgstr "La instalación se completó con éxito. ¡Recuerde reiniciar Steam!"
+
+#: tf2c_downloader.py:87 tf2c_downloader.py:161
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 "[italic magenta]----- Detalles de la excepción arriba de esta línea -----"
 
-#: tf2c_downloader.py:85
+#: tf2c_downloader.py:88 tf2c_downloader.py:162
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -154,9 +215,46 @@ msgstr ""
 "[bold red]:warning: El programa ha fallado. Publique una captura de pantalla "
 "en #technical-issues en Discord (solo en inglés). :warning:[/bold red]"
 
-#: tf2c_downloader.py:93
-msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr "La instalación se completó con éxito. ¡Recuerde reiniciar Steam!"
+#: tf2c_downloader.py:99
+msgid ""
+"Usage: TF2CDownloader [COMMAND] [PATH]\n"
+"Installation utility for TF2 Classic.\n"
+"\n"
+"If no arguments are provided, the downloader will be ran in setup mode, in\n"
+"which a series of questions will be asked to install the game for a regular\n"
+"user. This is what's used when opening the downloader from the desktop.\n"
+"\n"
+"Valid commands:\n"
+"  --install           installs TF2 Classic into a new folder inside PATH\n"
+"  --update            updates the pre-existing TF2 Classic installation in "
+"its\n"
+"                      folder inside PATH\n"
+"  --help              shows this\n"
+"\n"
+"PATH is the folder containing TF2 Classic's folder. This is usually the\n"
+"sourcemods folder for clients, or the Source dedicated server folder for\n"
+"servers.\n"
+"\n"
+"If PATH isn't provided, then it'll be replaced with the detected path to "
+"the\n"
+"sourcemods folder in the Steam directory. If it couldn't be detected, then "
+"the\n"
+"path will be the current work directory."
+msgstr ""
+
+#: tf2c_downloader.py:130
+msgid "TF2 Classic is already installed. Assuming a reinstallation."
+msgstr ""
+
+#: tf2c_downloader.py:143
+msgid ""
+"TF2 Classic isn't installed, cannot do an update. Consider using --install "
+"instead."
+msgstr ""
+
+#: tf2c_downloader.py:155
+msgid "Unrecognised command. Try --help"
+msgstr ""
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
@@ -166,30 +264,48 @@ msgstr "Aplicando lista negra de seguridad…"
 msgid "WARNING: could not apply safety blacklist."
 msgstr "ADVERTENCIA: no se pudo aplicar la lista negra de seguridad."
 
-#: updater.py:31
-msgid "No migration necessary!"
-msgstr "¡No es necesario migrar!"
-
-#: updater.py:44
+#: versions.py:20
 msgid ""
-"We found an existing up-to-date installation of the game. Do you want to "
-"repair it?"
+"Could not get version list. If your internet connection is fine, the servers "
+"could be having technical issues."
+msgstr ""
+
+#: versions.py:33 versions.py:85
+msgid ""
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
+msgstr ""
+
+#: versions.py:36 versions.py:88 versions.py:100 versions.py:108
+#: versions.py:117 versions.py:123
+msgid "We have nothing to do. Goodbye!"
+msgstr "No tenemos nada que hacer. ¡Adiós!"
+
+#: versions.py:97
+msgid ""
+"The version of your installation is unknown. It could be corrupted. Do you "
+"want to reinstall the game?"
+msgstr ""
+
+#: versions.py:105
+#, fuzzy
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
 msgstr ""
 "Encontramos una instalación actualizada existente del juego. ¿Quiere "
 "repararlo?"
 
-#: updater.py:47 updater.py:56 updater.py:63
-msgid "We have nothing to do. Goodbye!"
-msgstr "No tenemos nada que hacer. ¡Adiós!"
-
-#: updater.py:50 updater.py:60
+#: versions.py:111 versions.py:120
 msgid "An update is available for your game. Do you want to install it?"
 msgstr "Hay una actualización disponible para su juego. ¿Quiere instalarlo?"
 
-#: updater.py:53
+#: versions.py:114
 msgid "In that case, do you want to reinstall completely?"
 msgstr "En ese caso, ¿desea reinstalar completamente?"
 
-#: updater.py:69
-msgid "Downloading the update archive..."
-msgstr "Descargando el archivo de actualización..."
+#~ msgid "You need to install Zstd to use this script."
+#~ msgstr "Necesita instalar Zstd para usar este script."
+
+#~ msgid "No migration necessary!"
+#~ msgstr "¡No es necesario migrar!"
