@@ -38,9 +38,7 @@ def check_downloader_update():
     remote_hash_string = remote_hash_bytes.decode("utf8")
     remote_hash_string = remote_hash_string.rstrip('\n')
     remote_hash.close()
-    
-    print(remote_hash_string)
-    print(hash_script())
+
     if remote_hash_string == hash_script():
         gui.message(_("TF2CDownloader appears to be up-to-date."))
     elif gui.message_yes_no(_("TF2CDownloader has an update available. Your current version may not work properly. Do you want to install it?")) and not vars.SCRIPT_MODE:
