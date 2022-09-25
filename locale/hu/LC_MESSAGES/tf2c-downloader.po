@@ -1,9 +1,14 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tf2c-downloader package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-04 21:31+0200\n"
-"PO-Revision-Date: 2022-08-04 22:33+0200\n"
+"POT-Creation-Date: 2022-09-21 15:28+0200\n"
+"PO-Revision-Date: 2022-09-18 18:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hu\n"
@@ -11,87 +16,135 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 
-#: gui.py:31
+#: downloads.py:18
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "A letöltött archívum kicsomagolása, kérlek várj türelemmel."
+
+#: downloads.py:43
+#, python-format
+msgid "%s byte"
+msgid_plural "%s bytes"
+msgstr[0] "%s bájt"
+msgstr[1] "%s bájt"
+
+#: downloads.py:45
+#, python-format
+msgid "%.2f kB"
+msgstr "%.2f kB"
+
+#: downloads.py:47
+#, python-format
+msgid "%.2f MB"
+msgstr "%.2f MB"
+
+#: downloads.py:49
+#, python-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: downloads.py:51
+#, python-format
+msgid "%.2f TB"
+msgstr "%.2f TB"
+
+#: downloads.py:53
+#, python-format
+msgid "%.2f PB"
+msgstr "%.2f PB"
+
+#: downloads.py:57
+#, python-format
+msgid ""
+"You don't have enough free space for the download. A minimum of %s on your "
+"primary drive is required."
+msgstr ""
+"Nincs elég tárhelyed, hogy letöltsd a TF2 Classic-ot. %s minimum tárhely "
+"szükséges az elsődleges merevlemezeden."
+
+#: downloads.py:59
+msgid "The specified extraction location does not exist."
+msgstr "A meghatározott kicsomagolási hely nem létezik."
+
+#: downloads.py:61
+#, python-format
+msgid ""
+"You don't have enough free space for the extraction. A minimum of %s at your "
+"chosen extraction site is required."
+msgstr ""
+"Nincs elég tárhelyed, hogy kicsomagold a TF2 Classic-ot. %s minimum tárhely "
+"szükséges az általad választott kicsomagolási helyen."
+
+#: downloads.py:68
+msgid "Getting the archive..."
+msgstr "Archívum megszerzése..."
+
+#: downloads.py:91
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] "%s javítás megszerzése..."
+msgstr[1] "%s javítás megszerzése..."
+
+#: downloads.py:94
+#, python-format
+msgid "Downloading patch %s to %s..."
+msgstr "%s javítás letöltése ide: %s..."
+
+#: gui.py:36
 msgid "yes"
 msgstr "igen"
 
-#: gui.py:32
+#: gui.py:37
 msgid "no"
 msgstr "nem"
 
-#: gui.py:38
+#: gui.py:43
 msgid " {y/n}"
 msgstr " {i/n}"
 
-#: gui.py:40
+#: gui.py:45
 msgid " {Y/n}"
 msgstr " {I/n}"
 
-#: gui.py:42
+#: gui.py:47
 msgid " {y/N}"
 msgstr " {i/N}"
 
-#: gui.py:53
+#: gui.py:58
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 "[bold blue]Válaszolj kérlek egy 'igen' vagy 'nem'-mel (vagy 'i' vagy 'n').[/"
 "bold blue]"
 
-#: gui.py:87 tf2c_downloader.py:59
+#: gui.py:92 tf2c_downloader.py:90
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Mostmár biztonságban bezárhatod ezt az ablakot."
 
-#: gui.py:89 tf2c_downloader.py:61
+#: gui.py:94 tf2c_downloader.py:92
 msgid "Press Enter to exit."
 msgstr "Kilépéshez nyomd meg az Enter billentyűt."
 
-#: install.py:25
-msgid ""
-"You don't have enough free space to download TF2 Classic. A minimum of 4.5GB "
-"on your primary drive is required."
-msgstr ""
-"Nincs elég tárhelyed, hogy letöltsd a TF2 Classic-ot. 4.5GB minimum tárhely "
-"szükséges az elsődleges merevlemezeden."
+#: setup.py:66
+#, python-format
+msgid "Installation location not precised, will assume: %s"
+msgstr "Telepítési hely nem meghatározva, telepítési hely: %s"
 
-#: install.py:27
-msgid "The specified extraction location does not exist."
-msgstr "A meghatározott kicsomagolási hely nem létezik."
-
-#: install.py:29
-msgid ""
-"You don't have enough free space to extract TF2 Classic. A minimum of 12GB "
-"at your chosen extraction site is required."
-msgstr ""
-"Nincs elég tárhelyed, hogy kicsomagold a TF2 Classic-ot. 12GB minimum "
-"tárhely szükséges az általad választott kicsomagolási helyen."
-
-#: install.py:35
-msgid ""
-"Starting the download for TF2 Classic... You may see some errors that are "
-"safe to ignore."
-msgstr ""
-"TF2 Classic letöltésének megkezdése... Lehet, hogy látsz néhány hibát amit "
-"nyugodtan mellőzhetsz."
-
-#: install.py:44
-msgid "Extracting the downloaded archive, please wait patiently."
-msgstr "A letöltött archívum kicsomagolása, kérlek várj türelemmel."
-
-#: setup.py:63
+#: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
 msgstr "A sourcemods mappa automatikusan meglelve itt: %s"
 
-#: setup.py:64
+#: setup.py:80
 msgid ""
 "It's the recommended installation location. Would you like to install TF2 "
 "Classic there?"
 msgstr ""
 "Ez a javasolt telepítési hely. Szeretnéd oda telepíteni a TF2 Classic-ot?"
 
-#: setup.py:70
+#: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
@@ -99,7 +152,7 @@ msgstr ""
 "FIGYELEM: Nem lett megtalálva a Steam sourcemods mappája, vagy te döntöttél "
 "úgy, hogy nem használod azt."
 
-#: setup.py:71
+#: setup.py:87
 #, python-format
 msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
@@ -108,11 +161,11 @@ msgstr ""
 "Szeretnéd ide kicsomagolni: %s? Sajátkezüleg kell majd betenned a sourcemods "
 "mappádba."
 
-#: setup.py:75
+#: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
 msgstr "Add meg a helyet ahova szeretnéd a TF2 Classic-ot telepíteni.\n"
 
-#: setup.py:78
+#: setup.py:94
 #, python-format
 msgid ""
 "TF2 Classic will be installed in %s\n"
@@ -121,19 +174,15 @@ msgstr ""
 "A TF2 Classic ide lesz telepítve: %s\n"
 "Elfogadod?"
 
-#: setup.py:79
+#: setup.py:95
 msgid "Reinitialising...\n"
 msgstr "Újrainicializálás...\n"
 
-#: setup.py:99
+#: setup.py:113
 msgid "You need to install Aria2 to use this script."
 msgstr "Ehhez a script-hez a következőt kell telepítened: Aria2."
 
-#: setup.py:103
-msgid "You need to install Zstd to use this script."
-msgstr "Ehhez a script-hez a következőt kell telepítened: Zstd."
-
-#: tf2c_downloader.py:42
+#: tf2c_downloader.py:45
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -141,22 +190,102 @@ msgstr ""
 "Úgy néz ki, hogy a háttérben futtatod a programot. Ezt mi nem akarjuk, "
 "szóval kilépünk."
 
-#: tf2c_downloader.py:56
+#: tf2c_downloader.py:77
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"TF2 Classic letöltésének megkezdése... Lehet, hogy látsz néhány hibát amit "
+"nyugodtan mellőzhetsz."
+
+#: tf2c_downloader.py:80 tf2c_downloader.py:133
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr "A telepítés sikeres. Ne felejtsd újraindítani a Steam-et!"
+
+#: tf2c_downloader.py:83 tf2c_downloader.py:152
+msgid "The update has successfully completed."
+msgstr "A frissítés sikeres."
+
+#: tf2c_downloader.py:87 tf2c_downloader.py:161
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr "[italic magenta]----- Kifogás részletei e sor fölött -----"
 
-#: tf2c_downloader.py:57
+#: tf2c_downloader.py:88 tf2c_downloader.py:162
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
 "[bold red]:warning: A program sikertelen. Készíts egy képernyőképet és küld "
 "el a #technical-issues csatornába a hivatalos Discord szerveren (de csak "
-"angolul). :warning:[/bold red]"
+"Angolul). :warning:[/bold red]"
 
-#: tf2c_downloader.py:65
-msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr "A telepítés sikeres. Ne felejtsd újraindítani a Steam-et!"
+#: tf2c_downloader.py:99
+#, fuzzy
+msgid ""
+"Usage: TF2CDownloader [COMMAND] [PATH]\n"
+"Installation utility for TF2 Classic.\n"
+"\n"
+"If no arguments are provided, the downloader will be ran in setup mode, in\n"
+"which a series of questions will be asked to install the game for a regular\n"
+"user. This is what's used when opening the downloader from the desktop.\n"
+"\n"
+"Valid commands:\n"
+"  --install           installs TF2 Classic into a new folder inside PATH\n"
+"  --update            updates the pre-existing TF2 Classic installation in "
+"its\n"
+"                      folder inside PATH\n"
+"  --help              shows this\n"
+"\n"
+"PATH is the folder containing TF2 Classic's folder. This is usually the\n"
+"sourcemods folder for clients, or the Source dedicated server folder for\n"
+"servers.\n"
+"\n"
+"If PATH isn't provided, then it'll be replaced with the detected path to "
+"the\n"
+"sourcemods folder in the Steam directory. If it couldn't be detected, then "
+"the\n"
+"path will be the current work directory."
+msgstr ""
+"Kezelés: TF2CDownloader [COMMAND] [PATH]\n"
+"A TF2 Classic telepítő alkalmatossága.\n"
+"\n"
+"Ha nem lett megadva semmilyen parancs, a letöltő telepítés módban lesz\n"
+"futtatva, ahol egy kérdés sorozat lesz feltéve, hogy egy átlag "
+"felhasználónak\n"
+"legyen telepítve a játék. Ez az ami használva van, ha a program az "
+"asztalról\n"
+"van megnyitva.\n"
+"\n"
+"Érvényes parancsok:\n"
+"  --install           telepíti a TF2 Classic-ot egy új mappába a PATH-on "
+"belül\n"
+"  --update            frissíti a már létező TF2 Classic telepítést a\n"
+"                      PATH-on belül lévő mappában\n"
+"  --help              ezt mutatja\n"
+"\n"
+"A PATH az a mappa amiben a TF2 Classic mappája van. Ez általában\n"
+"a sourcemods mappa a klienseknek, vagy a Souce dedikált szerverek\n"
+"mappa a szervereknek.\n"
+"\n"
+"Ha nincs megadva PATH, akkor a sourcemods mappához észlelt út lesz megadva.\n"
+"Ha ez sincs észlelve, akkor a jelenlegi munkakönyvtár lesz az elérési "
+"útvonal."
+
+#: tf2c_downloader.py:130
+msgid "TF2 Classic is already installed. Assuming a reinstallation."
+msgstr "A TF2 Classic már telepítve van. Újratelepítés feltételezése..."
+
+#: tf2c_downloader.py:143
+msgid ""
+"TF2 Classic isn't installed, cannot do an update. Consider using --install "
+"instead."
+msgstr ""
+"A TF2 Classic nincs telepítve, így nem lehet frissíteni. Használd inkább az "
+"--install parancsot."
+
+#: tf2c_downloader.py:155
+msgid "Unrecognised command. Try --help"
+msgstr "Ismeretlen parancs. Próbáld a --help parancsot"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
@@ -165,3 +294,48 @@ msgstr "Biztonsági feketelistára helyezés..."
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
 msgstr "FIGYELEM: sikertelen biztonsági feketelistára helyezés."
+
+#: versions.py:20
+msgid ""
+"Could not get version list. If your internet connection is fine, the servers "
+"could be having technical issues."
+msgstr ""
+"Verziólista megszerzése sikertelen. Ha rendben van az internet kapcsolatod, "
+"akkor a szerverekkel lehet technikai probléma."
+
+#: versions.py:33 versions.py:85
+msgid ""
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
+msgstr ""
+"Játékverzió beolvasása sikertelen. Lehetséges, hogy sérült. Szeretnéd "
+"újratelepíteni a játékot?"
+
+#: versions.py:36 versions.py:88 versions.py:100 versions.py:108
+#: versions.py:117 versions.py:123
+msgid "We have nothing to do. Goodbye!"
+msgstr "Semmit se kell csinálnunk. Viszlát!"
+
+#: versions.py:97
+msgid ""
+"The version of your installation is unknown. It could be corrupted. Do you "
+"want to reinstall the game?"
+msgstr ""
+"A játékod verziószáma ismeretlen. Lehetséges, hogy sérült. Szeretnéd "
+"újratelepíteni a játékot?"
+
+#: versions.py:105
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
+msgstr ""
+"Úgy tűnik találtunk egy létező friss játék telepítést. Szeretnéd "
+"újratelepíteni?"
+
+#: versions.py:111 versions.py:120
+msgid "An update is available for your game. Do you want to install it?"
+msgstr "Egy frissítés érhető el a játékodhoz. Szeretnéd telepíteni?"
+
+#: versions.py:114
+msgid "In that case, do you want to reinstall completely?"
+msgstr "Ebben az esetben, szeretnéd teljesen újratelepíteni?"
