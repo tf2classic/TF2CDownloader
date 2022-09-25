@@ -1,11 +1,11 @@
-#
+# 
 # Technochips <thetechnochips@protonmail.com>, 2022.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 15:28+0200\n"
+"POT-Creation-Date: 2022-09-25 11:28-0500\n"
 "PO-Revision-Date: 2022-09-24 16:05+0200\n"
 "Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
 "Language-Team: French < >\n"
@@ -115,13 +115,47 @@ msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr "[bold blue]Répondez avec 'oui' ou 'non' ('o' ou 'n').[/bold blue]"
 
-#: gui.py:92 tf2c_downloader.py:90
+#: gui.py:92 tf2c_downloader.py:93
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Vous pouvez fermer cette fenêtre."
 
-#: gui.py:94 tf2c_downloader.py:92
+#: gui.py:94 tf2c_downloader.py:95
 msgid "Press Enter to exit."
 msgstr "Appuyez sur Entrée pour sortir."
+
+#: selfupdate.py:34
+#, fuzzy
+msgid ""
+"WARNING: downloader failed to check itself for updates, potentially out-of-"
+"date."
+msgstr ""
+"ATTENTION : impossible de vérifier les mises à jour, passage à "
+"l'installation."
+
+#: selfupdate.py:43
+msgid "TF2CDownloader appears to be up-to-date."
+msgstr ""
+
+#: selfupdate.py:44
+#, fuzzy
+msgid ""
+"TF2CDownloader has an update available. Your current version may not work "
+"properly. Do you want to install it?"
+msgstr "Une mise à jour est disponible. Voulez-vous l'installer ?"
+
+#: selfupdate.py:45
+msgid ""
+"Delete TF2CDownloader, then redownload and relaunch it from https://"
+"tf2classic.com/download"
+msgstr ""
+
+#: selfupdate.py:47
+msgid "TF2CDownloader out-of-date."
+msgstr ""
+
+#: selfupdate.py:49
+msgid "User chose to skip update. Things may be broken."
+msgstr ""
 
 #: setup.py:66
 #, python-format
@@ -180,7 +214,7 @@ msgstr "Réinitialisation…\n"
 msgid "You need to install Aria2 to use this script."
 msgstr "Vous devez installer Aria2 pour utiliser ce script."
 
-#: tf2c_downloader.py:45
+#: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -188,7 +222,7 @@ msgstr ""
 "On dirait qu'on est en train de tourner en arrière plan. On ne veut pas ça, "
 "donc on sort."
 
-#: tf2c_downloader.py:77
+#: tf2c_downloader.py:80
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
@@ -196,20 +230,20 @@ msgstr ""
 "Téléchargement de TF2 Classic... Vous pouvez voir certaines erreurs qui "
 "peuvent être parfaitement ignorées."
 
-#: tf2c_downloader.py:80 tf2c_downloader.py:133
+#: tf2c_downloader.py:83 tf2c_downloader.py:138
 msgid "The installation has successfully completed. Remember to restart Steam!"
 msgstr "L'installation est terminée. N'oubliez pas de redémarrer Steam !"
 
-#: tf2c_downloader.py:83 tf2c_downloader.py:152
+#: tf2c_downloader.py:86 tf2c_downloader.py:159
 msgid "The update has successfully completed."
 msgstr "La mise à jour est terminée."
 
-#: tf2c_downloader.py:87 tf2c_downloader.py:161
+#: tf2c_downloader.py:90 tf2c_downloader.py:168
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 "[italic magenta]----- Détails des exceptions au dessus de cette ligne -----"
 
-#: tf2c_downloader.py:88 tf2c_downloader.py:162
+#: tf2c_downloader.py:91 tf2c_downloader.py:169
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -217,7 +251,7 @@ msgstr ""
 "[bold red]:warning: Le programme a échoué. Postez un screenshot dans "
 "#technical-issues sur le Discord (en anglais seulement). :warning:[/bold red]"
 
-#: tf2c_downloader.py:99
+#: tf2c_downloader.py:102
 msgid ""
 "Usage: TF2CDownloader [COMMAND] [PATH]\n"
 "Installation utility for TF2 Classic.\n"
@@ -268,11 +302,11 @@ msgstr ""
 "le dossier sourcemods dans les dossiers de Steam. Si il n'a pas pu être\n"
 "détecté, alors le chemin sera le dossier de travail actuel."
 
-#: tf2c_downloader.py:130
+#: tf2c_downloader.py:135
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
 msgstr "TF2 Classic est déjà installé. Réinstallation..."
 
-#: tf2c_downloader.py:143
+#: tf2c_downloader.py:150
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
@@ -280,7 +314,7 @@ msgstr ""
 "TF2 Classic n'est pas installé, impossible de mettre à jour. Considérez "
 "d'utiliser --installer à la place."
 
-#: tf2c_downloader.py:155
+#: tf2c_downloader.py:162
 msgid "Unrecognised command. Try --help"
 msgstr "Commande non reconnue. Essayez --help"
 
@@ -339,11 +373,6 @@ msgstr "Dans ce cas, voulez-vous complètement réinstaller le jeu ?"
 
 #~ msgid "You need to install Zstd to use this script."
 #~ msgstr "Vous devez installer Zstd pour utiliser ce script."
-
-#~ msgid "WARNING: could not check for updates, moving to installation."
-#~ msgstr ""
-#~ "ATTENTION : impossible de vérifier les mises à jour, passage à "
-#~ "l'installation."
 
 #~ msgid "No migration necessary!"
 #~ msgstr "Aucune migration nécessaire !"

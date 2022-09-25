@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-25 11:20-0500\n"
+"POT-Creation-Date: 2022-09-25 11:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,27 +127,27 @@ msgid ""
 "date."
 msgstr ""
 
-#: selfupdate.py:45
+#: selfupdate.py:43
 msgid "TF2CDownloader appears to be up-to-date."
 msgstr ""
 
-#: selfupdate.py:46
+#: selfupdate.py:44
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
 msgstr ""
 
-#: selfupdate.py:47
+#: selfupdate.py:45
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
 msgstr ""
 
-#: selfupdate.py:49
+#: selfupdate.py:47
 msgid "TF2CDownloader out-of-date."
 msgstr ""
 
-#: selfupdate.py:51
+#: selfupdate.py:49
 msgid "User chose to skip update. Things may be broken."
 msgstr ""
 

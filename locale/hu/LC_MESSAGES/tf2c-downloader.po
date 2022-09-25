@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the tf2c-downloader package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 15:28+0200\n"
+"POT-Creation-Date: 2022-09-25 11:28-0500\n"
 "PO-Revision-Date: 2022-09-18 18:44+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -119,13 +119,44 @@ msgstr ""
 "[bold blue]Válaszolj kérlek egy 'igen' vagy 'nem'-mel (vagy 'i' vagy 'n').[/"
 "bold blue]"
 
-#: gui.py:92 tf2c_downloader.py:90
+#: gui.py:92 tf2c_downloader.py:93
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]Mostmár biztonságban bezárhatod ezt az ablakot."
 
-#: gui.py:94 tf2c_downloader.py:92
+#: gui.py:94 tf2c_downloader.py:95
 msgid "Press Enter to exit."
 msgstr "Kilépéshez nyomd meg az Enter billentyűt."
+
+#: selfupdate.py:34
+msgid ""
+"WARNING: downloader failed to check itself for updates, potentially out-of-"
+"date."
+msgstr ""
+
+#: selfupdate.py:43
+msgid "TF2CDownloader appears to be up-to-date."
+msgstr ""
+
+#: selfupdate.py:44
+#, fuzzy
+msgid ""
+"TF2CDownloader has an update available. Your current version may not work "
+"properly. Do you want to install it?"
+msgstr "Egy frissítés érhető el a játékodhoz. Szeretnéd telepíteni?"
+
+#: selfupdate.py:45
+msgid ""
+"Delete TF2CDownloader, then redownload and relaunch it from https://"
+"tf2classic.com/download"
+msgstr ""
+
+#: selfupdate.py:47
+msgid "TF2CDownloader out-of-date."
+msgstr ""
+
+#: selfupdate.py:49
+msgid "User chose to skip update. Things may be broken."
+msgstr ""
 
 #: setup.py:66
 #, python-format
@@ -182,7 +213,7 @@ msgstr "Újrainicializálás...\n"
 msgid "You need to install Aria2 to use this script."
 msgstr "Ehhez a script-hez a következőt kell telepítened: Aria2."
 
-#: tf2c_downloader.py:45
+#: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
@@ -190,7 +221,7 @@ msgstr ""
 "Úgy néz ki, hogy a háttérben futtatod a programot. Ezt mi nem akarjuk, "
 "szóval kilépünk."
 
-#: tf2c_downloader.py:77
+#: tf2c_downloader.py:80
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
@@ -198,19 +229,19 @@ msgstr ""
 "TF2 Classic letöltésének megkezdése... Lehet, hogy látsz néhány hibát amit "
 "nyugodtan mellőzhetsz."
 
-#: tf2c_downloader.py:80 tf2c_downloader.py:133
+#: tf2c_downloader.py:83 tf2c_downloader.py:138
 msgid "The installation has successfully completed. Remember to restart Steam!"
 msgstr "A telepítés sikeres. Ne felejtsd újraindítani a Steam-et!"
 
-#: tf2c_downloader.py:83 tf2c_downloader.py:152
+#: tf2c_downloader.py:86 tf2c_downloader.py:159
 msgid "The update has successfully completed."
 msgstr "A frissítés sikeres."
 
-#: tf2c_downloader.py:87 tf2c_downloader.py:161
+#: tf2c_downloader.py:90 tf2c_downloader.py:168
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr "[italic magenta]----- Kifogás részletei e sor fölött -----"
 
-#: tf2c_downloader.py:88 tf2c_downloader.py:162
+#: tf2c_downloader.py:91 tf2c_downloader.py:169
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -219,7 +250,7 @@ msgstr ""
 "el a #technical-issues csatornába a hivatalos Discord szerveren (de csak "
 "Angolul). :warning:[/bold red]"
 
-#: tf2c_downloader.py:99
+#: tf2c_downloader.py:102
 #, fuzzy
 msgid ""
 "Usage: TF2CDownloader [COMMAND] [PATH]\n"
@@ -271,11 +302,11 @@ msgstr ""
 "Ha ez sincs észlelve, akkor a jelenlegi munkakönyvtár lesz az elérési "
 "útvonal."
 
-#: tf2c_downloader.py:130
+#: tf2c_downloader.py:135
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
 msgstr "A TF2 Classic már telepítve van. Újratelepítés feltételezése..."
 
-#: tf2c_downloader.py:143
+#: tf2c_downloader.py:150
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
@@ -283,7 +314,7 @@ msgstr ""
 "A TF2 Classic nincs telepítve, így nem lehet frissíteni. Használd inkább az "
 "--install parancsot."
 
-#: tf2c_downloader.py:155
+#: tf2c_downloader.py:162
 msgid "Unrecognised command. Try --help"
 msgstr "Ismeretlen parancs. Próbáld a --help parancsot"
 
