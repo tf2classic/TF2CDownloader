@@ -20,13 +20,19 @@ def message(msg, delay = 0):
     if not vars.SCRIPT_MODE:
         sleep(delay)
 
-def message_yes_no(msg, default = None):
+def message_yes_no(msg, default = None, script_mode_default_override=None):
     """
     Show a message to user and get yes/no answer.
     """
     if vars.SCRIPT_MODE:
+        # Display msg even though we are in script mode, this because it might
+        # contain useful information.
+        print(msg)
+        print(_("The application is in script mode, using default choice."))
+        if script_mode_default_override is not None:
+            return script_mode_default_override
         return default
-
+    
     valid = {}
     valid["yes"] = True
     valid["no"] = False
@@ -90,6 +96,6 @@ def message_end(msg, code):
     print("[bold green]" + msg)
     if environ.get("WT_SESSION"):
         print(_("[bold]You are safe to close this window."))
-    else:
+    elif not vars.SCRIPT_MODE:
         input(_("Press Enter to exit."))
     exit(code)
