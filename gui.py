@@ -20,7 +20,7 @@ def message(msg, delay = 0):
     if not vars.SCRIPT_MODE:
         sleep(delay)
 
-def message_yes_no(msg, default = None, script_mode_default_override=None):
+def message_yes_no(msg: str, default: bool = None, script_mode_default_override:bool = None) -> bool:
     """
     Show a message to user and get yes/no answer.
     """
@@ -33,11 +33,7 @@ def message_yes_no(msg, default = None, script_mode_default_override=None):
             return script_mode_default_override
         return default
     
-    valid = {}
-    valid["yes"] = True
-    valid["no"] = False
-    valid["y"] = True
-    valid["n"] = False
+    valid = {"yes": True, "no": False, "y": True, "n": False}
 
     localyes = _("yes")
     localno = _("no")
@@ -47,9 +43,9 @@ def message_yes_no(msg, default = None, script_mode_default_override=None):
     valid[localno[0]] = False
 
     prompt = _(" {y/n}")
-    if default == "y":
+    if default:
         prompt = _(" {Y/n}")
-    elif default == "n":
+    elif default is not None:
         prompt = _(" {y/N}")
     msg += prompt
 
@@ -57,7 +53,7 @@ def message_yes_no(msg, default = None, script_mode_default_override=None):
         print(msg)
         choice = input().lower()
         if default is not None and choice == "":
-            return valid[default]
+            return default
         elif choice in valid:
             return valid[choice]
         else:
