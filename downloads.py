@@ -10,6 +10,7 @@ import gui
 import versions
 import pyzstd
 import tarfile
+import os
 
 def download_extract(url, filename, endpath):
     run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
@@ -60,13 +61,29 @@ def free_space_check(presz, postsz):
     elif disk_usage(vars.INSTALL_PATH)[2] < postsz and vars.INSTALLED == False:
         gui.message_end(_("You don't have enough free space for the extraction. A minimum of %s at your chosen extraction site is required.") % pretty_size(postsz), 1)
 
+def prepare_symlink():
+    for s in vars.TO_SYMLINK:
+        if path.isfile(vars.INSTALL_PATH + s[1]) and not path.islink(vars.INSTALL_PATH + s[1]):
+            os.remove(vars.INSTALL_PATH + s[1])
+
+def do_symlink():
+    if system() == "Windows":
+        return
+    
+    for s in vars.TO_SYMLINK:
+        if not path.isfile(vars.INSTALL_PATH + s[1]):
+            os.symlink(vars.INSTALL_PATH + s[0], vars.INSTALL_PATH + s[1])
+
 def install():
     lastver = versions.get_version_list()["versions"][-1]
 
     free_space_check(lastver["presz"], lastver["postsz"])
+    prepare_symlink()
 
     gui.message(_("Getting the archive..."), 0)
     download_extract(vars.SOURCE_URL + lastver["url"], lastver["file"], vars.INSTALL_PATH)
+
+    do_symlink()
 
 def update():
     """
@@ -87,9 +104,12 @@ def update():
         return
 
     free_space_check(presz, postsz)
+    prepare_symlink()
 
     gui.message(_N("Getting %s patch...", "Getting %s patches...", len(versions.get_patch_chain())) % len(versions.get_patch_chain()), 0)
 
     for patch in versions.get_patch_chain():
         gui.message(_("Downloading patch %s to %s...") % (patch["from"], patch["to"]), 1)
         download_extract(vars.SOURCE_URL + patch["url"], patch["file"], vars.INSTALL_PATH)
+    
+    do_symlink()
