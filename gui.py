@@ -20,18 +20,20 @@ def message(msg, delay = 0):
     if not vars.SCRIPT_MODE:
         sleep(delay)
 
-def message_yes_no(msg, default = None):
+def message_yes_no(msg: str, default: bool = None, script_mode_default_override:bool = None) -> bool:
     """
     Show a message to user and get yes/no answer.
     """
     if vars.SCRIPT_MODE:
+        # Display msg even though we are in script mode, this because it might
+        # contain useful information.
+        print(msg)
+        print(_("The application is in script mode, using default choice."))
+        if script_mode_default_override is not None:
+            return script_mode_default_override
         return default
-
-    valid = {}
-    valid["yes"] = True
-    valid["no"] = False
-    valid["y"] = True
-    valid["n"] = False
+    
+    valid = {"yes": True, "no": False, "y": True, "n": False}
 
     localyes = _("yes")
     localno = _("no")
@@ -41,9 +43,9 @@ def message_yes_no(msg, default = None):
     valid[localno[0]] = False
 
     prompt = _(" {y/n}")
-    if default == "y":
+    if default:
         prompt = _(" {Y/n}")
-    elif default == "n":
+    elif default is not None:
         prompt = _(" {y/N}")
     msg += prompt
 
@@ -51,7 +53,7 @@ def message_yes_no(msg, default = None):
         print(msg)
         choice = input().lower()
         if default is not None and choice == "":
-            return valid[default]
+            return default
         elif choice in valid:
             return valid[choice]
         else:
@@ -90,6 +92,6 @@ def message_end(msg, code):
     print("[bold green]" + msg)
     if environ.get("WT_SESSION"):
         print(_("[bold]You are safe to close this window."))
-    else:
+    elif not vars.SCRIPT_MODE:
         input(_("Press Enter to exit."))
     exit(code)

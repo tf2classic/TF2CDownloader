@@ -150,7 +150,7 @@ path will be the current work directory.'''
                 print(_("TF2 Classic isn't installed, cannot do an update. Consider using --install instead."))
                 exit(1)
             else:
-                vars.INSTALLED = versions.update_version_file(True)
+                vars.INSTALLED = versions.update_version_file()
                 if versions.check_for_updates() == 'reinstall':
                     downloads.install()
                     troubleshoot.apply_blacklist()

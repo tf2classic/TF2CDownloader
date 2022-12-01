@@ -88,7 +88,7 @@ def check_for_updates():
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
     found = False
-    for ver in VERSION_LIST["versions"]:
+    for ver in get_version_list()["versions"]:
         if ver["ver"] == local_version:
             found = True
             break
@@ -106,9 +106,8 @@ def check_for_updates():
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
-
     if patch_chain(local_version, latest_version):
-        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), 0):
+        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
             return 'update'
         else:
             if gui.message_yes_no(_("In that case, do you want to reinstall completely?"), 0):
@@ -117,7 +116,7 @@ def check_for_updates():
                 gui.message_end(_("We have nothing to do. Goodbye!"), 0)
     else:
         # We did not find an applicable patch chain to properly update the game, forcing us to relie on the ol' reinstallation method.
-        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), 0):
+        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
