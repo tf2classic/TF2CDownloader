@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tf2c-downloader package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tf2c-downloader\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-18 18:21+0200\n"
+"PO-Revision-Date: 2022-09-19 13:01+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"tf2cdownloader/tf2cdownloader/nb_NO/>\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#: downloads.py:18
+msgid "Extracting the downloaded archive, please wait patiently."
+msgstr "Vent mens nedlastingsarkivet pakkes ut …"
+
+#: downloads.py:43
+#, python-format
+msgid "%s byte"
+msgid_plural "%s bytes"
+msgstr[0] "%s byte"
+msgstr[1] "%s byte"
+
+#: downloads.py:45
+#, python-format
+msgid "%.2f kB"
+msgstr "%.2f kB"
+
+#: downloads.py:47
+#, python-format
+msgid "%.2f MB"
+msgstr "%.2f MB"
+
+#: downloads.py:49
+#, python-format
+msgid "%.2f GB"
+msgstr "%.2f GB"
+
+#: downloads.py:51
+#, python-format
+msgid "%.2f TB"
+msgstr "%.2f TB"
+
+#: downloads.py:53
+#, python-format
+msgid "%.2f PB"
+msgstr "%.2f PB"
+
+#: downloads.py:57
+#, python-format
+msgid ""
+"You don't have enough free space for the download. A minimum of %s on your "
+"primary drive is required."
+msgstr ""
+"Du har ikke nok ledig plass å laste ned til. Minst %s kreves på din "
+"hoveddisk."
+
+#: downloads.py:59
+msgid "The specified extraction location does not exist."
+msgstr "Angitt utpakkingssted finnes ikke."
+
+#: downloads.py:61
+#, python-format
+msgid ""
+"You don't have enough free space for the extraction. A minimum of %s at your "
+"chosen extraction site is required."
+msgstr ""
+"Du har ikke nok ledig plass for utpakking. Minst %s kreves på valgt "
+"utpakkingssted."
+
+#: downloads.py:68
+#, fuzzy
+msgid "Getting the archive..."
+msgstr "Henter arkivet …"
+
+#: downloads.py:91
+#, python-format
+msgid "Getting %s patch..."
+msgid_plural "Getting %s patches..."
+msgstr[0] "Henter %s feilfiks …"
+msgstr[1] "Henter %s feilfikser …"
+
+#: downloads.py:94
+#, python-format
+msgid "Downloading patch %s to %s..."
+msgstr "Laster ned feilfiks %s til %s …"
+
+#: gui.py:36
+msgid "yes"
+msgstr "ja"
+
+#: gui.py:37
+msgid "no"
+msgstr "nei"
+
+#: gui.py:43
+msgid " {y/n}"
+msgstr " {j/n}"
+
+#: gui.py:45
+msgid " {Y/n}"
+msgstr " {J/n}"
+
+#: gui.py:47
+msgid " {y/N}"
+msgstr " {j/N}"
+
+#: gui.py:58
+msgid ""
+"[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
+msgstr ""
+"[bold blue]Svar med «ja» eller «nei» (alternativt «j» eller «n»).[/bold blue]"
+
+#: gui.py:92 tf2c_downloader.py:90
+msgid "[bold]You are safe to close this window."
+msgstr "[bold]Du kan trygt lukke dette vinduet."
+
+#: gui.py:94 tf2c_downloader.py:92
+msgid "Press Enter to exit."
+msgstr "Trykk «Enter» for å avslutte."
+
+#: setup.py:66
+#, python-format
+msgid "Installation location not precised, will assume: %s"
+msgstr "Installasjonssted er ikke angitt. Antar: %s"
+
+#: setup.py:79
+#, fuzzy, python-format
+msgid "Sourcemods folder was automatically found at: %s"
+msgstr "Fant sourcemods-mappen automatisk på: %s"
+
+#: setup.py:80
+msgid ""
+"It's the recommended installation location. Would you like to install TF2 "
+"Classic there?"
+msgstr "Dette er anbefalt installasjonssted. Vil du installere TF2 Classic der?"
+
+#: setup.py:86
+msgid ""
+"WARNING: Steam's sourcemods folder has not been found, or you chose not to "
+"use it."
+msgstr ""
+"Advarsel: Steam sin sourcemods-mappe ble ikke funnet, eller så har du valgt "
+"å ikke bruke den."
+
+#: setup.py:87
+#, fuzzy, python-format
+msgid ""
+"Would you like to extract in %s? You must move it to your sourcemods "
+"manually."
+msgstr ""
+"Vil du pakke ut til «%s»? Du må flytte den til din sourcemods-mappe manuelt."
+
+#: setup.py:91
+msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
+msgstr "Skriv inn hvor du vil installere TF2 Classic hen.\n"
+
+#: setup.py:94
+#, python-format
+msgid ""
+"TF2 Classic will be installed in %s\n"
+"Do you accept?"
+msgstr ""
+"TF2 Classic vil bli installert til %s\n"
+"Godta?"
+
+#: setup.py:95
+msgid "Reinitialising...\n"
+msgstr "Laster inn igjen …\n"
+
+#: setup.py:113
+msgid "You need to install Aria2 to use this script."
+msgstr "Du må installere Aria2 for å bruke dette skriptet."
+
+#: tf2c_downloader.py:45
+msgid ""
+"Looks like we're running in the background. We don't want that, so we're "
+"exiting."
+msgstr "Kjører i bakgrunnen. Dette er ikke ønskelig. Avslutter derfor."
+
+#: tf2c_downloader.py:77
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+"Starter nedlasting av TF2 Classic … Det kan hende du får noen feil, men de "
+"kan du trygt ignorere."
+
+#: tf2c_downloader.py:80 tf2c_downloader.py:133
+#, fuzzy
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr "Installasjonen er fullført. Husk å starte Steam på ny."
+
+#: tf2c_downloader.py:83 tf2c_downloader.py:152
+#, fuzzy
+msgid "The update has successfully completed."
+msgstr "Oppdatering fullført."
+
+#: tf2c_downloader.py:87 tf2c_downloader.py:161
+msgid "[italic magenta]----- Exception details above this line -----"
+msgstr "[italic magenta]----- Detaljer om utpakkingen over denne linjen -----"
+
+#: tf2c_downloader.py:88 tf2c_downloader.py:162
+#, fuzzy
+msgid ""
+"[bold red]:warning: The program has failed. Post a screenshot in #technical-"
+"issues on the Discord. :warning:[/bold red]"
+msgstr ""
+"[bold red]:Advarsel: Programmet har mislyktes. Post en skjermavbildning i "
+"#technical-issues på Discord-en. :warning:[/bold red]"
+
+#: tf2c_downloader.py:99
+#, fuzzy
+msgid ""
+"Usage: TF2CDownloader [COMMAND] [PATH]\n"
+"Installation utility for TF2 Classic.\n"
+"\n"
+"If no arguments are provided, the downloader will be ran in setup mode, in\n"
+"which a series of questions will be asked to install the game for a regular\n"
+"user. This is what's used when opening the downloader from the desktop.\n"
+"\n"
+"Valid commands:\n"
+"  --install           installs TF2 Classic into a new folder inside PATH\n"
+"  --update            updates the pre-existing TF2 Classic installation in "
+"its\n"
+"                      folder inside PATH\n"
+"  --help              shows this\n"
+"\n"
+"PATH is the folder containing TF2 Classic's folder. This is usually the\n"
+"sourcemods folder for clients, or the Source dedicated server folder for\n"
+"servers.\n"
+"\n"
+"If PATH isn't provided, then it'll be replaced with the detected path to "
+"the\n"
+"sourcemods folder in the Steam directory. If it couldn't be detected, then "
+"the\n"
+"path will be the current work directory."
+msgstr ""
+"Bruk: TF2CDownloader [COMMAND] [PATH]\n"
+"Installasjonsverktøy for TF2 Classic.\n"
+"\n"
+"Hvis ingen argumenter tilbys, vil nedlasteren bli kjørt i oppsettsmodus, "
+"der\n"
+"en rekke spørsmål vil bli stilt for å installere spillet for en vanlig "
+"bruker.\n"
+"Det er dette som brukes når nedlasteren startes fra skrivebordet.\n"
+"\n"
+"Gyldige kommandoer:\n"
+"  --install           installerer TF2 Classic i en ny mappe inne i PATH\n"
+"  --update            oppdaterer en allerede eksisterende TF2 Classic-"
+"installasjon i egen mappe\n"
+"                      inne i PATH\n"
+"  --help              viser denne hjelpeteksten\n"
+"\n"
+"PATH er mappen som inneholder mappen for TF2 Classic. Dette er vanligvis\n"
+"sourcemods-mappen for klienter, eller Source-dedikert tjenermappe for "
+"tjenere.\n"
+"\n"
+"Hvis PATH ikke angis, vil den bli erstattet med oppdaget sti til\n"
+"sourcemods-mappen i Steam-mappen. Hvis heller ikke den oppdages vil\n"
+"sti erstattes med nåværende arbeidsmappe."
+
+#: tf2c_downloader.py:130
+msgid "TF2 Classic is already installed. Assuming a reinstallation."
+msgstr "TF2 Classic er allerede installert. Antar en reinstallasjon."
+
+#: tf2c_downloader.py:143
+msgid ""
+"TF2 Classic isn't installed, cannot do an update. Consider using --install "
+"instead."
+msgstr ""
+"TF2 Classic er ikke installert. Kan ikke oppgradere. Overvei bruk av "
+"«--install» istedenfor."
+
+#: tf2c_downloader.py:155
+msgid "Unrecognised command. Try --help"
+msgstr "Gjenkjenner ikke kommandoen. Prøv «--help»"
+
+#: troubleshoot.py:7
+msgid "Applying safety blacklist..."
+msgstr "Legger til trygghetssvarteliste …"
+
+#: troubleshoot.py:11
+msgid "WARNING: could not apply safety blacklist."
+msgstr "Advarsel: Kunne ikke legge til trygghetssvarteliste."
+
+#: versions.py:20
+msgid ""
+"Could not get version list. If your internet connection is fine, the servers "
+"could be having technical issues."
+msgstr ""
+"Kunne ikke hente versjonslisten. Hvis tilkoblingen din til Internett virker "
+"kan det hende problemet er på tjenersiden."
+
+#: versions.py:33 versions.py:85
+msgid ""
+"We can't read the version of your installation. It could be corrupted. Do "
+"you want to reinstall the game?"
+msgstr ""
+"Kan ikke lese versjonen for din installasjon. Den er kanskje skadet. Vil du "
+"reinstallere spillet?"
+
+#: versions.py:36 versions.py:88 versions.py:100 versions.py:108
+#: versions.py:117 versions.py:123
+msgid "We have nothing to do. Goodbye!"
+msgstr "Ingenting å utføre. Adjø."
+
+#: versions.py:97
+msgid ""
+"The version of your installation is unknown. It could be corrupted. Do you "
+"want to reinstall the game?"
+msgstr ""
+"Versjonen for din installasjon er ukjent. Den er kanskje skadet. Vil du "
+"reinstallere spillet?"
+
+#: versions.py:105
+#, fuzzy
+msgid ""
+"We think we've found an existing up-to-date installation of the game. Do you "
+"want to reinstall it?"
+msgstr ""
+"Vi har funnet en eksisterende installasjon av nyeste dato av spillet. Vil du "
+"reinstallere det?"
+
+#: versions.py:111 versions.py:120
+msgid "An update is available for your game. Do you want to install it?"
+msgstr "En nye versjon av spillet ditt er tilgjengelig. Vil du installere den?"
+
+#: versions.py:114
+msgid "In that case, do you want to reinstall completely?"
+msgstr "Vil du også reinstallere spillet fullstendig?"
