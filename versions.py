@@ -80,7 +80,7 @@ def check_for_updates():
 
     try:
         local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
-        local_version = local_version_file.read()
+        local_version = local_version_file.read().rstrip('\n')
     except ValueError:
         if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
             return 'reinstall'
