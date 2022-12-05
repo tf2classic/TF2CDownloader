@@ -1,7 +1,7 @@
 # TF2CDownloader
 Official tool for handling installation, updating, and more for TF2 Classic.
 
-Requires Rich, PyZstd, and TQDM. On Linux, we recommend using Apt to install the python3-tqdm and python3-rich packages. Install PyZstd through PIP.
+Requires Rich, PyZstd, TQDM, and HTTPX. On Linux, we recommend using Apt to install the python3-tqdm, python3-rich, and python3-httpx packages. Install PyZstd through PIP.
 
 PyInstaller is used to build this into a single-file binary. Buildscripts are included.
 

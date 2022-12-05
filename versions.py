@@ -3,7 +3,7 @@ from subprocess import run
 from platform import system
 from gettext import gettext as _
 from gettext import ngettext as _N
-import urllib.request
+import httpx
 import gui
 import vars
 import json
@@ -15,8 +15,9 @@ def get_version_list():
     global VERSION_LIST
     if VERSION_LIST is None:
         try:
-            VERSION_LIST = json.loads(urllib.request.urlopen(vars.SOURCE_URL + 'versions.json').read())
-        except urllib.error.URLError:
+            VERSION_JSON = httpx.get(vars.SOURCE_URL + 'versions.json')
+            VERSION_LIST = json.loads(VERSION_JSON.text)
+        except httpx.RequestError:
             gui.message_end(_("Could not get version list. If your internet connection is fine, the servers could be having technical issues."), 1)
     return VERSION_LIST
 

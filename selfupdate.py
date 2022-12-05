@@ -9,7 +9,7 @@ from subprocess import run
 from platform import system
 from gettext import gettext as _
 import hashlib
-import urllib.request
+import httpx
 import os
 import sys
 import gui
@@ -27,17 +27,15 @@ def hash_script():
 def check_downloader_update():
     try:
         if system() == 'Windows':
-            remote_hash = urllib.request.urlopen("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_windows")
+            remote_hash = httpx.get("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_windows")
         else:
-            remote_hash = urllib.request.urlopen("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_linux")
-    except urllib.error.URLError:
+            remote_hash = httpx.get("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_linux")
+    except httpx.RequestError:
         gui.message(_("WARNING: downloader failed to check itself for updates, potentially out-of-date."))
         return
 
-    remote_hash_bytes = remote_hash.read()
-    remote_hash_string = remote_hash_bytes.decode("utf8")
+    remote_hash_string = remote_hash.text
     remote_hash_string = remote_hash_string.rstrip('\n')
-    remote_hash.close()
 
     if remote_hash_string == hash_script():
         gui.message(_("TF2CDownloader appears to be up-to-date."))
