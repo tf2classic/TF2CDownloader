@@ -13,7 +13,7 @@ import tarfile
 import os
 
 def download_extract(url, filename, endpath):
-    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloaderGit', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
+    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2022-12-04-1', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
 
     gui.message(_("Extracting the downloaded archive, please wait patiently."), 1)
