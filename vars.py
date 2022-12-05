@@ -21,7 +21,7 @@ TF2C_PATH = None
 
 SCRIPT_MODE = len(sys.argv) > 1
 
-SOURCE_URL = 'https://raw.githubusercontent.com/tf2classic/TF2C-Meta/main/'
+SOURCE_URL = 'https://wiki.tf2classic.com/downloader/'
 
 # Only on Linux
 TO_SYMLINK = [
