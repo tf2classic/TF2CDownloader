@@ -93,9 +93,10 @@ def check_for_updates():
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
+    version_json = get_version_list()["versions"]
     found = False
-    for ver in get_version_list()["versions"]:
-        if ver["ver"] == local_version:
+    for ver in version_json:
+        if ver == local_version:
             found = True
             break
     
@@ -105,8 +106,8 @@ def check_for_updates():
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
-    latest_version = VERSION_LIST["versions"][-1]["ver"]
-
+    last_key = list(version_json.keys())[-1]
+    latest_version = sorted(version_json.keys(), reverse=True)[0]
     if local_version == latest_version:
         if gui.message_yes_no(_("We think we've found an existing up-to-date installation of the game. Do you want to reinstall it?"), False):
             return 'reinstall'

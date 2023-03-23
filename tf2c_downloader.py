@@ -75,24 +75,26 @@ def wizard():
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
             versions.update_version_file()
+        
+        user_choice = gui.main_menu()
 
-        if gui.main_menu() == '1':
+        if user_choice == '1':
             gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
             downloads.install()
             troubleshoot.apply_blacklist()
             gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
 
-        elif gui.main_menu() == '2':
+        elif user_choice == '2':
             if versions.check_for_updates() == "update":
                 downloads.update()
+                gui.message_end(_("The update has successfully completed."), 0)
             if versions.check_for_updates() == "reinstall":
                 gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
                 downloads.install()
                 troubleshoot.apply_blacklist()
                 gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
-                gui.message_end(_("The update has successfully completed."), 0)
 
-        elif gui.main_menu() == '3':
+        elif user_choice == '3':
             downloads.butler_verify
 
     except Exception as ex:

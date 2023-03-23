@@ -3,8 +3,9 @@ from subprocess import run
 from platform import system
 from gettext import gettext as _
 from gettext import ngettext as _N
-from shutil import disk_usage
+from shutil import disk_usage, rmtree
 from tqdm import tqdm
+from pathlib import Path
 import vars
 import gui
 import versions
@@ -40,12 +41,6 @@ def download_extract(url, filename, endpath):
             tar.extract(member=member, path=endpath)
 
 def butler_verify(signature, gamedir, remote):
-
-    for ver in versions.get_version_list()["versions"]:
-        if ver["ver"] == get_installed_version():
-            found = True
-            break
-
     run([vars.BUTLER_BINARY, 'verify', signature, gamedir, '--heal=archive,' + remote], check=True)
 
 def butler_patch(url, staging_dir, patchfilename, gamedir):
@@ -53,6 +48,9 @@ def butler_patch(url, staging_dir, patchfilename, gamedir):
     '-d' + vars.TEMP_PATH, url], check=True)
     gui.message(_("Patching your game with the new update, please wait patiently."), 1)
     run([vars.BUTLER_BINARY, 'apply', '--staging-dir=' + staging_dir, path.join(vars.TEMP_PATH, patchfilename), gamedir], check=True)
+    if Path(staging_dir).exists() and Path(staging_dir).is_dir():
+        rmtree(staging_dir)
+    
 
 def pretty_size(bytes):
     if bytes < 100:
@@ -90,7 +88,9 @@ def do_symlink():
             os.symlink(vars.INSTALL_PATH + s[0], vars.INSTALL_PATH + s[1])
 
 def install():
-    lastver = versions.get_version_list()["versions"][-1]
+    version_json = versions.get_version_list()["versions"]
+    last_key = list(version_json.keys())[-1]
+    lastver = version_json[last_key]
 
     free_space_check(lastver["presz"], lastver["postsz"])
     prepare_symlink()
@@ -112,7 +112,8 @@ def update():
         postsz += patch["postsz"]
 
     # check if it is more efficient to download the game or the patches
-    lastver = versions.get_version_list()["versions"][-1]
+    version_json = versions.get_version_list()["versions"]
+    lastver = sorted(version_json.keys(), reverse=True)[0]
 
     if "presz" in lastver and lastver["presz"] < presz: # this means the patches are heavier than the bare download
         install()
@@ -122,14 +123,11 @@ def update():
     prepare_symlink()
 
     gui.message(_N("Getting %s patch...", "Getting %s patches...", len(versions.get_patch_chain())) % len(versions.get_patch_chain()), 0)
-    
-    print(versions.get_version_list()["versions"][versions.get_installed_version()]["signature"])
-          #  if ver["ver"] == versions.get_installed_version():
-          #      print("YES")
-          #      butler_verify(versions.get_version_list()["versions", versions.get_installed_version(), "signature"], vars.INSTALL_PATH, ver["heal"])
+
+    butler_verify(vars.SOURCE_URL + version_json[versions.get_installed_version()]["signature"], vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + version_json[versions.get_installed_version()]["heal"])
     
     for patch in versions.get_patch_chain():
         gui.message(_("Downloading patch %s to %s...") % (patch["from"], patch["to"]), 1)
-        butler_patch(vars.SOURCE_URL + patch["url"], vars.TEMP_PATH + 'butler-staging', patch["file"], vars.INSTALL_PATH)
+        butler_patch(vars.SOURCE_URL + patch["url"], vars.TEMP_PATH + 'butler-staging', patch["file"], vars.INSTALL_PATH + '/tf2classic')
     
     do_symlink()
