@@ -69,21 +69,32 @@ def wizard():
             selfupdate.check_downloader_update()
         setup.setup_binaries()
         setup.setup_path(False)
-        # After this line, we have two possible paths: installing, or updating/repairing
+        versions.get_version_list()
+        
+        # Check if the game is already installed, for the purposes of running update_version_file() safely
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
-        if vars.INSTALLED == True:
-            vars.INSTALLED = versions.update_version_file()
-        versions.get_version_list()
-        if versions.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
-            if vars.INSTALLED == False:
-                gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+            versions.update_version_file()
+
+        if gui.main_menu() == '1':
+            gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
             downloads.install()
             troubleshoot.apply_blacklist()
             gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
-        else:
-            downloads.update()
-            gui.message_end(_("The update has successfully completed."), 0)
+
+        elif gui.main_menu() == '2':
+            if versions.check_for_updates() == "update":
+                downloads.update()
+            if versions.check_for_updates() == "reinstall":
+                gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+                downloads.install()
+                troubleshoot.apply_blacklist()
+                gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+                gui.message_end(_("The update has successfully completed."), 0)
+
+        elif gui.main_menu() == '3':
+            downloads.butler_verify
+
     except Exception as ex:
         if ex is not SystemExit:
             traceback.print_exc()

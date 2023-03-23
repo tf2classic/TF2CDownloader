@@ -70,9 +70,14 @@ def get_patch_chain():
     global PATCH_CHAIN
     return PATCH_CHAIN
 
+def get_installed_version():
+    local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
+    local_version = local_version_file.read().rstrip('\n')
+    return(local_version)
+
 def check_for_updates():
     """
-    It's all math here. We can compare the version number against remote variables to see what we should do.
+    This function checks the local version against the list of remote versions and deems firstly, if an update is necessary, and secondarily, whether it's more efficient to update or reinstall.
     """
 
     # This probably was already communicated to the user in update_version_file(), but if version.txt doesn't exist, skip updating.

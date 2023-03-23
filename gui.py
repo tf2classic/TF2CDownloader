@@ -20,6 +20,13 @@ def message(msg, delay = 0):
     if not vars.SCRIPT_MODE:
         sleep(delay)
 
+def main_menu():
+    print(_("""Welcome to TF2CDownloader. Enter a number to continue.\n\n
+        1 - Install or reinstall the game
+        2 - Check for and apply any available updates
+        3 - Verify and repair game files"""))
+    return(input())
+
 def message_yes_no(msg: str, default: bool = None, script_mode_default_override:bool = None) -> bool:
     """
     Show a message to user and get yes/no answer.

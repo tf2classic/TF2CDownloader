@@ -39,6 +39,21 @@ def download_extract(url, filename, endpath):
         for member in tqdm(iterable=tar.getmembers(), total=len(tar.getmembers())):
             tar.extract(member=member, path=endpath)
 
+def butler_verify(signature, gamedir, remote):
+
+    for ver in versions.get_version_list()["versions"]:
+        if ver["ver"] == get_installed_version():
+            found = True
+            break
+
+    run([vars.BUTLER_BINARY, 'verify', signature, gamedir, '--heal=archive,' + remote], check=True)
+
+def butler_patch(url, staging_dir, patchfilename, gamedir):
+    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2022-12-05', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
+    '-d' + vars.TEMP_PATH, url], check=True)
+    gui.message(_("Patching your game with the new update, please wait patiently."), 1)
+    run([vars.BUTLER_BINARY, 'apply', '--staging-dir=' + staging_dir, path.join(vars.TEMP_PATH, patchfilename), gamedir], check=True)
+
 def pretty_size(bytes):
     if bytes < 100:
         return _N("%s byte", "%s bytes", bytes) % bytes
@@ -107,9 +122,14 @@ def update():
     prepare_symlink()
 
     gui.message(_N("Getting %s patch...", "Getting %s patches...", len(versions.get_patch_chain())) % len(versions.get_patch_chain()), 0)
-
+    
+    print(versions.get_version_list()["versions"][versions.get_installed_version()]["signature"])
+          #  if ver["ver"] == versions.get_installed_version():
+          #      print("YES")
+          #      butler_verify(versions.get_version_list()["versions", versions.get_installed_version(), "signature"], vars.INSTALL_PATH, ver["heal"])
+    
     for patch in versions.get_patch_chain():
         gui.message(_("Downloading patch %s to %s...") % (patch["from"], patch["to"]), 1)
-        download_extract(vars.SOURCE_URL + patch["url"], patch["file"], vars.INSTALL_PATH)
+        butler_patch(vars.SOURCE_URL + patch["url"], vars.TEMP_PATH + 'butler-staging', patch["file"], vars.INSTALL_PATH)
     
     do_symlink()
