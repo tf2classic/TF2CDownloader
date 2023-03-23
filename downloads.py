@@ -102,32 +102,31 @@ def install():
 
 def update():
     """
-    The simplest part of all this - if this function is called, we know the user wants to update.
+    The simplest part of all of this.
+    We already know the user wants to update, can update, and the local version we get the patch from.
+    So at this point, it's just downloading, healing, and applying.
     """
 
-    presz = 0
-    postsz = 0
-    for patch in versions.get_patch_chain():
-        presz += patch["presz"]
-        postsz += patch["postsz"]
-
-    # check if it is more efficient to download the game or the patches
-    version_json = versions.get_version_list()["versions"]
-    lastver = sorted(version_json.keys(), reverse=True)[0]
-
-    if "presz" in lastver and lastver["presz"] < presz: # this means the patches are heavier than the bare download
-        install()
-        return
-
-    free_space_check(presz, postsz)
-    prepare_symlink()
-
-    gui.message(_N("Getting %s patch...", "Getting %s patches...", len(versions.get_patch_chain())) % len(versions.get_patch_chain()), 0)
-
-    butler_verify(vars.SOURCE_URL + version_json[versions.get_installed_version()]["signature"], vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + version_json[versions.get_installed_version()]["heal"])
     
-    for patch in versions.get_patch_chain():
-        gui.message(_("Downloading patch %s to %s...") % (patch["from"], patch["to"]), 1)
-        butler_patch(vars.SOURCE_URL + patch["url"], vars.TEMP_PATH + 'butler-staging', patch["file"], vars.INSTALL_PATH + '/tf2classic')
+    prepare_symlink()
+    
+    # Prepare some variables
+    local_version = versions.get_installed_version()
+
+    patch_json = versions.get_version_list()["patches"]
+    patch_url = patch_json[local_version]["url"]
+    patch_file = patch_json[local_version]["file"]
+    patch_tempreq = patch_json[local_version]["tempreq"]
+    
+    # Filesize check...
+    if disk_usage(vars.TEMP_PATH)[2] < patch_tempreq:
+        gui.message_end(_("You don't have enough free space to hold the temporary update files. A minimum of %s on your primary drive is required.") % pretty_size(patch_tempreq), 1)
+    version_json = versions.get_version_list()["versions"]
+    signature_url = version_json[versions.get_installed_version()]["signature"]
+    heal_url = version_json[versions.get_installed_version()]["heal"]
+    
+    # Finally, verify and heal with the information we've gathered.
+    butler_verify(vars.SOURCE_URL + signature_url, vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + heal_url)
+    butler_patch(vars.SOURCE_URL + patch_url, vars.TEMP_PATH + 'butler-staging', patch_file, vars.INSTALL_PATH + '/tf2classic')
     
     do_symlink()

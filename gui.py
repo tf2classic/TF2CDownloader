@@ -10,6 +10,9 @@ from rich import print
 from gettext import gettext as _
 import unicodedata
 import vars
+import gui
+import downloads
+import versions
 
 def message(msg, delay = 0):
     """
@@ -21,11 +24,35 @@ def message(msg, delay = 0):
         sleep(delay)
 
 def main_menu():
-    print(_("""Welcome to TF2CDownloader. Enter a number to continue.\n\n
+    print(_("""Welcome to TF2CDownloader. Enter a number to continue.\n
         1 - Install or reinstall the game
         2 - Check for and apply any available updates
         3 - Verify and repair game files"""))
-    return(input())
+    user_choice = int(input())
+    if user_choice == 1:
+        message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+        downloads.install()
+        troubleshoot.apply_blacklist()
+        message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+
+    elif user_choice == 2:
+        if versions.check_for_updates() == "update":
+            downloads.update()
+            message_end(_("The update has successfully completed."), 0)
+        if versions.check_for_updates() == "reinstall":
+            message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+            downloads.install()
+            troubleshoot.apply_blacklist()
+            message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+
+    elif user_choice == 3:
+        version_json = versions.get_version_list()["versions"]
+        downloads.butler_verify(vars.SOURCE_URL + version_json[versions.get_installed_version()]["signature"], vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + version_json[versions.get_installed_version()]["heal"])
+    
+    else:
+        message(_("Invalid choice. Please retry."))
+        main_menu()
+    
 
 def message_yes_no(msg: str, default: bool = None, script_mode_default_override:bool = None) -> bool:
     """

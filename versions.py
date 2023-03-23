@@ -47,29 +47,6 @@ def update_version_file():
     old_version_file.close()
     return True
 
-def patch_chain(ver_from, ver_to):
-    current_version = ver_from
-    global PATCH_CHAIN
-    PATCH_CHAIN = []
-    while current_version != ver_to:
-        if not current_version in VERSION_LIST["patches"]:
-            # still not in the latest version, could not find patch
-            return False
-        patch = VERSION_LIST["patches"][current_version]
-        patch["from"] = current_version
-        if "file" not in patch:
-            patch["file"] = patch["url"]
-        if patch in PATCH_CHAIN:
-            # somehow managed to get ourselves into a loop, avoid the memory hogging infinite loop, killer of desktops
-            return False
-        PATCH_CHAIN.append(patch)
-        current_version = patch["to"]
-    return True
-
-def get_patch_chain():
-    global PATCH_CHAIN
-    return PATCH_CHAIN
-
 def get_installed_version():
     local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
     local_version = local_version_file.read().rstrip('\n')
@@ -92,7 +69,12 @@ def check_for_updates():
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
+    # End of checking, we definitely have a valid installation at this point
+    # Now we have to see if there's a remote patch matching our local version
 
+
+    # First, as a basic sanity check, do we know about this version at all?
+    # We don't want to try to patch from 746 or some other nonexistent version.
     version_json = get_version_list()["versions"]
     found = False
     for ver in version_json:
@@ -106,6 +88,7 @@ def check_for_updates():
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
+    # Now we're checking the latest version, to see if we're already up-to-date.
     last_key = list(version_json.keys())[-1]
     latest_version = sorted(version_json.keys(), reverse=True)[0]
     if local_version == latest_version:
@@ -113,17 +96,11 @@ def check_for_updates():
             return 'reinstall'
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
-    if patch_chain(local_version, latest_version):
+
+    # Finally, we check if there's a patch available.
+    patches = get_version_list()["patches"]
+    if local_version in patches:
         if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
             return 'update'
         else:
-            if gui.message_yes_no(_("In that case, do you want to reinstall completely?"), 0):
-                return 'reinstall'
-            else:
                 gui.message_end(_("We have nothing to do. Goodbye!"), 0)
-    else:
-        # We did not find an applicable patch chain to properly update the game, forcing us to relie on the ol' reinstallation method.
-        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
-            return 'reinstall'
-        else:
-            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
