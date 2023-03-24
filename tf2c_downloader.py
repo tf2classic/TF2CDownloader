@@ -10,9 +10,9 @@ from shutil import which
 from subprocess import run
 import sys
 from sys import argv, exit, stdin
-from rich import print
-from gettext import gettext as _
 import gettext
+from gettext import gettext as _
+from rich import print
 import gui
 import downloads
 import setup
@@ -27,7 +27,7 @@ import selfupdate
 # is launched with cmd.exe instead, it relaunches the application in WT instead.
 if not vars.SCRIPT_MODE and system() == 'Windows':
     if which('wt') is not None and os.environ.get("WT_SESSION") is None:
-        run(['wt', argv[0]], check=True)    
+        run(['wt', argv[0]], check=True)
         exit()
 
 # Disable QuickEdit so the process doesn't pause when clicked
@@ -53,7 +53,7 @@ if sys.stderr.encoding == 'ascii':
 
 if os.getenv('LANG') is None:
     import locale
-    lang, enc = locale.getdefaultlocale()
+    lang, enc = locale.getlocale()
     os.environ['LANG'] = lang
 
 if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
@@ -70,12 +70,12 @@ def wizard():
         setup.setup_binaries()
         setup.setup_path(False)
         versions.get_version_list()
-        
+
         # Check if the game is already installed, for the purposes of running update_version_file() safely
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
             versions.update_version_file()
-        
+
         # All of the choice logic is handled in this function directly.
         gui.main_menu()
 

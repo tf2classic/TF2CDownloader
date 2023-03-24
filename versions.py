@@ -3,20 +3,19 @@ from subprocess import run
 from platform import system
 from gettext import gettext as _
 from gettext import ngettext as _N
+import json
 import httpx
 import gui
 import vars
-import json
 
 VERSION_LIST = None
-PATCH_CHAIN = None
 
 def get_version_list():
     global VERSION_LIST
     if VERSION_LIST is None:
         try:
-            VERSION_JSON = httpx.get(vars.SOURCE_URL + 'versions.json')
-            VERSION_LIST = json.loads(VERSION_JSON.text)
+            version_remote = httpx.get(vars.SOURCE_URL + 'versions.json')
+            VERSION_LIST = json.loads(version_remote.text)
         except httpx.RequestError:
             gui.message_end(_("Could not get version list. If your internet connection is fine, the servers could be having technical issues."), 1)
     return VERSION_LIST
@@ -52,7 +51,7 @@ def get_installed_version():
     update_version_file()
     local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
     local_version = local_version_file.read().rstrip('\n')
-    return(local_version)
+    return local_version
 
 def check_for_updates():
     """
@@ -86,7 +85,7 @@ def check_for_updates():
         if ver == local_version:
             found = True
             break
-    
+
     if not found:
         if gui.message_yes_no(_("The version of your installation is unknown. It could be corrupted. Do you want to reinstall the game?"), False):
             return False
@@ -94,7 +93,6 @@ def check_for_updates():
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
     # Now we're checking the latest version, to see if we're already up-to-date.
-    last_key = list(version_json.keys())[-1]
     latest_version = sorted(version_json.keys(), reverse=True)[0]
     if local_version == latest_version:
         if gui.message_yes_no(_("We think we've found an existing up-to-date installation of the game. Do you want to reinstall it?"), False):
@@ -102,10 +100,15 @@ def check_for_updates():
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
-    # Finally, we check if there's a patch available.
+    # Finally, we ensure our local version has a patch available before continuing.
     patches = get_version_list()["patches"]
     if local_version in patches:
-        if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
-            return True
+        if gui.message_yes_no(_("An update is available for TF2 Classic. Do you want to install it?"), None, True):
+            if gui.message_yes_no(_("If running, please close your game client and/or game launcher. Confirm once they're closed."), None, True):
+                return True
+            else:
+                gui.message_end(_("Exiting..."), 0)
         else:
-                gui.message_end(_("We have nothing to do. Goodbye!"), 0)
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
+    else:
+        gui.message_end(_("An update is available, but no patch could be found for your game version. Try reinstalling?"), 0)
