@@ -10,9 +10,9 @@ from shutil import which
 from subprocess import run
 import sys
 from sys import argv, exit, stdin
-from rich import print
-from gettext import gettext as _
 import gettext
+from gettext import gettext as _
+from rich import print
 import gui
 import downloads
 import setup
@@ -27,7 +27,7 @@ import selfupdate
 # is launched with cmd.exe instead, it relaunches the application in WT instead.
 if not vars.SCRIPT_MODE and system() == 'Windows':
     if which('wt') is not None and os.environ.get("WT_SESSION") is None:
-        run(['wt', argv[0]], check=True)    
+        run(['wt', argv[0]], check=True)
         exit()
 
 # Disable QuickEdit so the process doesn't pause when clicked
@@ -53,7 +53,7 @@ if sys.stderr.encoding == 'ascii':
 
 if os.getenv('LANG') is None:
     import locale
-    lang, enc = locale.getdefaultlocale()
+    lang, enc = locale.getlocale()
     os.environ['LANG'] = lang
 
 if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
@@ -69,21 +69,16 @@ def wizard():
             selfupdate.check_downloader_update()
         setup.setup_binaries()
         setup.setup_path(False)
-        # After this line, we have two possible paths: installing, or updating/repairing
+        versions.get_version_list()
+
+        # Check if the game is already installed, for the purposes of running update_version_file() safely
         if os.path.exists(vars.INSTALL_PATH + '/tf2classic/gameinfo.txt'):
             vars.INSTALLED = True
-        if vars.INSTALLED == True:
-            vars.INSTALLED = versions.update_version_file()
-        versions.get_version_list()
-        if versions.check_for_updates() == 'reinstall' or vars.INSTALLED == False:
-            if vars.INSTALLED == False:
-                gui.message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
-            downloads.install()
-            troubleshoot.apply_blacklist()
-            gui.message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
-        else:
-            downloads.update()
-            gui.message_end(_("The update has successfully completed."), 0)
+            versions.update_version_file()
+
+        # All of the choice logic is handled in this function directly.
+        gui.main_menu()
+
     except Exception as ex:
         if ex is not SystemExit:
             traceback.print_exc()

@@ -6,10 +6,12 @@ of communication or interactivity with the user.
 from os import environ, makedirs, path, rmdir
 from sys import exit
 from time import sleep
-from rich import print
 from gettext import gettext as _
-import unicodedata
+from rich import print
 import vars
+import downloads
+import versions
+import troubleshoot
 
 def message(msg, delay = 0):
     """
@@ -19,6 +21,37 @@ def message(msg, delay = 0):
     print("[bold yellow]" + msg)
     if not vars.SCRIPT_MODE:
         sleep(delay)
+
+def main_menu():
+    print(_("""Welcome to TF2CDownloader. Enter a number to continue.\n
+        1 - Install or reinstall the game
+        2 - Check for and apply any available updates
+        3 - Verify and repair game files"""))
+    user_choice = int(input())
+    if user_choice == 1:
+        message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+        downloads.install()
+        troubleshoot.apply_blacklist()
+        message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+
+    elif user_choice == 2:
+        if versions.check_for_updates():
+            downloads.update()
+            message_end(_("The update has successfully completed."), 0)
+        else:
+            message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
+            downloads.install()
+            troubleshoot.apply_blacklist()
+            message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
+
+    elif user_choice == 3:
+        version_json = versions.get_version_list()["versions"]
+        downloads.butler_verify(vars.SOURCE_URL + version_json[versions.get_installed_version()]["signature"], vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + version_json[versions.get_installed_version()]["heal"])
+
+    else:
+        message(_("Invalid choice. Please retry."))
+        main_menu()
+
 
 def message_yes_no(msg: str, default: bool = None, script_mode_default_override:bool = None) -> bool:
     """
@@ -32,7 +65,7 @@ def message_yes_no(msg: str, default: bool = None, script_mode_default_override:
         if script_mode_default_override is not None:
             return script_mode_default_override
         return default
-    
+
     valid = {"yes": True, "no": False, "y": True, "n": False}
 
     localyes = _("yes")
@@ -54,10 +87,9 @@ def message_yes_no(msg: str, default: bool = None, script_mode_default_override:
         choice = input().lower()
         if default is not None and choice == "":
             return default
-        elif choice in valid:
+        if choice in valid:
             return valid[choice]
-        else:
-            print(_("[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"))
+        print(_("[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"))
 
 
 def message_input(msg):

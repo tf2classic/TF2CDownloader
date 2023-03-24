@@ -16,12 +16,13 @@ else:
 INSTALLED = False
 
 ARIA2C_BINARY = None
+BUTLER_BINARY = None
 INSTALL_PATH = None
 TF2C_PATH = None
 
 SCRIPT_MODE = len(sys.argv) > 1
 
-SOURCE_URL = 'https://wiki.tf2classic.com/downloader/'
+SOURCE_URL = 'https://wiki.tf2classic.com/downloader/butler/'
 
 # Only on Linux
 TO_SYMLINK = [

@@ -63,7 +63,7 @@ def setup_path_script():
         else:
             vars.INSTALL_PATH = getcwd()
 
-        gui.message(_("Installation location not precised, will assume: %s") % vars.INSTALL_PATH)
+        gui.message(_("Installation location not specified, will assume: %s") % vars.INSTALL_PATH)
 
 def setup_path(manual_path):
     """
@@ -77,7 +77,7 @@ def setup_path(manual_path):
     smodsfound = isinstance(vars.INSTALL_PATH, str)
     if smodsfound is True and manual_path is not True:
         gui.message(_("Sourcemods folder was automatically found at: %s") % vars.INSTALL_PATH)
-        if gui.message_yes_no(_("It's the recommended installation location. Would you like to install TF2 Classic there?")):
+        if gui.message_yes_no(_("Does that look correct?")):
             confirm = True
         else:
             setup_path(True)
@@ -102,14 +102,19 @@ def setup_binaries():
     if system() == 'Windows':
         # When we can detect that we're compiled using PyInstaller, we use their
         # suggested method of determining the location of the temporary runtime folder
-        # to point to Aria2 and Tar.
+        # to point to Aria2 and Butler.
         if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
             vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c.exe'))
+            vars.BUTLER_BINARY = path.abspath(path.join(path.dirname(__file__), 'butler.exe'))
         else:
-            # When running as a script, we just select the Binaries folder directly for Aria2 and Arc.
+            # When running as a script, we just select the Binaries folder directly for Aria2 and Butler.
             vars.ARIA2C_BINARY = 'Binaries/aria2c.exe'
+            vars.BUTLER_BINARY = 'Binaries/butler.exe'
     else:
-        if which('aria2c') is None:
-            gui.message_end(_("You need to install Aria2 to use this script."), 1)
+        # If we're running on Linux...
+        if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+            vars.ARIA2C_BINARY = path.abspath(path.join(path.dirname(__file__), 'aria2c'))
+            vars.BUTLER_BINARY = path.abspath(path.join(path.dirname(__file__), 'butler'))
         else:
-            vars.ARIA2C_BINARY = 'aria2c'
+            vars.BUTLER_BINARY = 'Binaries/butler'
+            vars.ARIA2C_BINARY = 'Binaries/aria2c'
