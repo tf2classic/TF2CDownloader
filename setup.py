@@ -63,7 +63,7 @@ def setup_path_script():
         else:
             vars.INSTALL_PATH = getcwd()
 
-        gui.message(_("Installation location not precised, will assume: %s") % vars.INSTALL_PATH)
+        gui.message(_("Installation location not specified, will assume: %s") % vars.INSTALL_PATH)
 
 def setup_path(manual_path):
     """

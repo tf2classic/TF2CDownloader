@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-25 11:28-0500\n"
+"POT-Creation-Date: 2023-03-24 04:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,106 +18,139 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: downloads.py:18
+#: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr ""
 
-#: downloads.py:43
+#: downloads.py:65
+msgid "Patching your game with the new update, please wait patiently."
+msgstr ""
+
+#: downloads.py:73
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: downloads.py:45
+#: downloads.py:75
 #, python-format
 msgid "%.2f kB"
 msgstr ""
 
-#: downloads.py:47
+#: downloads.py:77
 #, python-format
 msgid "%.2f MB"
 msgstr ""
 
-#: downloads.py:49
+#: downloads.py:79
 #, python-format
 msgid "%.2f GB"
 msgstr ""
 
-#: downloads.py:51
+#: downloads.py:81
 #, python-format
 msgid "%.2f TB"
 msgstr ""
 
-#: downloads.py:53
+#: downloads.py:83
 #, python-format
 msgid "%.2f PB"
 msgstr ""
 
-#: downloads.py:57
+#: downloads.py:88
 #, python-format
 msgid ""
-"You don't have enough free space for the download. A minimum of %s on your "
-"primary drive is required."
+"You don't have enough free space in your computer's default temporary folder "
+"for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
 
-#: downloads.py:59
-msgid "The specified extraction location does not exist."
+#: downloads.py:95
+msgid ""
+"Still not enough space at specified path. Retry, and select a different "
+"drive if available."
 msgstr ""
 
-#: downloads.py:61
+#: downloads.py:97
+msgid "Folder selection prompt closed without choosing any path. Exiting..."
+msgstr ""
+
+#: downloads.py:102
 #, python-format
 msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
 msgstr ""
 
-#: downloads.py:68
+#: downloads.py:124
 msgid "Getting the archive..."
 msgstr ""
 
-#: downloads.py:91
-#, python-format
-msgid "Getting %s patch..."
-msgid_plural "Getting %s patches..."
-msgstr[0] ""
-msgstr[1] ""
-
-#: downloads.py:94
-#, python-format
-msgid "Downloading patch %s to %s..."
+#: downloads.py:129
+msgid "The specified extraction location does not exist."
 msgstr ""
 
-#: gui.py:36
+#: gui.py:26
+msgid ""
+"Welcome to TF2CDownloader. Enter a number to continue.\n"
+"\n"
+"        1 - Install or reinstall the game\n"
+"        2 - Check for and apply any available updates\n"
+"        3 - Verify and repair game files"
+msgstr ""
+
+#: gui.py:32 gui.py:42
+msgid ""
+"Starting the download for TF2 Classic... You may see some errors that are "
+"safe to ignore."
+msgstr ""
+
+#: gui.py:35 gui.py:45 tf2c_downloader.py:133
+msgid "The installation has successfully completed. Remember to restart Steam!"
+msgstr ""
+
+#: gui.py:40 tf2c_downloader.py:154
+msgid "The update has successfully completed."
+msgstr ""
+
+#: gui.py:52
+msgid "Invalid choice. Please retry."
+msgstr ""
+
+#: gui.py:64
+msgid "The application is in script mode, using default choice."
+msgstr ""
+
+#: gui.py:71
 msgid "yes"
 msgstr ""
 
-#: gui.py:37
+#: gui.py:72
 msgid "no"
 msgstr ""
 
-#: gui.py:43
+#: gui.py:78
 msgid " {y/n}"
 msgstr ""
 
-#: gui.py:45
+#: gui.py:80
 msgid " {Y/n}"
 msgstr ""
 
-#: gui.py:47
+#: gui.py:82
 msgid " {y/N}"
 msgstr ""
 
-#: gui.py:58
+#: gui.py:92
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 
-#: gui.py:92 tf2c_downloader.py:93
+#: gui.py:126 tf2c_downloader.py:88
 msgid "[bold]You are safe to close this window."
 msgstr ""
 
-#: gui.py:94 tf2c_downloader.py:95
+#: gui.py:128 tf2c_downloader.py:90
 msgid "Press Enter to exit."
 msgstr ""
 
@@ -127,33 +160,33 @@ msgid ""
 "date."
 msgstr ""
 
-#: selfupdate.py:43
+#: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
 msgstr ""
 
-#: selfupdate.py:44
+#: selfupdate.py:42
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
 msgstr ""
 
-#: selfupdate.py:45
+#: selfupdate.py:43
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
 msgstr ""
 
-#: selfupdate.py:47
+#: selfupdate.py:45
 msgid "TF2CDownloader out-of-date."
 msgstr ""
 
-#: selfupdate.py:49
+#: selfupdate.py:47
 msgid "User chose to skip update. Things may be broken."
 msgstr ""
 
 #: setup.py:66
 #, python-format
-msgid "Installation location not precised, will assume: %s"
+msgid "Installation location not specified, will assume: %s"
 msgstr ""
 
 #: setup.py:79
@@ -162,9 +195,7 @@ msgid "Sourcemods folder was automatically found at: %s"
 msgstr ""
 
 #: setup.py:80
-msgid ""
-"It's the recommended installation location. Would you like to install TF2 "
-"Classic there?"
+msgid "Does that look correct?"
 msgstr ""
 
 #: setup.py:86
@@ -195,41 +226,23 @@ msgstr ""
 msgid "Reinitialising...\n"
 msgstr ""
 
-#: setup.py:113
-msgid "You need to install Aria2 to use this script."
-msgstr ""
-
 #: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
 msgstr ""
 
-#: tf2c_downloader.py:80
-msgid ""
-"Starting the download for TF2 Classic... You may see some errors that are "
-"safe to ignore."
-msgstr ""
-
-#: tf2c_downloader.py:83 tf2c_downloader.py:138
-msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr ""
-
-#: tf2c_downloader.py:86 tf2c_downloader.py:159
-msgid "The update has successfully completed."
-msgstr ""
-
-#: tf2c_downloader.py:90 tf2c_downloader.py:168
+#: tf2c_downloader.py:85 tf2c_downloader.py:163
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
 
-#: tf2c_downloader.py:91 tf2c_downloader.py:169
+#: tf2c_downloader.py:86 tf2c_downloader.py:164
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
 
-#: tf2c_downloader.py:102
+#: tf2c_downloader.py:97
 msgid ""
 "Usage: TF2CDownloader [COMMAND] [PATH]\n"
 "Installation utility for TF2 Classic.\n"
@@ -256,17 +269,17 @@ msgid ""
 "path will be the current work directory."
 msgstr ""
 
-#: tf2c_downloader.py:135
+#: tf2c_downloader.py:130
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
 msgstr ""
 
-#: tf2c_downloader.py:150
+#: tf2c_downloader.py:145
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
 msgstr ""
 
-#: tf2c_downloader.py:162
+#: tf2c_downloader.py:157
 msgid "Unrecognised command. Try --help"
 msgstr ""
 
@@ -284,33 +297,51 @@ msgid ""
 "could be having technical issues."
 msgstr ""
 
-#: versions.py:33 versions.py:85
+#: versions.py:44 versions.py:72
 msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
 msgstr ""
 
-#: versions.py:36 versions.py:88 versions.py:100 versions.py:108
-#: versions.py:117 versions.py:123
+#: versions.py:47 versions.py:66 versions.py:75 versions.py:93 versions.py:101
+#: versions.py:112
 msgid "We have nothing to do. Goodbye!"
 msgstr ""
 
-#: versions.py:97
+#: versions.py:63
+msgid ""
+"No game installation detected at given sourcemods path. Do you want to "
+"install the game?"
+msgstr ""
+
+#: versions.py:90
 msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
 msgstr ""
 
-#: versions.py:105
+#: versions.py:98
 msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
 msgstr ""
 
-#: versions.py:111 versions.py:120
-msgid "An update is available for your game. Do you want to install it?"
+#: versions.py:106
+msgid "An update is available for TF2 Classic. Do you want to install it?"
+msgstr ""
+
+#: versions.py:107
+msgid ""
+"If running, please close your game client and/or game launcher. Confirm once "
+"they're closed."
+msgstr ""
+
+#: versions.py:110
+msgid "Exiting..."
 msgstr ""
 
 #: versions.py:114
-msgid "In that case, do you want to reinstall completely?"
+msgid ""
+"An update is available, but no patch could be found for your game version. "
+"Try reinstalling?"
 msgstr ""
