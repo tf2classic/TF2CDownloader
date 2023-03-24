@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 04:28-0500\n"
-"PO-Revision-Date: 2022-09-19 21:30+0200\n"
-"Last-Translator: Paweł Ruszkiewicz <pawel66031@protonmail.com>; "
-"Teownik#0807\n"
-"Language-Team: \n"
-"Language: pl_PL\n"
+"POT-Creation-Date: 2022-09-25 11:28-0500\n"
+"PO-Revision-Date: 2023-01-29 11:53+0000\n"
+"Last-Translator: kittyra <jdp0e8mm@anonaddy.me>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/tf2cdownloader/"
+"tf2cdownloader/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
-"|| n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
@@ -172,31 +172,37 @@ msgid ""
 "WARNING: downloader failed to check itself for updates, potentially out-of-"
 "date."
 msgstr ""
+"UWAGA: nie powiodło się sprawdzanie aktualizacji dla programu do pobierania, "
+"potencjalnie jest nieaktualny."
 
 #: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
-msgstr ""
+msgstr "TF2CDownloader jest aktualny."
 
-#: selfupdate.py:42
-#, fuzzy
+#: selfupdate.py:44
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
-msgstr "Dostępna jest aktualizacja dla zainstalowanej gry. Zainstalować?"
+msgstr ""
+"TF2CDownloader ma dostępną aktualizację. Twoja aktualna wersja może nie "
+"działać poprawnie. Czy chcesz ją zainstalować?"
 
 #: selfupdate.py:43
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
 msgstr ""
+"Usuń TF2CDownloader, następnie ponownie pobierz i uruchom ponownie go z "
+"https://tf2classic.com/download"
 
 #: selfupdate.py:45
 msgid "TF2CDownloader out-of-date."
-msgstr ""
+msgstr "TF2CDownloader jest nieaktualny."
 
 #: selfupdate.py:47
 msgid "User chose to skip update. Things may be broken."
 msgstr ""
+"Użytkownik zdecydował się pominąć aktualizację. Rzeczy mogą być zepsute."
 
 #: setup.py:66
 #, fuzzy, python-format
