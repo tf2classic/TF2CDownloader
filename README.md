@@ -1,13 +1,21 @@
 # TF2CDownloader
-Official tool for handling installation, updating, and more for TF2 Classic.
+To end-users, this tool is the official installer and updater for Team Fortress 2 Classic. 
 
-Requires Rich, PyZstd, TQDM, and HTTPX. On Linux, we recommend using Apt to install the python3-tqdm, python3-rich, and python3-httpx packages. Install PyZstd through PIP.
+To programmers, this is a thin and rough script that sits on top of Aria2 and Butler to provide reasonably-efficient updating without too much complication.
 
-PyInstaller is used to build this into a single-file binary. Buildscripts are included.
+To other Sourcemods, this is a tool you can use for *your project* with only minor work, as the mechanism here is extremely agnostic and flexible. Get in touch with cco on our Discord if you're interested!
 
-In the Binaries folder of the repository, Aria2 is extracted from: https://github.com/q3aql/aria2-static-builds (aria2-1.36.0-win-64bit-build2.7z)
+----
 
-aria2c.exe can be replaced with your own build as desired.
+Requires Rich, PyZstd, TQDM, and HTTPX to build.
+
+PyInstaller is used to build this into a single-file binary. A spec file is included.
+
+For convenience in building, the Binaries folder of the repository contains prebuilt and static versions of Aria2 and Butler for Windows and Linux. Aria2 is extracted from here: https://github.com/q3aql/aria2-static-builds (aria2-1.36.0-win-64bit-build2.7z)
+
+The official build of Butler, as supplied by itch.io, is used.
+
+----
 
 <a href="https://hosted.weblate.org/engage/tf2cdownloader/">
 <img src="https://hosted.weblate.org/widgets/tf2cdownloader/-/287x66-grey.png" alt="Translation status" />
