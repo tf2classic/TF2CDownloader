@@ -36,10 +36,10 @@ def main_menu():
         message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
 
     elif user_choice == 2:
-        if versions.check_for_updates() == "update":
+        if versions.check_for_updates():
             downloads.update()
             message_end(_("The update has successfully completed."), 0)
-        if versions.check_for_updates() == "reinstall":
+        else:
             message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
             downloads.install()
             troubleshoot.apply_blacklist()

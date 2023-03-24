@@ -6,6 +6,8 @@ from gettext import ngettext as _N
 from shutil import disk_usage, rmtree
 from tqdm import tqdm
 from pathlib import Path
+from tkinter import filedialog
+from tkinter import *
 import vars
 import gui
 import versions
@@ -13,9 +15,15 @@ import pyzstd
 import tarfile
 import os
 
-def download_extract(url, filename, endpath):
+def download(url, size):
+    free_space_check(size, 'temporary')
+
     run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2022-12-05', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
+    
+
+def extract(filename, endpath, size):
+    free_space_check(size, 'permanent')
 
     gui.message(_("Extracting the downloaded archive, please wait patiently."), 1)
     class ZstdTarFile(tarfile.TarFile):
@@ -66,13 +74,26 @@ def pretty_size(bytes):
     elif bytes < 1000000000000000000:
         return _("%.2f PB") % (bytes/1000000000000000)
 
-def free_space_check(presz, postsz):
-    if disk_usage(vars.TEMP_PATH)[2] < presz:
-        gui.message_end(_("You don't have enough free space for the download. A minimum of %s on your primary drive is required.") % pretty_size(presz), 1)
-    if not path.isdir(vars.INSTALL_PATH):
-        gui.message_end(_("The specified extraction location does not exist."), 1)
-    elif disk_usage(vars.INSTALL_PATH)[2] < postsz and vars.INSTALLED == False:
-        gui.message_end(_("You don't have enough free space for the extraction. A minimum of %s at your chosen extraction site is required.") % pretty_size(postsz), 1)
+def free_space_check(size, cat):
+    if cat == 'temporary':
+        if disk_usage(vars.TEMP_PATH)[2] < size:
+            if gui.message_yes_no(_("You don't have enough free space in your computer's default temporary folder for this. A minimum of %s is required. Select alternate temporary folder?") % pretty_size(size), 1):
+                root = Tk()
+                root.withdraw()
+                try:
+                    while disk_usage(vars.TEMP_PATH)[2] < size:
+                        vars.TEMP_PATH = filedialog.askdirectory()
+                        if disk_usage(vars.TEMP_PATH)[2] < size:
+                            gui.message(_("Still not enough space at specified path. Retry, and select a different drive if available."))
+                except TypeError:
+                    gui.message_end(_("Folder selection prompt closed without choosing any path. Exiting..."), 1)
+                    
+                
+    if cat == 'permanent':
+        if disk_usage(vars.INSTALL_PATH)[2] < size and vars.INSTALLED == False:
+            gui.message_end(_("You don't have enough free space for the extraction. A minimum of %s at your chosen extraction site is required.") % pretty_size(size), 1)
+    else:
+        return 'safe'
 
 def prepare_symlink():
     for s in vars.TO_SYMLINK:
@@ -92,11 +113,16 @@ def install():
     last_key = list(version_json.keys())[-1]
     lastver = version_json[last_key]
 
-    free_space_check(lastver["presz"], lastver["postsz"])
     prepare_symlink()
 
     gui.message(_("Getting the archive..."), 0)
-    download_extract(vars.SOURCE_URL + lastver["url"], lastver["file"], vars.INSTALL_PATH)
+    
+    download(vars.SOURCE_URL + lastver["url"], lastver["presz"])
+        
+    if not path.isdir(vars.INSTALL_PATH):
+        gui.message_end(_("The specified extraction location does not exist."), 1)
+
+    extract(lastver["file"], vars.INSTALL_PATH, lastver["postsz"])
 
     do_symlink()
 
@@ -107,7 +133,6 @@ def update():
     So at this point, it's just downloading, healing, and applying.
     """
 
-    
     prepare_symlink()
     
     # Prepare some variables
@@ -119,8 +144,8 @@ def update():
     patch_tempreq = patch_json[local_version]["tempreq"]
     
     # Filesize check...
-    if disk_usage(vars.TEMP_PATH)[2] < patch_tempreq:
-        gui.message_end(_("You don't have enough free space to hold the temporary update files. A minimum of %s on your primary drive is required.") % pretty_size(patch_tempreq), 1)
+    free_space_check(patch_tempreq, 'temporary')
+
     version_json = versions.get_version_list()["versions"]
     signature_url = version_json[versions.get_installed_version()]["signature"]
     heal_url = version_json[versions.get_installed_version()]["heal"]

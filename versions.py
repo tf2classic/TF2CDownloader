@@ -30,24 +30,26 @@ def update_version_file():
     """
     try:
         old_version_file = open(vars.INSTALL_PATH + '/tf2classic/version.txt', 'r')
+        old_version = old_version_file.readlines()[1]
+        before, sep, after = old_version.partition('=')
+        if len(after) > 0:
+            old_version = after
+        old_version = old_version.replace('.', '')
+        new_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'w')
+        # We unconditionally overwrite rev.txt since version.txt is the canonical file.
+        new_version_file.write(old_version)
+        new_version_file.close()
+        old_version_file.close()
+        return True
     except FileNotFoundError:
         if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
             return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
-    old_version = old_version_file.readlines()[1]
-    before, sep, after = old_version.partition('=')
-    if len(after) > 0:
-        old_version = after
-    old_version = old_version.replace('.', '')
-    new_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'w')
-    # We unconditionally overwrite rev.txt since version.txt is the canonical file.
-    new_version_file.write(old_version)
-    new_version_file.close()
-    old_version_file.close()
-    return True
+
 
 def get_installed_version():
+    update_version_file()
     local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
     local_version = local_version_file.read().rstrip('\n')
     return(local_version)
@@ -59,14 +61,17 @@ def check_for_updates():
 
     # This probably was already communicated to the user in update_version_file(), but if version.txt doesn't exist, skip updating.
     if not path.exists(vars.INSTALL_PATH + '/tf2classic/version.txt'):
-        return 'reinstall'
+        if gui.message_yes_no(_("No game installation detected at given sourcemods path. Do you want to install the game?")):
+            return False
+        else:
+            gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
     try:
         local_version_file = open(vars.INSTALL_PATH + '/tf2classic/rev.txt', 'r')
         local_version = local_version_file.read().rstrip('\n')
     except ValueError:
         if gui.message_yes_no(_("We can't read the version of your installation. It could be corrupted. Do you want to reinstall the game?"), False):
-            return 'reinstall'
+            return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
     # End of checking, we definitely have a valid installation at this point
@@ -84,7 +89,7 @@ def check_for_updates():
     
     if not found:
         if gui.message_yes_no(_("The version of your installation is unknown. It could be corrupted. Do you want to reinstall the game?"), False):
-            return 'reinstall'
+            return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
@@ -93,7 +98,7 @@ def check_for_updates():
     latest_version = sorted(version_json.keys(), reverse=True)[0]
     if local_version == latest_version:
         if gui.message_yes_no(_("We think we've found an existing up-to-date installation of the game. Do you want to reinstall it?"), False):
-            return 'reinstall'
+            return False
         else:
             gui.message_end(_("We have nothing to do. Goodbye!"), 0)
 
@@ -101,6 +106,6 @@ def check_for_updates():
     patches = get_version_list()["patches"]
     if local_version in patches:
         if gui.message_yes_no(_("An update is available for your game. Do you want to install it?"), None, True):
-            return 'update'
+            return True
         else:
                 gui.message_end(_("We have nothing to do. Goodbye!"), 0)
