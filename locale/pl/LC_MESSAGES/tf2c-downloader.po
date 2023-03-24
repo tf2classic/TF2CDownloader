@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-25 11:28-0500\n"
+"POT-Creation-Date: 2023-03-24 05:13-0500\n"
 "PO-Revision-Date: 2023-01-29 11:53+0000\n"
 "Last-Translator: kittyra <jdp0e8mm@anonaddy.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/tf2cdownloader/"
@@ -179,7 +179,7 @@ msgstr ""
 msgid "TF2CDownloader appears to be up-to-date."
 msgstr "TF2CDownloader jest aktualny."
 
-#: selfupdate.py:44
+#: selfupdate.py:42
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
