@@ -143,7 +143,8 @@ def update():
     patch_file = patch_json[local_version]["file"]
     patch_tempreq = patch_json[local_version]["tempreq"]
     
-    # Filesize check...
+    # Filesize check for butler-staging...
+    # patch_tempreq is NOT the size of the patch, this is the size of the staging folder when commiting
     free_space_check(patch_tempreq, 'temporary')
 
     version_json = versions.get_version_list()["versions"]

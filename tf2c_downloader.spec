@@ -9,8 +9,17 @@ import glob
 
 def data_generator():
 	datas = []
+	datas.append(('Binaries/ca-certificates.crt', '.'))
 	if system() == 'Windows':
-		datas.append(('Binaries/*', '.'))
+		datas.append(('Binaries/butler.exe', '.'))
+		datas.append(('Binaries/aria2c.exe', '.'))
+		datas.append(('Binaries/7z.dll', '.'))
+		datas.append(('Binaries/c7zip.dll', '.'))
+	else:
+		datas.append(('Binaries/butler', '.'))
+		datas.append(('Binaries/aria2c', '.'))
+		datas.append(('Binaries/7z.so', '.'))
+		datas.append(('Binaries/libc7zip.so', '.'))
 	
 	for p in glob.iglob("locale/**/*.mo", recursive=True):
 		datas.append((p,os.path.dirname(p)))
@@ -26,7 +35,7 @@ a = Analysis(
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
+    excludes=['matplotlib', 'jedi', 'numpy', 'babel', 'typeshed'],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,
