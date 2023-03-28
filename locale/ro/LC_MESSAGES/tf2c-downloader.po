@@ -8,55 +8,58 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-03-29 12:42+0000\n"
+"Last-Translator: Mike Hawk <japonezul75@gmail.com>\n"
+"Language-Team: Romanian <https://hosted.weblate.org/projects/tf2cdownloader/"
+"tf2cdownloader/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
-msgstr ""
+msgstr "Se extrage arhiva descărcată, vă rugăm să aveți răbdare."
 
 #: downloads.py:65
 msgid "Patching your game with the new update, please wait patiently."
-msgstr ""
+msgstr "Jocul dumneavoastră se actualizează, va rugăm să aveți răbdare."
 
 #: downloads.py:73
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s bit"
+msgstr[1] "%s biți"
+msgstr[2] "%s de biți"
 
 #: downloads.py:75
 #, python-format
 msgid "%.2f kB"
-msgstr ""
+msgstr "%.2f kB"
 
 #: downloads.py:77
 #, python-format
 msgid "%.2f MB"
-msgstr ""
+msgstr "%.2f MB"
 
 #: downloads.py:79
 #, python-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f GB"
 
 #: downloads.py:81
 #, python-format
 msgid "%.2f TB"
-msgstr ""
+msgstr "%.2f TB"
 
 #: downloads.py:83
 #, python-format
 msgid "%.2f PB"
-msgstr ""
+msgstr "%.2f PB"
 
 #: downloads.py:88
 #, python-format
@@ -64,16 +67,23 @@ msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
+"Nu ai suficient spațiu liber în folder-ul temporar implicit al computerului "
+"tău pentru asta. Un minimum de %s este necesar. Selectezi un folder temporar "
+"alternativ?"
 
 #: downloads.py:95
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
+"Tot nu aveți suficient spațiu în zona specificată. Reîncercați, și selectați "
+"un drive diferit dacă este posibil."
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
+"Prompt-ul pentru selecția folder-ului a fost închis fară a alege o zonă. "
+"Ieșire..."
 
 #: downloads.py:102
 #, python-format
@@ -81,14 +91,16 @@ msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
 msgstr ""
+"Nu ai suficient spațiu liber pentru extracție. Un minimum de %s la ruta de "
+"extracție aleasă este necesar."
 
 #: downloads.py:124
 msgid "Getting the archive..."
-msgstr ""
+msgstr "Obținere arhivă..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr ""
+msgstr "Locația de extragere specificată nu există."
 
 #: gui.py:26
 msgid ""
@@ -98,111 +110,130 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"Bine ați venit la TF2CDownloader. Selectați un număr pentru a continua.\n"
+"\n"
+"        1 - Instați sau reinstalați jocul\n"
+"        2 - Verifică și aplică orice actualizare disponibilă\n"
+"        3 - Verifică și repară filele jocului"
 
 #: gui.py:32 gui.py:42
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
 msgstr ""
+"Se începe descărcarea pentru TF2 Classic... Este posibil să vezi niște erori "
+"care pot fi ignorate."
 
 #: gui.py:35 gui.py:45 tf2c_downloader.py:133
 msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr ""
+msgstr "Instalația a fost finalizată cu succes. Nu uita să restartezi Steam!"
 
 #: gui.py:40 tf2c_downloader.py:154
 msgid "The update has successfully completed."
-msgstr ""
+msgstr "Actualizarea a fost finalizată cu succes."
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "Alegere invalidă. Vă rugăm reîncercați."
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
-msgstr ""
+msgstr "Aplicația este în modul scriptură, se va utiliza alegerea implicită."
 
 #: gui.py:71
 msgid "yes"
-msgstr ""
+msgstr "da"
 
 #: gui.py:72
 msgid "no"
-msgstr ""
+msgstr "nu"
 
 #: gui.py:78
 msgid " {y/n}"
-msgstr ""
+msgstr " (d/n)"
 
 #: gui.py:80
 msgid " {Y/n}"
-msgstr ""
+msgstr " (D/n)"
 
 #: gui.py:82
 msgid " {y/N}"
-msgstr ""
+msgstr " (d/N)"
 
 #: gui.py:92
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
+"[bold blue]Vă rugăm să răspundeți cu 'da' sau 'nu' (sau 'd' sau 'n').[/bold "
+"blue]"
 
 #: gui.py:126 tf2c_downloader.py:88
 msgid "[bold]You are safe to close this window."
-msgstr ""
+msgstr "[bold]Puteți închide această fereastră."
 
 #: gui.py:128 tf2c_downloader.py:90
 msgid "Press Enter to exit."
-msgstr ""
+msgstr "Apasați Enter pentru a ieși."
 
 #: selfupdate.py:34
 msgid ""
 "WARNING: downloader failed to check itself for updates, potentially out-of-"
 "date."
 msgstr ""
+"ATENȚIE: descărcătorul a eșuat să se verifice pentru actualizări, posibil "
+"demodat."
 
 #: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
-msgstr ""
+msgstr "TF2CDownloader apare să fie la curent."
 
 #: selfupdate.py:42
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
 msgstr ""
+"TF2CDownloader are o actualizare disponibilă. Versiunea dumneavoastră "
+"curentă ar putea să nu mai fucționeze cum trebuie. Doriți să-l instalați?"
 
 #: selfupdate.py:43
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
 msgstr ""
+"Ștergeți TF2CDownloader, apoi redescărcați-l și relansați-l de la "
+"https://tf2classic.com/download"
 
 #: selfupdate.py:45
 msgid "TF2CDownloader out-of-date."
-msgstr ""
+msgstr "TF2CDownloader demodat."
 
 #: selfupdate.py:47
 msgid "User chose to skip update. Things may be broken."
 msgstr ""
+"Utilizatorul a ales să amâne actualizarea. Unele chestii ar putea să nu mai "
+"funcționeze."
 
 #: setup.py:66
 #, python-format
 msgid "Installation location not specified, will assume: %s"
-msgstr ""
+msgstr "Locația instalării nu a fost specificată, se va asuma: %s"
 
 #: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
-msgstr ""
+msgstr "Folder-ul ”sourcemods” a fost găsit automat la: %s"
 
 #: setup.py:80
 msgid "Does that look correct?"
-msgstr ""
+msgstr "Arată asta corect?"
 
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
 msgstr ""
+"ATENȚIE: folder-ul Steam ”sourcemod” nu a fost găsit, sau ați ales să nu-l "
+"folosiți."
 
 #: setup.py:87
 #, python-format
@@ -210,10 +241,11 @@ msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
 msgstr ""
+"Ași dori să extrageți în %s? Trebuie să-l mutați manual către sourcemods."
 
 #: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr ""
+msgstr "Vă rugăm, alegeți locația unde vreți să instalați TF2 Classic.\n"
 
 #: setup.py:94
 #, python-format
@@ -221,26 +253,30 @@ msgid ""
 "TF2 Classic will be installed in %s\n"
 "Do you accept?"
 msgstr ""
+"TF2 Classic va fi instalat la %s\n"
+"Acceptați?"
 
 #: setup.py:95
 msgid "Reinitialising...\n"
-msgstr ""
+msgstr "Reinițializare...\n"
 
 #: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
-msgstr ""
+msgstr "Se pară ca rulăm pe fundal. Nu ne dorim asta, deci vom ieși."
 
 #: tf2c_downloader.py:85 tf2c_downloader.py:163
 msgid "[italic magenta]----- Exception details above this line -----"
-msgstr ""
+msgstr "[italic magenta]----- Detalii excepții deasupra liniei -----"
 
 #: tf2c_downloader.py:86 tf2c_downloader.py:164
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
+"[bold red]:warning: Programul a eșuat. Va rugăm să postați un screenshot în "
+"#technical-issues pe Discord. :warning:[/bold red]"
 
 #: tf2c_downloader.py:97
 msgid ""
@@ -268,80 +304,121 @@ msgid ""
 "the\n"
 "path will be the current work directory."
 msgstr ""
+"Utilizare: TF2CDownloader [COMANDĂ][RUTĂ]\n"
+"Utilizat pentru instalarea TF2 Classic.\n"
+"\n"
+"Dacă niciun argument nu este furnizat, descărcătorul va rula în modul "
+"pregătire,\n"
+"în care o serie de întrebări vor fi puse pentru a instala jocul pentru un "
+"utilizator\n"
+"obișnuit. Asta este ce se folosește când se deschide descărcătorul de pe "
+"desktop.\n"
+"\n"
+"Comenzi valide:\n"
+"  --install           instalează TF2 Classic într-un folder nou înăuntru la "
+"RUTĂ\n"
+"  --update            actualizează instalația pre-existentă de TF2 Classic "
+"în \n"
+"                      folder-ul său în RUTĂ\n"
+"  --help              afișează asta\n"
+"\n"
+"RUTA este folderul care conține folder-ul TF2 Classic. Acesta este deobicei\n"
+"folder-ul sourcemods pentru clienți, sau folder-ul pentru servere dedicate\n"
+"Source pentru servere.\n"
+"\n"
+"Dacă RUTA nu este furnizată, atunci va fi înlocuită cu ruta către folder-ul\n"
+"sourcemods din registrul Steam. Dacă poate fi detectată, atunci ruta va\n"
+"fi actual registru de lucru."
 
 #: tf2c_downloader.py:130
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
-msgstr ""
+msgstr "TF2 Classic este deja intalat. Se asumă o reinstalare."
 
 #: tf2c_downloader.py:145
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
 msgstr ""
+"TF2 Classic nu este instalat, nu se paote actualiza. Considerați să "
+"utilizați --install în schimb."
 
 #: tf2c_downloader.py:157
 msgid "Unrecognised command. Try --help"
-msgstr ""
+msgstr "Comandă necunoscută. Încercați --help"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
-msgstr ""
+msgstr "Se aplică lista neagră de siguranță..."
 
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
-msgstr ""
+msgstr "ATENȚIE: nu s-a putut aplica lista neagră de siguranță."
 
 #: versions.py:20
 msgid ""
 "Could not get version list. If your internet connection is fine, the servers "
 "could be having technical issues."
 msgstr ""
+"Nu s-a putut obține lista de versiuni. Dacă conexiunea dumneavoastră la "
+"internet este bună. atunci serverele ar putea avea dificultăți tehnice."
 
 #: versions.py:44 versions.py:72
 msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
 msgstr ""
+"Nu putem citi versiunea instalării voastre. Ar putea să fie coruptă. Doriți "
+"să reinstalați jocul?"
 
 #: versions.py:47 versions.py:66 versions.py:75 versions.py:93 versions.py:101
 #: versions.py:112
 msgid "We have nothing to do. Goodbye!"
-msgstr ""
+msgstr "Nu avem nimic de făcut. La revedere!"
 
 #: versions.py:63
 msgid ""
 "No game installation detected at given sourcemods path. Do you want to "
 "install the game?"
 msgstr ""
+"Nicio instalație a jocului detectată la ruta dată de sourcemods. Doriți să "
+"instalați jocul?"
 
 #: versions.py:90
 msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
 msgstr ""
+"Versiunea instalării voastre este necunoscută. Ar putea să fi coruptă. "
+"Doriți să reinstalați jocul?"
 
 #: versions.py:98
 msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
 msgstr ""
+"Credem că am găsit o instalație de actualitate a jocului. Doriți s-o "
+"reinstalați?"
 
 #: versions.py:106
 msgid "An update is available for TF2 Classic. Do you want to install it?"
-msgstr ""
+msgstr "O actualizare este disponibilă pentru TF2Classic. Doriți s-o intalați?"
 
 #: versions.py:107
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
 msgstr ""
+"Dacă rulează, vă rugăm să închideți clientul și/sau lansatorul jocului. "
+"Confirmați odată ce sunt închise."
 
 #: versions.py:110
 msgid "Exiting..."
-msgstr ""
+msgstr "Ieșire..."
 
 #: versions.py:114
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
 msgstr ""
+"O actualizare este disponibiliă, dar niciun patch nu a putut fi găsit pentru "
+"vesiunea jocului dumneavoastră. Încercați să reinstalați?"
