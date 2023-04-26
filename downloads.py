@@ -14,19 +14,10 @@ import vars
 import gui
 import versions
 
-
-
-
-
-
-
-
-
-
 def download(url, size):
     free_space_check(size, 'temporary')
 
-    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2022-12-05', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
+    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2023-04-26', '--disable-ipv6=true', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--allow-overwrite=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
 
 
@@ -60,7 +51,7 @@ def butler_verify(signature, gamedir, remote):
     run([vars.BUTLER_BINARY, 'verify', signature, gamedir, '--heal=archive,' + remote], check=True)
 
 def butler_patch(url, staging_dir, patchfilename, gamedir):
-    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2022-12-05', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
+    run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2023-04-26', '--disable-ipv6=true', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--allow-overwrite=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
     gui.message(_("Patching your game with the new update, please wait patiently."), 1)
     run([vars.BUTLER_BINARY, 'apply', '--staging-dir=' + staging_dir, path.join(vars.TEMP_PATH, patchfilename), gamedir], check=True)
@@ -151,7 +142,8 @@ def update():
 
     # Filesize check for butler-staging...
     # patch_tempreq is NOT the size of the patch, this is the size of the staging folder when commiting
-    free_space_check(patch_tempreq, 'temporary')
+    # Even though this is literally temporary, we say this is "permanent" since we want to check and use the same drive as the game
+    free_space_check(patch_tempreq, 'permanent')
 
     version_json = versions.get_version_list()["versions"]
     signature_url = version_json[versions.get_installed_version()]["signature"]
@@ -159,6 +151,6 @@ def update():
 
     # Finally, verify and heal with the information we've gathered.
     butler_verify(vars.SOURCE_URL + signature_url, vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + heal_url)
-    butler_patch(vars.SOURCE_URL + patch_url, vars.TEMP_PATH + 'butler-staging', patch_file, vars.INSTALL_PATH + '/tf2classic')
+    butler_patch(vars.SOURCE_URL + patch_url, vars.INSTALL_PATH + '/butler-staging', patch_file, vars.INSTALL_PATH + '/tf2classic')
 
     do_symlink()

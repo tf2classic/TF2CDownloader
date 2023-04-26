@@ -22,7 +22,7 @@ TF2C_PATH = None
 
 SCRIPT_MODE = len(sys.argv) > 1
 
-SOURCE_URL = 'https://wiki.tf2classic.com/downloader/butler/'
+SOURCE_URL = 'https://wiki.tf2classic.com/kachemak/'
 
 # Only on Linux
 TO_SYMLINK = [

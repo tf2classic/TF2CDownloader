@@ -27,9 +27,9 @@ def hash_script():
 def check_downloader_update():
     try:
         if system() == 'Windows':
-            remote_hash = httpx.get("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_windows")
+            remote_hash = httpx.get("https://wiki.tf2classic.com/kachemak/tf2cd_sha512sum_windows")
         else:
-            remote_hash = httpx.get("https://wiki.tf2classic.com/downloader/tf2cd_sha512sum_linux")
+            remote_hash = httpx.get("https://wiki.tf2classic.com/kachemak/tf2cd_sha512sum_linux")
     except httpx.RequestError:
         gui.message(_("WARNING: downloader failed to check itself for updates, potentially out-of-date."))
         return
