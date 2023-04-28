@@ -54,7 +54,8 @@ if sys.stderr.encoding == 'ascii':
 if os.getenv('LANG') is None:
     import locale
     lang, enc = locale.getlocale()
-    os.environ['LANG'] = lang
+    if lang is not None:
+        os.environ['LANG'] = lang
 
 if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
     gettext.bindtextdomain('tf2c-downloader', os.path.abspath(os.path.join(os.path.dirname(__file__), 'locale')))
