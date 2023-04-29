@@ -109,7 +109,7 @@ msgstr ""
 "Bienvenue sur TF2CDownloader. Entrez un nombre pour continuer.\n"
 "\n"
 "        1 - Installer ou réinstaller le jeu\n"
-"        3 - Rechercher et appliquer des mises à jour\n"
+"        2 - Rechercher et appliquer des mises à jour\n"
 "        3 - Vérifier et réparer les fichiers du jeu"
 
 #: gui.py:32 gui.py:42
