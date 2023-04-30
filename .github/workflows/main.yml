@@ -1,0 +1,43 @@
+name: "TF2C Build"
+on: push
+
+jobs:
+  export-windows:
+    name: Windows Export
+    runs-on: windows-latest
+    steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup environment
+        run: |
+          pip install zstd rich httpx tqdm
+      - name: Build Windows
+        run: |
+          .\CompileWindows.bat
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows
+          path: dist/tf2c_downloader.exe
+  export-linux:
+    name: Linux Export
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup environment
+        run: |
+          pip install zstd rich httpx tqdm
+      - name: Build Linux
+        run: |
+          ./CompileLinux.sh
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: linux
+          path: dist/tf2c_downloader
+          
