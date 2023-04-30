@@ -82,9 +82,13 @@ def wizard():
 
     except Exception as ex:
         if ex is not SystemExit:
-            traceback.print_exc()
+            tb = traceback.format_exc()
+            print(tb)
             print(_("[italic magenta]----- Exception details above this line -----"))
             print(_("[bold red]:warning: The program has failed. Post a screenshot in #technical-issues on the Discord. :warning:[/bold red]"))
+            if "Access is denied." in tb:
+                print(_("[bold yellow]This is most likely a known issue. Go to {}, delete the "
+                        "butler-staging folder, and rerun this administrator.").format(vars.INSTALL_PATH))
             if os.environ.get("WT_SESSION"):
                 print(_("[bold]You are safe to close this window."))
             else:

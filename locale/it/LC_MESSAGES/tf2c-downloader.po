@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-24 05:13-0500\n"
+"POT-Creation-Date: 2023-04-30 23:54+0100\n"
 "PO-Revision-Date: 2022-10-17 07:54+0000\n"
 "Last-Translator: Giovanni Cutrì <giovannicutri02@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/tf2cdownloader/"
@@ -14,48 +14,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15-dev\n"
 
-#: downloads.py:36
+#: downloads.py:27
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Estrazione dell'archivio scaricato, attendi pazientemente."
 
-#: downloads.py:65
+#: downloads.py:56
 #, fuzzy
 msgid "Patching your game with the new update, please wait patiently."
 msgstr "Estrazione dell'archivio scaricato, attendi pazientemente."
 
-#: downloads.py:73
+#: downloads.py:64
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
 msgstr[0] "%s byte"
 msgstr[1] "%s byte"
 
-#: downloads.py:75
+#: downloads.py:66
 #, python-format
 msgid "%.2f kB"
 msgstr "%.2f kB"
 
-#: downloads.py:77
+#: downloads.py:68
 #, python-format
 msgid "%.2f MB"
 msgstr "%.2f MB"
 
-#: downloads.py:79
+#: downloads.py:70
 #, python-format
 msgid "%.2f GB"
 msgstr "%.2f GB"
 
-#: downloads.py:81
+#: downloads.py:72
 #, python-format
 msgid "%.2f TB"
 msgstr "%.2f TB"
 
-#: downloads.py:83
+#: downloads.py:74
 #, python-format
 msgid "%.2f PB"
 msgstr "%.2f PB"
 
-#: downloads.py:88
+#: downloads.py:79
 #, fuzzy, python-format
 msgid ""
 "You don't have enough free space in your computer's default temporary folder "
@@ -64,17 +64,17 @@ msgstr ""
 "Non hai abbastanza spazio libero per estrarre TF2 Classic. È richiesto un "
 "minimo di %s nel sito di estrazione scelto."
 
-#: downloads.py:95
+#: downloads.py:86
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
 
-#: downloads.py:97
+#: downloads.py:88
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
 
-#: downloads.py:102
+#: downloads.py:93
 #, python-format
 msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
@@ -83,11 +83,11 @@ msgstr ""
 "Non hai abbastanza spazio libero per estrarre TF2 Classic. È richiesto un "
 "minimo di %s nel sito di estrazione scelto."
 
-#: downloads.py:124
+#: downloads.py:115
 msgid "Getting the archive..."
 msgstr "Recuperando l'archivio..."
 
-#: downloads.py:129
+#: downloads.py:120
 msgid "The specified extraction location does not exist."
 msgstr "Il percorso di estrazione specificato non esiste."
 
@@ -108,54 +108,59 @@ msgstr ""
 "Avvio del download per TF2 Classic... È possibile che vengano visualizzati "
 "alcuni errori che è possibile ignorare."
 
-#: gui.py:35 gui.py:45 tf2c_downloader.py:133
+#: gui.py:35 gui.py:45 tf2c_downloader.py:138
 msgid "The installation has successfully completed. Remember to restart Steam!"
 msgstr ""
 "L'installazione è stata completata con successo. Ricorda di riavviare Steam!"
 
-#: gui.py:40 tf2c_downloader.py:154
+#: gui.py:40 tf2c_downloader.py:159
 msgid "The update has successfully completed."
 msgstr "L'installazione è stata completata con successo."
 
-#: gui.py:52
+#: gui.py:50
+msgid ""
+"The verification process has completed, and any corruption has been repaired."
+msgstr ""
+
+#: gui.py:53
 msgid "Invalid choice. Please retry."
 msgstr ""
 
-#: gui.py:64
+#: gui.py:65
 msgid "The application is in script mode, using default choice."
 msgstr ""
 
-#: gui.py:71
+#: gui.py:72
 msgid "yes"
 msgstr "sì"
 
-#: gui.py:72
+#: gui.py:73
 msgid "no"
 msgstr "no"
 
-#: gui.py:78
+#: gui.py:79
 msgid " {y/n}"
 msgstr " {s/n}"
 
-#: gui.py:80
+#: gui.py:81
 msgid " {Y/n}"
 msgstr " {S/n}"
 
-#: gui.py:82
+#: gui.py:83
 msgid " {y/N}"
 msgstr " {s/N}"
 
-#: gui.py:92
+#: gui.py:93
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
 "[bold blue]Per favore, rispondi con 'sì' o 'no' (o 's' o 'n').[/bold blue]"
 
-#: gui.py:126 tf2c_downloader.py:88
+#: gui.py:127 tf2c_downloader.py:93
 msgid "[bold]You are safe to close this window."
 msgstr "[bold]È possibile chiudere questa finestra."
 
-#: gui.py:128 tf2c_downloader.py:90
+#: gui.py:129 tf2c_downloader.py:95
 msgid "Press Enter to exit."
 msgstr "Premi Enter per uscire."
 
@@ -197,21 +202,21 @@ msgstr ""
 "L'utente ha scelto di saltare l'aggiornamento. Alcune cose potrebbero non "
 "funzionare."
 
-#: setup.py:66
+#: setup.py:65
 #, fuzzy, python-format
 msgid "Installation location not specified, will assume: %s"
 msgstr "Percorso di installazione non specificato, verrà utilizzato: %s"
 
-#: setup.py:79
+#: setup.py:78
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
 msgstr "La cartella sourcemods fu trovata automaticamente in: %s"
 
-#: setup.py:80
+#: setup.py:79
 msgid "Does that look correct?"
 msgstr ""
 
-#: setup.py:86
+#: setup.py:85
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
@@ -219,7 +224,7 @@ msgstr ""
 "ATTENZIONE: La cartella sourcemods di Steam non è stata trovata, oppure hai "
 "scelto di non usarla."
 
-#: setup.py:87
+#: setup.py:86
 #, python-format
 msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
@@ -227,12 +232,12 @@ msgid ""
 msgstr ""
 "Desideri estrarre in %s? Devi spostarlo manualmente sui tuoi sourcemods."
 
-#: setup.py:91
+#: setup.py:90
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
 msgstr ""
 "Per favore, inserire la posizione in cui verrà installato TF2 Classic.\n"
 
-#: setup.py:94
+#: setup.py:93
 #, python-format
 msgid ""
 "TF2 Classic will be installed in %s\n"
@@ -241,7 +246,7 @@ msgstr ""
 "TF2 Classic sarà installato in %s\n"
 "Accetti?"
 
-#: setup.py:95
+#: setup.py:94
 msgid "Reinitialising...\n"
 msgstr "Reinstallazione…\n"
 
@@ -253,11 +258,11 @@ msgstr ""
 "Sembra che stiamo lavorando in background. Non lo vogliamo, quindi stiamo "
 "uscendo."
 
-#: tf2c_downloader.py:85 tf2c_downloader.py:163
+#: tf2c_downloader.py:87 tf2c_downloader.py:168
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr "[italic magenta]----- Dettagli dell'eccezione sopra questa riga -----"
 
-#: tf2c_downloader.py:86 tf2c_downloader.py:164
+#: tf2c_downloader.py:88 tf2c_downloader.py:169
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
@@ -265,7 +270,13 @@ msgstr ""
 "[bold red]:warning: Il programma ha fallito. Posta uno screenshot su "
 "#technical-issues nel Discord (in inglese soltanto). :warning:[/bold red]"
 
-#: tf2c_downloader.py:97
+#: tf2c_downloader.py:90
+msgid ""
+"[bold yellow]This is most likely a known issue. Go to {}, delete the butler-"
+"staging folder, and rerun this administrator."
+msgstr ""
+
+#: tf2c_downloader.py:102
 msgid ""
 "Usage: TF2CDownloader [COMMAND] [PATH]\n"
 "Installation utility for TF2 Classic.\n"
@@ -318,12 +329,12 @@ msgstr ""
 "cartella sourcemods nella cartella Steam. Se esso non può essere rilevato,\n"
 "il percorso utilizzato sarà la cartella attuale."
 
-#: tf2c_downloader.py:130
+#: tf2c_downloader.py:135
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
 msgstr ""
 "TF2 Classic è già installato. Verrà considerata come una reinstallazione."
 
-#: tf2c_downloader.py:145
+#: tf2c_downloader.py:150
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
@@ -331,7 +342,7 @@ msgstr ""
 "TF2 Classic non è installato, impossibile aggiornarlo. Considera di "
 "utilizzare --install."
 
-#: tf2c_downloader.py:157
+#: tf2c_downloader.py:162
 msgid "Unrecognised command. Try --help"
 msgstr "Comando non riconosciuto. Prova --help"
 
