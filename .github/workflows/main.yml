@@ -8,11 +8,9 @@ jobs:
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v2
-        with:
-          lfs: true
       - name: Setup environment
         run: |
-          pip install zstd rich httpx tqdm
+          pip install zstd rich httpx tqdm pyinstaller
       - name: Build Windows
         run: |
           .\CompileWindows.bat
@@ -27,11 +25,9 @@ jobs:
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v2
-        with:
-          lfs: true
       - name: Setup environment
         run: |
-          pip install zstd rich httpx tqdm
+          pip install zstd rich httpx tqdm pyinstaller
       - name: Build Linux
         run: |
           ./CompileLinux.sh
