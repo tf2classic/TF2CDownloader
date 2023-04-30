@@ -11,9 +11,13 @@ jobs:
       - name: Setup environment
         run: |
           pip install zstd rich httpx tqdm pyinstaller
+      - name: Do localisations
+        run: |
+          .\GenerateMO.sh
+        shell: bash
       - name: Build Windows
         run: |
-          .\CompileWindows.bat
+          .\CompileWindows
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -30,6 +34,7 @@ jobs:
           pip install zstd rich httpx tqdm pyinstaller
       - name: Build Linux
         run: |
+          ./GenerateMO.sh
           ./CompileLinux.sh
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
