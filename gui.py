@@ -123,8 +123,6 @@ def message_end(msg, code):
     Show a message and exit.
     """
     print("[bold green]" + msg)
-    if environ.get("WT_SESSION"):
-        print(_("[bold]You are safe to close this window."))
-    elif not vars.SCRIPT_MODE:
+    if not vars.SCRIPT_MODE:
         input(_("Press Enter to exit."))
     exit(code)
