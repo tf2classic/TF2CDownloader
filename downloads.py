@@ -51,6 +51,8 @@ def butler_verify(signature, gamedir, remote):
     run([vars.BUTLER_BINARY, 'verify', signature, gamedir, '--heal=archive,' + remote], check=True)
 
 def butler_patch(url, staging_dir, patchfilename, gamedir):
+    if Path(staging_dir).exists() and Path(staging_dir).is_dir():
+        rmtree(staging_dir)
     run([vars.ARIA2C_BINARY, '--max-connection-per-server=16', '-UTF2CDownloader2023-04-26', '--disable-ipv6=true', '--max-concurrent-downloads=16', '--optimize-concurrent-downloads=true', '--check-certificate=false', '--check-integrity=true', '--auto-file-renaming=false', '--continue=true', '--allow-overwrite=true', '--console-log-level=error', '--summary-interval=0', '--bt-hash-check-seed=false', '--seed-time=0',
     '-d' + vars.TEMP_PATH, url], check=True)
     gui.message(_("Patching your game with the new update, please wait patiently."), 1)
