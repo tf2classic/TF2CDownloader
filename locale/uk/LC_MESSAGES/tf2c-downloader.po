@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: 2023-05-27 22:51+0000\n"
+"PO-Revision-Date: 2023-05-28 23:52+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/tf2cdownloader/"
 "tf2cdownloader/uk/>\n"
@@ -97,7 +97,7 @@ msgstr "Отримання архіву..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr ""
+msgstr "Зазначене місце видобутку не існує."
 
 #: gui.py:26
 msgid ""
@@ -107,111 +107,130 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"Ласкаво просимо до TF2CDownloader. Введіть номер для продовження.\n"
+"\n"
+"        1 - Встановіть або перевстановіть гру\n"
+"        2 - Перевірити наявність та застосувати всі доступні оновлення\n"
+"        3 - Перевірити та виправити файли гри"
 
 #: gui.py:32 gui.py:42
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
 msgstr ""
+"Починаємо завантаження TF2 Classic... Ви можете побачити деякі помилки, які "
+"можна проігнорувати."
 
 #: gui.py:35 gui.py:45 tf2c_downloader.py:133
 msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr ""
+msgstr "Встановлення успішно завершено. Не забудьте перезапустити Steam!"
 
 #: gui.py:40 tf2c_downloader.py:154
 msgid "The update has successfully completed."
-msgstr ""
+msgstr "Оновлення успішно завершено."
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "Неправильний вибір. Спробуйте ще раз."
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
 msgstr ""
+"Застосунок працює в режимі скриптів, використовуючи вибір за замовчуванням."
 
 #: gui.py:71
 msgid "yes"
-msgstr ""
+msgstr "так"
 
 #: gui.py:72
 msgid "no"
-msgstr ""
+msgstr "ні"
 
 #: gui.py:78
 msgid " {y/n}"
-msgstr ""
+msgstr " {т/н}"
 
 #: gui.py:80
 msgid " {Y/n}"
-msgstr ""
+msgstr " {Т/н}"
 
 #: gui.py:82
 msgid " {y/N}"
-msgstr ""
+msgstr " {т/Н}"
 
 #: gui.py:92
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
+"[bold blue]Будь ласка, відповідайте \"так\" або \"ні\" (або \"т\" або \"н\""
+").[/bold blue]"
 
 #: gui.py:126 tf2c_downloader.py:88
 msgid "[bold]You are safe to close this window."
-msgstr ""
+msgstr "[bold]Ви можете закрити це вікно."
 
 #: gui.py:128 tf2c_downloader.py:90
 msgid "Press Enter to exit."
-msgstr ""
+msgstr "Натисніть Enter, щоб вийти."
 
 #: selfupdate.py:34
 msgid ""
 "WARNING: downloader failed to check itself for updates, potentially out-of-"
 "date."
 msgstr ""
+"ПОПЕРЕДЖЕННЯ: завантажувач не зміг перевірити себе на наявність оновлень, "
+"можливо, він застарів."
 
 #: selfupdate.py:41
 msgid "TF2CDownloader appears to be up-to-date."
-msgstr ""
+msgstr "TF2CDownloader, здається, оновлений."
 
 #: selfupdate.py:42
 msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
 msgstr ""
+"TF2CDownloader має оновлення. Ваша поточна версія може працювати "
+"неправильно. Бажаєте встановити її?"
 
 #: selfupdate.py:43
 msgid ""
 "Delete TF2CDownloader, then redownload and relaunch it from https://"
 "tf2classic.com/download"
 msgstr ""
+"Видаліть TF2CDownloader, а потім завантажте та перезапустіть його з "
+"https://tf2classic.com/download"
 
 #: selfupdate.py:45
 msgid "TF2CDownloader out-of-date."
-msgstr ""
+msgstr "TF2CDownloader застарів."
 
 #: selfupdate.py:47
 msgid "User chose to skip update. Things may be broken."
 msgstr ""
+"Користувач вирішив пропустити оновлення. Деякі речі можуть не працювати."
 
 #: setup.py:66
 #, python-format
 msgid "Installation location not specified, will assume: %s"
-msgstr ""
+msgstr "Місце встановлення не вказано, припустимо: %s"
 
 #: setup.py:79
 #, python-format
 msgid "Sourcemods folder was automatically found at: %s"
-msgstr ""
+msgstr "Папку Sourcemods автоматично знайдено за адресою: %s"
 
 #: setup.py:80
 msgid "Does that look correct?"
-msgstr ""
+msgstr "Це виглядає правильно?"
 
 #: setup.py:86
 msgid ""
 "WARNING: Steam's sourcemods folder has not been found, or you chose not to "
 "use it."
 msgstr ""
+"ПОПЕРЕДЖЕННЯ: папку sourcemods у Steam не знайдено, або ви вирішили не "
+"використовувати її."
 
 #: setup.py:87
 #, python-format
@@ -219,10 +238,12 @@ msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
 msgstr ""
+"Ви бажаєте витягти у %s? Ви повинні перемістити його до ваших sourcemods "
+"вручну."
 
 #: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr ""
+msgstr "Будь ласка, введіть місце, де буде встановлено TF2 Classic.\n"
 
 #: setup.py:94
 #, python-format
@@ -230,26 +251,32 @@ msgid ""
 "TF2 Classic will be installed in %s\n"
 "Do you accept?"
 msgstr ""
+"TF2 Classic буде встановлено в %s\n"
+"Ви згодні?"
 
 #: setup.py:95
 msgid "Reinitialising...\n"
-msgstr ""
+msgstr "Повторна ініціалізація...\n"
 
 #: tf2c_downloader.py:46
 msgid ""
 "Looks like we're running in the background. We don't want that, so we're "
 "exiting."
 msgstr ""
+"Схоже, ми працюємо у фоновому режимі. Ми цього не хочемо, тому ми виходимо."
 
 #: tf2c_downloader.py:85 tf2c_downloader.py:163
 msgid "[italic magenta]----- Exception details above this line -----"
 msgstr ""
+"[italic magenta]----- Детальна інформація про винятки над цим рядком -----"
 
 #: tf2c_downloader.py:86 tf2c_downloader.py:164
 msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
+"[bold red]Попередження: Програма завершилася невдало. Скриншот викладіть в "
+"темі #technical-issues на Discord :warning:[/bold red]"
 
 #: tf2c_downloader.py:97
 msgid ""
@@ -277,80 +304,118 @@ msgid ""
 "the\n"
 "path will be the current work directory."
 msgstr ""
+"Використання: TF2CDownloader [COMMAND] [PATH]\n"
+"Утиліта для встановлення TF2 Classic.\n"
+"\n"
+"Якщо не вказати жодних аргументів, завантажувач буде запущено у режимі "
+"встановлення, в якому\n"
+"в якому буде поставлено низку запитань для встановлення гри для звичайного\n"
+"користувача. Це те, що використовується при відкритті завантажувача з "
+"робочого столу.\n"
+"\n"
+"Допустимі команди:\n"
+"  --install           встановлює TF2 Classic до нової папки у каталозі PATH\n"
+"  --update            оновлює попередньо встановлений TF2 Classic у його\n"
+"                      теці у PATH\n"
+"  --help              показує це\n"
+"\n"
+"PATH - це папка, у якій знаходиться папка TF2 Classic. Зазвичай це папка\n"
+"sourcemods для клієнтів, або папка виділеного сервера Source для\n"
+"серверів.\n"
+"\n"
+"Якщо PATH не вказано, його буде замінено виявленим шляхом до папки\n"
+"sourcemods у каталозі Steam. Якщо його не вдасться визначити, то\n"
+"буде поточний робочий каталог."
 
 #: tf2c_downloader.py:130
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
-msgstr ""
+msgstr "TF2 Classic вже встановлено. Передбачається перевстановлення."
 
 #: tf2c_downloader.py:145
 msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
 msgstr ""
+"TF2 Classic не встановлено, не вдається виконати оновлення. Спробуйте "
+"скористатися командою --install."
 
 #: tf2c_downloader.py:157
 msgid "Unrecognised command. Try --help"
-msgstr ""
+msgstr "Нерозпізнана команда. Спробуй --help"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
-msgstr ""
+msgstr "Застосування чорного списку безпеки..."
 
 #: troubleshoot.py:11
 msgid "WARNING: could not apply safety blacklist."
-msgstr ""
+msgstr "ПОПЕРЕДЖЕННЯ: не вдалося застосувати чорний список безпеки."
 
 #: versions.py:20
 msgid ""
 "Could not get version list. If your internet connection is fine, the servers "
 "could be having technical issues."
 msgstr ""
+"Не вдалося отримати список версій. Якщо ваше інтернет-з'єднання в порядку, "
+"на серверах можуть бути технічні проблеми."
 
 #: versions.py:44 versions.py:72
 msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
 msgstr ""
+"Ми не можемо прочитати версію вашого встановлення. Можливо, вона пошкоджена. "
+"Бажаєте перевстановити гру?"
 
 #: versions.py:47 versions.py:66 versions.py:75 versions.py:93 versions.py:101
 #: versions.py:112
 msgid "We have nothing to do. Goodbye!"
-msgstr ""
+msgstr "Нам нема чого робити. До побачення!"
 
 #: versions.py:63
 msgid ""
 "No game installation detected at given sourcemods path. Do you want to "
 "install the game?"
 msgstr ""
+"За вказаним шляхом до sourcemods не виявлено встановлення гри. Бажаєте "
+"встановити гру?"
 
 #: versions.py:90
 msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
 msgstr ""
+"Версія вашого встановлення невідома. Можливо, вона пошкоджена. Ви хочете "
+"перевстановити гру?"
 
 #: versions.py:98
 msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
 msgstr ""
+"Ми вважаємо, що знайшли існуюче актуальне встановлення гри. Бажаєте "
+"перевстановити її?"
 
 #: versions.py:106
 msgid "An update is available for TF2 Classic. Do you want to install it?"
-msgstr ""
+msgstr "Для TF2 Classic доступне оновлення. Бажаєте встановити його?"
 
 #: versions.py:107
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
 msgstr ""
+"Якщо запущено, будь ласка, закрийте ваш ігровий клієнт та/або лаунчер гри. "
+"Підтвердіть, коли вони будуть закриті."
 
 #: versions.py:110
 msgid "Exiting..."
-msgstr ""
+msgstr "Вихід..."
 
 #: versions.py:114
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
 msgstr ""
+"Оновлення доступне, але для вашої версії гри не знайдено патч. Спробувати "
+"перевстановити?"
