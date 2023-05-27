@@ -8,55 +8,58 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-05-27 22:51+0000\n"
+"Last-Translator: Dan <denqwerta@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/tf2cdownloader/"
+"tf2cdownloader/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
-msgstr ""
+msgstr "Розпакування завантаженого архіву, терпляче зачекайте."
 
 #: downloads.py:65
 msgid "Patching your game with the new update, please wait patiently."
-msgstr ""
+msgstr "Виправлення вашої гри новим оновленням, будь ласка, терпляче зачекайте."
 
 #: downloads.py:73
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s байт"
+msgstr[1] "%s байти"
+msgstr[2] "%s байтів"
 
 #: downloads.py:75
 #, python-format
 msgid "%.2f kB"
-msgstr ""
+msgstr "%.2f кБ"
 
 #: downloads.py:77
 #, python-format
 msgid "%.2f MB"
-msgstr ""
+msgstr "%.2f МБ"
 
 #: downloads.py:79
 #, python-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f ГБ"
 
 #: downloads.py:81
 #, python-format
 msgid "%.2f TB"
-msgstr ""
+msgstr "%.2f ТБ"
 
 #: downloads.py:83
 #, python-format
 msgid "%.2f PB"
-msgstr ""
+msgstr "%.2f ПБ"
 
 #: downloads.py:88
 #, python-format
@@ -64,16 +67,20 @@ msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
+"У вашій тимчасовій папці за замовчуванням недостатньо вільного місця для "
+"цього. Потрібно мінімум %s. Вибрати іншу тимчасову папку?"
 
 #: downloads.py:95
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
+"За вказаним шляхом все ще недостатньо місця. Спробуйте ще раз і виберіть "
+"інший диск, якщо він доступний."
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
-msgstr ""
+msgstr "Запит на вибір папки закрито без вибору шляху. Вихід..."
 
 #: downloads.py:102
 #, python-format
@@ -81,10 +88,12 @@ msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
 msgstr ""
+"У вас недостатньо вільного місця для видобутку. Потрібно мінімум %s на "
+"обраному вами місці видобутку."
 
 #: downloads.py:124
 msgid "Getting the archive..."
-msgstr ""
+msgstr "Отримання архіву..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
