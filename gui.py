@@ -27,14 +27,14 @@ def main_menu():
         1 - Install or reinstall the game
         2 - Check for and apply any available updates
         3 - Verify and repair game files"""))
-    user_choice = int(input())
-    if user_choice == 1:
+    user_choice = input()
+    if user_choice == '1':
         message(_("Starting the download for TF2 Classic... You may see some errors that are safe to ignore."), 3)
         downloads.install()
         troubleshoot.apply_blacklist()
         message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
 
-    elif user_choice == 2:
+    elif user_choice == '2':
         if versions.check_for_updates():
             downloads.update()
             message_end(_("The update has successfully completed."), 0)
@@ -44,7 +44,7 @@ def main_menu():
             troubleshoot.apply_blacklist()
             message_end(_("The installation has successfully completed. Remember to restart Steam!"), 0)
 
-    elif user_choice == 3:
+    elif user_choice == '3':
         version_json = versions.get_version_list()["versions"]
         downloads.butler_verify(vars.SOURCE_URL + version_json[versions.get_installed_version()]["signature"], vars.INSTALL_PATH + '/tf2classic', vars.SOURCE_URL + version_json[versions.get_installed_version()]["heal"])
         message_end(_("The verification process has completed, and any corruption has been repaired."), 0)
