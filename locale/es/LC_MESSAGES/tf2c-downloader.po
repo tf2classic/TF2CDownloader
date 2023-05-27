@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: 2022-12-23 15:48+0000\n"
+"PO-Revision-Date: 2023-04-28 09:53+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/tf2cdownloader/"
 "tf2cdownloader/es/>\n"
@@ -12,16 +12,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Extrayendo el archivo descargado, espere pacientemente."
 
 #: downloads.py:65
-#, fuzzy
 msgid "Patching your game with the new update, please wait patiently."
-msgstr "Extrayendo el archivo descargado, espere pacientemente."
+msgstr "Parcheando tu juego con la nueva actualización, espera pacientemente."
 
 #: downloads.py:73
 #, python-format
@@ -61,8 +60,9 @@ msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
-"No tiene suficiente espacio libre para extraer TF2 Classic. Se requiere un "
-"mínimo de 12GB en el sitio de extracción elegido."
+"No tienes suficiente espacio libre en la carpeta temporal predeterminada de "
+"tu computadora para esto. Se requiere un mínimo de %s. ¿Seleccionar la "
+"carpeta temporal alternativa?"
 
 #: downloads.py:95
 msgid ""
@@ -75,6 +75,8 @@ msgstr ""
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
+"El mensaje de selección de carpeta se cerró sin elegir ninguna ruta. "
+"Saliendo..."
 
 #: downloads.py:102
 #, python-format
@@ -91,7 +93,7 @@ msgstr "Obteniendo el archivo..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr ""
+msgstr "La ubicación de extracción especificada no existe."
 
 #: gui.py:26
 msgid ""
@@ -101,6 +103,11 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"Bienvenido a TF2C Downloader. Introduzca un número para continuar.\n"
+"\n"
+"        1 - Instalar o reinstalar el juego\n"
+"        3 - Buscar y aplicar actualizaciones\n"
+"        3 - Comprueba y repara los archivos del juego"
 
 #: gui.py:32 gui.py:42
 msgid ""
@@ -120,11 +127,11 @@ msgstr "La actualización se ha completado con éxito."
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "Elección no válida. Por favor, inténtalo de nuevo."
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
-msgstr ""
+msgstr "La aplicación está en modo script, utilizando la opción predeterminada."
 
 #: gui.py:71
 msgid "yes"
@@ -198,9 +205,9 @@ msgstr ""
 "El usuario elige omitir la actualización. Las cosas pueden estar rotas."
 
 #: setup.py:66
-#, fuzzy, python-format
+#, python-format
 msgid "Installation location not specified, will assume: %s"
-msgstr "La ubicación de la instalación no es precisa, asumirá: %s"
+msgstr "No se especifica la ubicación de la instalación, se asumirá: %s"
 
 #: setup.py:79
 #, python-format
@@ -209,7 +216,7 @@ msgstr "La carpeta Sourcemods se encontró automáticamente en: %s"
 
 #: setup.py:80
 msgid "Does that look correct?"
-msgstr ""
+msgstr "¿Eso parece correcto?"
 
 #: setup.py:86
 msgid ""
@@ -365,6 +372,8 @@ msgid ""
 "No game installation detected at given sourcemods path. Do you want to "
 "install the game?"
 msgstr ""
+"No se detectó la instalación del juego en la ruta de sourcemods dada. ¿"
+"Quieres instalar el juego?"
 
 #: versions.py:90
 msgid ""
@@ -383,26 +392,28 @@ msgstr ""
 "juego. ¿Quieres reinstalarlo?"
 
 #: versions.py:106
-#, fuzzy
 msgid "An update is available for TF2 Classic. Do you want to install it?"
-msgstr "Hay una actualización disponible para su juego. ¿Quiere instalarlo?"
+msgstr "Hay una actualización disponible para TF2 Classic. ¿Quieres instalarlo?"
 
 #: versions.py:107
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
 msgstr ""
+"Si se está ejecutando, cierre el cliente del juego y/o el ejecutable del "
+"juego. Confirmar una vez que estén cerrados."
 
 #: versions.py:110
 msgid "Exiting..."
-msgstr ""
+msgstr "Saliendo..."
 
 #: versions.py:114
-#, fuzzy
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
-msgstr "Hay una actualización disponible para su juego. ¿Quiere instalarlo?"
+msgstr ""
+"Hay una actualización disponible, pero no se pudo encontrar ningún parche "
+"para su versión del juego. ¿Intentar reinstalar?"
 
 #, python-format
 #~ msgid "Getting %s patch..."

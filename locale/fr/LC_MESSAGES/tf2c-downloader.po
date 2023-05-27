@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:13-0500\n"
-"PO-Revision-Date: 2023-03-30 17:41+0000\n"
+"PO-Revision-Date: 2023-05-02 16:53+0000\n"
 "Last-Translator: Technochips <thetechnochips@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/tf2cdownloader/"
 "tf2cdownloader/fr/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
@@ -109,7 +109,7 @@ msgstr ""
 "Bienvenue sur TF2CDownloader. Entrez un nombre pour continuer.\n"
 "\n"
 "        1 - Installer ou réinstaller le jeu\n"
-"        3 - Rechercher et appliquer des mises à jour\n"
+"        2 - Rechercher et appliquer des mises à jour\n"
 "        3 - Vérifier et réparer les fichiers du jeu"
 
 #: gui.py:32 gui.py:42
@@ -242,7 +242,7 @@ msgstr ""
 
 #: setup.py:91
 msgid "Please, enter the location in which TF2 Classic will be installed to.\n"
-msgstr "Veuillez saisir l'emplacement où va être installer TF2 Classic.\n"
+msgstr "Veuillez saisir l'emplacement où va être installé TF2 Classic.\n"
 
 #: setup.py:94
 #, python-format
@@ -250,8 +250,8 @@ msgid ""
 "TF2 Classic will be installed in %s\n"
 "Do you accept?"
 msgstr ""
-"TF2 Classic va être installer ici : %s\n"
-"Es-ce que vous acceptez ?"
+"TF2 Classic sera installé ici : %s\n"
+"Est-ce correct ?"
 
 #: setup.py:95
 msgid "Reinitialising...\n"
@@ -338,7 +338,7 @@ msgid ""
 "TF2 Classic isn't installed, cannot do an update. Consider using --install "
 "instead."
 msgstr ""
-"TF2 Classic n'est pas installé, impossible de mettre à jour. Considérez "
+"TF2 Classic n'est pas installé, impossible de mettre à jour. Essayez "
 "d'utiliser --installer à la place."
 
 #: tf2c_downloader.py:157

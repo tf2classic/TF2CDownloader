@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:13-0500\n"
-"PO-Revision-Date: 2023-02-20 18:04+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2023-05-04 00:53+0000\n"
+"Last-Translator: Bruno Alencar Casais <brunocasais2010@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "tf2cdownloader/tf2cdownloader/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,16 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
 msgstr "Extraindo o arquivo baixado, por favor aguarde."
 
 #: downloads.py:65
-#, fuzzy
 msgid "Patching your game with the new update, please wait patiently."
-msgstr "Extraindo o arquivo baixado, por favor aguarde."
+msgstr "Atualizando o seu jogo com a versão mais recente, por favor aguarde."
 
 #: downloads.py:73
 #, python-format
@@ -61,23 +60,26 @@ msgid "%.2f PB"
 msgstr "%.2f PB"
 
 #: downloads.py:88
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
-"Você não tem espaço livre suficiente para o extrair o arquivo. É necessário "
-"um mínimo de %s livre na sua unidade principal."
+"Você não tem espaço livre suficiente na sua pasta temp. É necessário um "
+"mínimo de %s livre. Selecionar uma pasta alternativa?"
 
 #: downloads.py:95
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
+"Ainda não há espaço suficiente no caminho especificado, Tente novamente, e "
+"selecione outra unidade se possível."
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
+"Prompt de seleção de pasta fechado sem ter um destino escolhido. Saindo..."
 
 #: downloads.py:102
 #, python-format
@@ -104,6 +106,11 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"Bem-vindo ao TF2CDownloader. Digite um numero para continuar.\n"
+"\n"
+"        1 - Instalar ou reinstalar o jogo\n"
+"        2 - Procurar e aplicar atualizações disponíveis\n"
+"        3 - Verificar e reparar arquivos do jogo"
 
 #: gui.py:32 gui.py:42
 msgid ""
@@ -124,11 +131,11 @@ msgstr "A atualização foi concluída com sucesso."
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "Escolha inválida. Tente de novo."
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
-msgstr ""
+msgstr "O aplicativo está em modo de script, usando a opção padrão."
 
 #: gui.py:71
 msgid "yes"
@@ -204,7 +211,7 @@ msgstr ""
 "corretamente."
 
 #: setup.py:66
-#, fuzzy, python-format
+#, python-format
 msgid "Installation location not specified, will assume: %s"
 msgstr "Local de instalação não especificado, assumirá: %s"
 
@@ -215,7 +222,7 @@ msgstr "A pasta Sourcemods foi encontrada automaticamente em: %s"
 
 #: setup.py:80
 msgid "Does that look correct?"
-msgstr ""
+msgstr "Isso parece correto?"
 
 #: setup.py:86
 msgid ""
@@ -394,26 +401,30 @@ msgstr ""
 "lo?"
 
 #: versions.py:106
-#, fuzzy
 msgid "An update is available for TF2 Classic. Do you want to install it?"
-msgstr "Uma atualização está disponível para o seu jogo. Deseja instalá-lo?"
+msgstr "Uma atualização está disponível para o TF2 Classic. Deseja instalá-lo?"
 
 #: versions.py:107
+#, fuzzy
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
 msgstr ""
+"Se em execução, feche o cliente do seu jogo e/ou o launcher do jogo. "
+"Confirme assim que estiverem fechados."
 
 #: versions.py:110
 msgid "Exiting..."
-msgstr ""
+msgstr "Saindo..."
 
 #: versions.py:114
 #, fuzzy
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
-msgstr "Uma atualização está disponível para o seu jogo. Deseja instalá-lo?"
+msgstr ""
+"Uma atualização está disponível, mas nenhum patch foi encontrado para a sua "
+"versão do jogo. Deseja reinstalar?"
 
 #, python-format
 #~ msgid ""
