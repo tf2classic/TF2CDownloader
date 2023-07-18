@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:13-0500\n"
-"PO-Revision-Date: 2023-05-04 00:53+0000\n"
+"PO-Revision-Date: 2023-07-20 16:05+0000\n"
 "Last-Translator: Bruno Alencar Casais <brunocasais2010@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "tf2cdownloader/tf2cdownloader/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
@@ -73,13 +73,12 @@ msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
-"Ainda não há espaço suficiente no caminho especificado, Tente novamente, e "
+"Ainda não há espaço suficiente no caminho especificado. Tente novamente e "
 "selecione outra unidade se possível."
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
-msgstr ""
-"Prompt de seleção de pasta fechado sem ter um destino escolhido. Saindo..."
+msgstr "Prompt de seleção de pasta fechado sem um destino escolhido. Saindo..."
 
 #: downloads.py:102
 #, python-format
@@ -376,13 +375,12 @@ msgid "We have nothing to do. Goodbye!"
 msgstr "Não temos nada para fazer. Adeus!"
 
 #: versions.py:63
-#, fuzzy
 msgid ""
 "No game installation detected at given sourcemods path. Do you want to "
 "install the game?"
 msgstr ""
-"Não podemos ler a versão da sua instalação. Pode estar corrompido. Deseja "
-"reinstalar o jogo?"
+"Nenhuma instalação do jogo detectada no caminho do sourcemods fornecido. "
+"Deseja instalar o jogo?"
 
 #: versions.py:90
 msgid ""
@@ -405,7 +403,6 @@ msgid "An update is available for TF2 Classic. Do you want to install it?"
 msgstr "Uma atualização está disponível para o TF2 Classic. Deseja instalá-lo?"
 
 #: versions.py:107
-#, fuzzy
 msgid ""
 "If running, please close your game client and/or game launcher. Confirm once "
 "they're closed."
@@ -418,7 +415,6 @@ msgid "Exiting..."
 msgstr "Saindo..."
 
 #: versions.py:114
-#, fuzzy
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
