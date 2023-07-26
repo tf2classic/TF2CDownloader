@@ -34,7 +34,7 @@ def sourcemods_path():
                 REGISTRY_KEY = winreg.OpenKeyEx(REGISTRY, r'SOFTWARE\Valve\Steam', access=winreg.KEY_ALL_ACCESS)
 
             value = winreg.QueryValueEx(REGISTRY_KEY, 'SourceModInstallPath')
-            return value[0]
+            return value[0].rstrip('"')
         except Exception:
             return None
     else:
@@ -43,7 +43,8 @@ def sourcemods_path():
             with open(path.expanduser(r'~/.steam/registry.vdf'), encoding="utf-8") as file:
                 for _, line in enumerate(file):
                     if 'SourceModInstallPath' in line:
-                        sourcepath = line[line.index('/home'):-1].replace(r'\\', '/')
+                        import string
+                        sourcepath = line.replace('"SourceModInstallPath"', '').replace(r'\\', '/').strip(string.whitespace +  '"')
                         break
                 file.close()
             return sourcepath
@@ -58,9 +59,7 @@ def setup_path_script():
         vars.INSTALL_PATH = sys.argv[2].rstrip('"')
     else:
         vars.INSTALL_PATH = sourcemods_path()
-        if vars.INSTALL_PATH is not None:
-            vars.INSTALL_PATH = vars.INSTALL_PATH.rstrip('"')
-        else:
+        if vars.INSTALL_PATH is None:
             vars.INSTALL_PATH = getcwd()
 
         gui.message(_("Installation location not specified, will assume: %s") % vars.INSTALL_PATH)
@@ -72,7 +71,7 @@ def setup_path(manual_path):
     confirm = False
     install_path = sourcemods_path()
     if install_path is not None:
-        vars.INSTALL_PATH = install_path.rstrip('\"')
+        vars.INSTALL_PATH = install_path
 
     smodsfound = isinstance(vars.INSTALL_PATH, str)
     if smodsfound is True and manual_path is not True:
