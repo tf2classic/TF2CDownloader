@@ -8,18 +8,20 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-08-11 15:50+0000\n"
+"Last-Translator: Roger VC <rogervilarasau@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/tf2cdownloader/"
+"tf2cdownloader/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
-msgstr ""
+msgstr "Extraient l'arxiu descarregat, si us plau espereu pacientment."
 
 #: downloads.py:65
 msgid "Patching your game with the new update, please wait patiently."
@@ -29,33 +31,33 @@ msgstr ""
 #, python-format
 msgid "%s byte"
 msgid_plural "%s bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s byte"
+msgstr[1] "%s bytes"
 
 #: downloads.py:75
 #, python-format
 msgid "%.2f kB"
-msgstr ""
+msgstr "%.2f kB"
 
 #: downloads.py:77
 #, python-format
 msgid "%.2f MB"
-msgstr ""
+msgstr "%.2f MB"
 
 #: downloads.py:79
 #, python-format
 msgid "%.2f GB"
-msgstr ""
+msgstr "%.2f GB"
 
 #: downloads.py:81
 #, python-format
 msgid "%.2f TB"
-msgstr ""
+msgstr "%.2f TB"
 
 #: downloads.py:83
 #, python-format
 msgid "%.2f PB"
-msgstr ""
+msgstr "%.2f PB"
 
 #: downloads.py:88
 #, python-format
@@ -63,16 +65,23 @@ msgid ""
 "You don't have enough free space in your computer's default temporary folder "
 "for this. A minimum of %s is required. Select alternate temporary folder?"
 msgstr ""
+"No teniu prou espai lliure a la carpeta temporal predeterminada del vostre "
+"ordinador. Es requereix un mínim de %s. Seleccionar una carpeta temporal "
+"alternativa?"
 
 #: downloads.py:95
 msgid ""
 "Still not enough space at specified path. Retry, and select a different "
 "drive if available."
 msgstr ""
+"Encara no hi ha prou espai al camí especificat. Seleccioneu una unitat "
+"diferent si està disponible."
 
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
+"La finestra de selecció de carpeta s'ha tancat sense seleccionar cap camí. "
+"Sortint..."
 
 #: downloads.py:102
 #, python-format
@@ -80,14 +89,16 @@ msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
 msgstr ""
+"No teniu prou espai lliure per a l'extracció. Es requereix un mínim de %s a "
+"la localització d'extracció escollida."
 
 #: downloads.py:124
 msgid "Getting the archive..."
-msgstr ""
+msgstr "Rebent l'arxiu..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr ""
+msgstr "La ubicació d'extracció especificada no existeix."
 
 #: gui.py:26
 msgid ""
@@ -97,24 +108,31 @@ msgid ""
 "        2 - Check for and apply any available updates\n"
 "        3 - Verify and repair game files"
 msgstr ""
+"Benvingut a TF2CDownloader. Introduïu un nombre per continuar\n"
+"\n"
+"        1 - Instal·lar o reinstal·lar el joc\n"
+"        2 - Buscar i instal·lar qualsevol actualització disponible\n"
+"        3 - Verificar i reparar els fitxers del joc"
 
 #: gui.py:32 gui.py:42
 msgid ""
 "Starting the download for TF2 Classic... You may see some errors that are "
 "safe to ignore."
 msgstr ""
+"Iniciant la descàrrega per TF2 Classic ... Podríeu veure alguns errors que "
+"es poden d'ignorar."
 
 #: gui.py:35 gui.py:45 tf2c_downloader.py:133
 msgid "The installation has successfully completed. Remember to restart Steam!"
-msgstr ""
+msgstr "La instal·lació ha finalitzat amb èxit. Recordeu de reiniciar Steam!"
 
 #: gui.py:40 tf2c_downloader.py:154
 msgid "The update has successfully completed."
-msgstr ""
+msgstr "L'actualització s'ha completat correctament."
 
 #: gui.py:52
 msgid "Invalid choice. Please retry."
-msgstr ""
+msgstr "Elecció no valida. Si us plau torneu-ho a provar."
 
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
@@ -122,32 +140,33 @@ msgstr ""
 
 #: gui.py:71
 msgid "yes"
-msgstr ""
+msgstr "sí"
 
 #: gui.py:72
 msgid "no"
-msgstr ""
+msgstr "no"
 
 #: gui.py:78
 msgid " {y/n}"
-msgstr ""
+msgstr " {s/n}"
 
 #: gui.py:80
 msgid " {Y/n}"
-msgstr ""
+msgstr " {S/n}"
 
 #: gui.py:82
 msgid " {y/N}"
-msgstr ""
+msgstr " {s/N}"
 
 #: gui.py:92
 msgid ""
 "[bold blue]Please respond with 'yes' or 'no' (or 'y' or 'n').[/bold blue]"
 msgstr ""
+"[bold blue]Si us plau responeu amb 'si' o 'no' (o 's' o 'n').[/bold blue]"
 
 #: gui.py:126 tf2c_downloader.py:88
 msgid "[bold]You are safe to close this window."
-msgstr ""
+msgstr "[bold]Podeu tancar aquesta finestra."
 
 #: gui.py:128 tf2c_downloader.py:90
 msgid "Press Enter to exit."
