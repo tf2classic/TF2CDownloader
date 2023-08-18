@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:14-0500\n"
-"PO-Revision-Date: 2023-05-28 23:52+0000\n"
-"Last-Translator: Dan <denqwerta@gmail.com>\n"
+"PO-Revision-Date: 2023-08-19 16:08+0000\n"
+"Last-Translator: Bohdan Havryliuk <compositedynamic@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/tf2cdownloader/"
 "tf2cdownloader/uk/>\n"
 "Language: uk\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
-msgstr "Розпакування завантаженого архіву, терпляче зачекайте."
+msgstr "Розпакування завантаженого архіву, будь ласка, терпляче зачекайте."
 
 #: downloads.py:65
 msgid "Patching your game with the new update, please wait patiently."
-msgstr "Виправлення вашої гри новим оновленням, будь ласка, терпляче зачекайте."
+msgstr "Застосування патчу з новим оновленням, будь ласка, терпляче зачекайте."
 
 #: downloads.py:73
 #, python-format
@@ -88,8 +88,8 @@ msgid ""
 "You don't have enough free space for the extraction. A minimum of %s at your "
 "chosen extraction site is required."
 msgstr ""
-"У вас недостатньо вільного місця для видобутку. Потрібно мінімум %s на "
-"обраному вами місці видобутку."
+"У вас недостатньо вільного місця для розпакування. Потрібно мінімум %s на "
+"обраному вами місці розпакування."
 
 #: downloads.py:124
 msgid "Getting the archive..."
@@ -97,7 +97,7 @@ msgstr "Отримання архіву..."
 
 #: downloads.py:129
 msgid "The specified extraction location does not exist."
-msgstr "Зазначене місце видобутку не існує."
+msgstr "Зазначене місце розпакування не існує."
 
 #: gui.py:26
 msgid ""
@@ -109,7 +109,7 @@ msgid ""
 msgstr ""
 "Ласкаво просимо до TF2CDownloader. Введіть номер для продовження.\n"
 "\n"
-"        1 - Встановіть або перевстановіть гру\n"
+"        1 - Встановити або перевстановити гру\n"
 "        2 - Перевірити наявність та застосувати всі доступні оновлення\n"
 "        3 - Перевірити та виправити файли гри"
 
@@ -136,7 +136,7 @@ msgstr "Неправильний вибір. Спробуйте ще раз."
 #: gui.py:64
 msgid "The application is in script mode, using default choice."
 msgstr ""
-"Застосунок працює в режимі скриптів, використовуючи вибір за замовчуванням."
+"Застосунок працює в режимі скрипту, використовуєм вибір за замовчуванням."
 
 #: gui.py:71
 msgid "yes"
@@ -190,8 +190,8 @@ msgid ""
 "TF2CDownloader has an update available. Your current version may not work "
 "properly. Do you want to install it?"
 msgstr ""
-"TF2CDownloader має оновлення. Ваша поточна версія може працювати "
-"неправильно. Бажаєте встановити її?"
+"TF2CDownloader має доступне оновлення. Ваша поточна версія може працювати "
+"неправильно. Бажаєте встановити його?"
 
 #: selfupdate.py:43
 msgid ""
@@ -238,7 +238,7 @@ msgid ""
 "Would you like to extract in %s? You must move it to your sourcemods "
 "manually."
 msgstr ""
-"Ви бажаєте витягти у %s? Ви повинні перемістити його до ваших sourcemods "
+"Ви бажаєте розпакувати у %s? Ви повинні перемістити її до вашого sourcemods "
 "вручну."
 
 #: setup.py:91
@@ -275,8 +275,8 @@ msgid ""
 "[bold red]:warning: The program has failed. Post a screenshot in #technical-"
 "issues on the Discord. :warning:[/bold red]"
 msgstr ""
-"[bold red]Попередження: Програма завершилася невдало. Скриншот викладіть в "
-"темі #technical-issues на Discord :warning:[/bold red]"
+"[bold red]:warning: Програма завершилася невдало. Надішліть скриншот в канал "
+"#technical-issues на сервері Discord. :warning:[/bold red]"
 
 #: tf2c_downloader.py:97
 msgid ""
@@ -308,15 +308,15 @@ msgstr ""
 "Утиліта для встановлення TF2 Classic.\n"
 "\n"
 "Якщо не вказати жодних аргументів, завантажувач буде запущено у режимі "
-"встановлення, в якому\n"
+"встановлення,\n"
 "в якому буде поставлено низку запитань для встановлення гри для звичайного\n"
 "користувача. Це те, що використовується при відкритті завантажувача з "
 "робочого столу.\n"
 "\n"
 "Допустимі команди:\n"
-"  --install           встановлює TF2 Classic до нової папки у каталозі PATH\n"
+"  --install           встановлює TF2 Classic до нової папки в PATH\n"
 "  --update            оновлює попередньо встановлений TF2 Classic у його\n"
-"                      теці у PATH\n"
+"                      папці в PATH\n"
 "  --help              показує це\n"
 "\n"
 "PATH - це папка, у якій знаходиться папка TF2 Classic. Зазвичай це папка\n"
@@ -325,11 +325,11 @@ msgstr ""
 "\n"
 "Якщо PATH не вказано, його буде замінено виявленим шляхом до папки\n"
 "sourcemods у каталозі Steam. Якщо його не вдасться визначити, то\n"
-"буде поточний робочий каталог."
+"це буде поточний робочий каталог."
 
 #: tf2c_downloader.py:130
 msgid "TF2 Classic is already installed. Assuming a reinstallation."
-msgstr "TF2 Classic вже встановлено. Передбачається перевстановлення."
+msgstr "TF2 Classic вже встановлено. Перевстановлюємо."
 
 #: tf2c_downloader.py:145
 msgid ""
@@ -341,7 +341,7 @@ msgstr ""
 
 #: tf2c_downloader.py:157
 msgid "Unrecognised command. Try --help"
-msgstr "Нерозпізнана команда. Спробуй --help"
+msgstr "Нерозпізнана команда. Спробуйте --help"
 
 #: troubleshoot.py:7
 msgid "Applying safety blacklist..."
@@ -364,8 +364,8 @@ msgid ""
 "We can't read the version of your installation. It could be corrupted. Do "
 "you want to reinstall the game?"
 msgstr ""
-"Ми не можемо прочитати версію вашого встановлення. Можливо, вона пошкоджена. "
-"Бажаєте перевстановити гру?"
+"Ми не можемо прочитати версію вашого встановлення гри. Можливо, вона "
+"пошкоджена. Бажаєте перевстановити гру?"
 
 #: versions.py:47 versions.py:66 versions.py:75 versions.py:93 versions.py:101
 #: versions.py:112
@@ -385,7 +385,7 @@ msgid ""
 "The version of your installation is unknown. It could be corrupted. Do you "
 "want to reinstall the game?"
 msgstr ""
-"Версія вашого встановлення невідома. Можливо, вона пошкоджена. Ви хочете "
+"Версія вашого встановлення гри невідома. Можливо, вона пошкоджена. Ви хочете "
 "перевстановити гру?"
 
 #: versions.py:98
@@ -393,7 +393,7 @@ msgid ""
 "We think we've found an existing up-to-date installation of the game. Do you "
 "want to reinstall it?"
 msgstr ""
-"Ми вважаємо, що знайшли існуюче актуальне встановлення гри. Бажаєте "
+"Здається, ми знайшли існуюче актуальне встановлення гри. Бажаєте "
 "перевстановити її?"
 
 #: versions.py:106
