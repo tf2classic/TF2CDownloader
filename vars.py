@@ -10,7 +10,7 @@ import tempfile
 if system() == 'Windows':
     TEMP_PATH = tempfile.gettempdir()
 else:
-    TEMP_PATH = '/var/tmp/'
+    TEMP_PATH = '/tmp/'
 
 # For determining whether we're installing or updating/repairing the game
 INSTALLED = False
