@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tf2c-downloader\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-24 05:13-0500\n"
-"PO-Revision-Date: 2023-12-19 17:10+0000\n"
+"PO-Revision-Date: 2023-12-21 14:08+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/"
 "tf2cdownloader/tf2cdownloader/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.3\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: downloads.py:36
 msgid "Extracting the downloaded archive, please wait patiently."
@@ -80,6 +80,7 @@ msgstr ""
 #: downloads.py:97
 msgid "Folder selection prompt closed without choosing any path. Exiting..."
 msgstr ""
+"O prompt de seleção de pasta foi fechado sem destinos escolhidos. A sair..."
 
 #: downloads.py:102
 #, python-format
@@ -415,11 +416,12 @@ msgid "Exiting..."
 msgstr "A sair…"
 
 #: versions.py:114
-#, fuzzy
 msgid ""
 "An update is available, but no patch could be found for your game version. "
 "Try reinstalling?"
-msgstr "Uma atualização está disponível para o seu jogo. Deseja instalá-lo?"
+msgstr ""
+"Uma atualização está disponível, mas nenhum remendo pode ser encontrado para "
+"a sua versão do jogo. Deseja reinstalar?"
 
 #, python-format
 #~ msgid ""
